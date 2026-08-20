@@ -11,13 +11,12 @@ Talks get recorded, decks get posted, recap posts get crawled. The stories and n
 
 ## Do this job
 
-1. Ask where this talk's files should live before creating any (default: the current directory). If they already pointed at a folder or an existing outline, use that directory. Do not ask again in Inputs.
-2. Load brand context. Check `.agents/brand-context.md`, then `.claude/brand-context.md`. If it exists, read it. If it does not, interview in the same batch as Inputs and write the answers there so the next visibility skill skips the interview.
-3. Establish Inputs. Ask only what is missing.
-4. Write `<talk-slug>-outline.md` in the working directory as soon as the talk has a name or topic, even if the three boxes are still empty. Sessions die. The file is the memory.
-5. Fill **Who this is for**, **What the audience gets**, and **What I get** before any section list. If a box is mush, stop and ask. Do not invent an audience or a presenter win.
-6. Write **Outline**. Every block must serve the audience takeaway, the presenter win, or both. Cut the rest.
-7. Set `status: ready` when a cold reader could give the talk from the file. In chat: path + the three boxes + section titles only. Do not paste the file.
+1. Load brand context. Check `.agents/brand-context.md`, then `.claude/brand-context.md`. If it exists, read it.
+2. If they already pointed at a folder or an existing outline, use that directory. If not, ask where files should live (default: the current directory) in the same message as any missing Inputs or brand questions. Do not ask the directory first and the talk second.
+3. Write `<talk-slug>-outline.md` in that directory as soon as the talk has a name or topic, in the same turn as any missing-input questions. Do not wait for answers to create the stub. Sessions die. The file is the memory.
+4. Fill **Who this is for**, **What the audience gets**, and **What I get** before any section list. If a box is mush, stop and ask. Do not invent an audience or a presenter win.
+5. Write **Outline**. Every block must serve the audience takeaway, the presenter win, or both. Cut the rest.
+6. Set `status: ready` when a cold reader could give the talk from the file. In chat: path + the three boxes + section titles only. Do not paste the file.
 
 ## Working files
 
@@ -67,9 +66,9 @@ From the user's message (ask only if missing and it matters), in one batch:
 3. Who do you think is in the room?
 4. What do you want out of giving this, in a form you could check in 30 days?
 
-File location is asked once, in Do this job. If they already have slides, a messy draft, or speaker notes, read those instead of guessing. Do not go fetch extra context.
+File location is asked once, in the same batch as these questions when the path is unset. If they already have slides, a messy draft, or speaker notes, read those instead of guessing. Do not go fetch extra context.
 
-If brand context is missing, add these to the same batch, then write `.agents/brand-context.md`:
+If brand context is missing, add these to that same batch, then write `.agents/brand-context.md`:
 
 1. What's your current company, and how do you describe it in one sentence?
 2. What did you build before this that comes up in conversation?
