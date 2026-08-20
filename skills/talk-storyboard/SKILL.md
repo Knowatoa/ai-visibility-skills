@@ -34,7 +34,7 @@ resume: "<exact next step a cold session should do>"
 
 `status` is `in-progress` until a cold reader could run the talk from the beats. Then `ready`. If the file already exists, read it, honor `resume`, and do not re-ask the source path or talk title.
 
-In chat: the path, the journey in a few sentences, and the beat names in order. Do not paste the file.
+In chat: the path, the journey in a few sentences, and the beat names in order. Do not paste the file. If they ask for the storyboard only in chat, write the file anyway and keep chat short.
 
 ## Do this job
 
