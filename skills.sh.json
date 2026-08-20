@@ -11,6 +11,11 @@
       "title": "Agent workflows",
       "description": "Review, ship, and work with Cursor on a branch.",
       "skills": ["issue-pr", "pr-review", "cursor-guidance"]
+    },
+    {
+      "title": "Skill craft",
+      "description": "Author and pressure-test skills in this repo. Inspired by Jason Cohen / A Smart Bear (asb-skills, CC BY 4.0).",
+      "skills": ["create-skill", "audit-skill", "exercise-skill"]
     }
   ]
 }

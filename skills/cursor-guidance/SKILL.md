@@ -41,4 +41,6 @@ When they are ready to ship: `/issue-pr`. When they want to walk open PRs: `/pr-
 
 This is a skills catalog, not the Knowatoa Rails app. There is no `bin/rails test`. Validate with `npx skills add . --list` and by checking `SKILL.md` frontmatter. Visibility skills (`podcast-prep` and later) may read `.agents/brand-context.md`; these workflow skills do not.
 
+New public skills: `create-skill`. Pressure-test a draft: `audit-skill`, then `exercise-skill`. House rules: `AGENTS.md`. Do not copy text from [asb-skills](https://github.com/asmartbear/asb-skills); we took behavior, not prose (`NOTICE.md`).
+
 Knowatoa-only slash commands (`/issue-fix`, Honeybadger, Playwright QA, newsletters, Buffer) stay in that product repo. Do not invent them here.

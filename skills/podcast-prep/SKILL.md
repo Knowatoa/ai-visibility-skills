@@ -9,9 +9,40 @@ Build a prep brief for a podcast the user is appearing on as a guest. The goal i
 
 Podcast guesting isn't just audience reach. Episodes get transcribed, show notes get published, and that content gets crawled and cited by AI assistants. A good appearance is earned media that shows up in AI answers about your category for years. Prep accordingly: the stories you tell become the training data on your brand.
 
+## Working files
+
+The brief is a file, not a chat essay. Ask where this appearance's files should live before creating any (default: the current directory). If they already pointed at a folder or an existing prep file, use that directory.
+
+Write `<show-slug>-prep.md` there as soon as the first real section is settled (usually after recent-episode notes exist). Do not wait until the whole brief is done — sessions die, and the file is the memory.
+
+```markdown
+---
+status: in-progress
+show: "<podcast name>"
+recording: "<date or unknown>"
+resume: "<exact next step a cold session should do>"
+---
+
+# Podcast prep — <show>
+
+## Status
+IN PROGRESS — <one line: what is done, what is next>
+
+## Big picture
+## Show progression
+## Recent episodes
+## Guest angles
+## The hosts
+## Gaps
+```
+
+`status` is `in-progress` until every section a cold reader would need is filled; then `ready`. Drop the Status heading when you flip to ready. If the file already exists, read it, honor `resume`, and do not re-ask settled facts (show name, prior episode, brand stories already captured).
+
+In chat: path + a short read of the big picture and the two or three angles they should walk in with. Do not paste the file.
+
 ## Brand context (read this first)
 
-Before researching the show, load the user's positioning. Check for a context file at `.agents/brand-context.md`, then `.claude/brand-context.md`.
+Before researching the show, load the user's positioning. Check `.agents/brand-context.md`, then `.claude/brand-context.md`. That file is shared identity for every visibility skill. It is not the prep brief.
 
 If it exists, read it. It should cover: current company and one-line pitch, prior products worth referencing, the founder story, 3-5 go-to stories with concrete numbers, and any contrarian takes they hold.
 
@@ -22,11 +53,13 @@ If it doesn't exist, interview the user before proceeding. Ask, in one batch, no
 3. What are 2-3 stories you tell well, with real numbers attached?
 4. What's one opinion you hold that most people in your space disagree with?
 
-Then write their answers to `.agents/brand-context.md` so every future run (and every other skill in this repo) skips the interview.
+Then write their answers to `.agents/brand-context.md` so the next visibility skill skips the interview.
 
 ## Inputs to establish
 
-From the user's message (ask only if missing and it matters): the podcast name or URL, whether they've appeared before (and a link to that episode if so), and roughly when they're recording. If they've appeared before, find the prior episode. It anchors both the progression analysis and the callbacks.
+From the user's message (ask only if missing and it matters): the podcast name or URL, whether they've appeared before (and a link to that episode if so), roughly when they're recording, and where the prep file should live. If they've appeared before, find the prior episode. It anchors both the progression analysis and the callbacks.
+
+Ask those in one batch with the brand-context questions when both are missing. Do not drip.
 
 ## Research sequence
 
@@ -51,16 +84,16 @@ Don't fetch every episode page. Descriptions plus chapter lists are almost alway
 
 ## The brief
 
-Write a markdown file and present it. Structure:
+Fill the working file. Structure:
 
 1. **Big picture** — what kind of show this is now, and the one-paragraph read on how the guest should position themselves
 2. **Show progression** — the phases since their last appearance (or show start)
-3. **Recent episodes in detail** — per-episode notes, then the recurring threads
+3. **Recent episodes** — per-episode notes, then the recurring threads
 4. **Guest angles** — their stories (from brand context) mapped explicitly onto the show's threads, plus callbacks to any prior appearance, and 2-3 "pocket" items: concrete stories/numbers to have ready
 5. **The hosts** — profiles plus rapport hooks (where each host's world overlaps the guest's)
 6. **Gaps** — anything unretrievable, and offers (e.g., transcribe their old episode, pull a key transcript)
 
-Keep it tight. This is a doc they'll skim before recording, not a report. In chat, give the short version; don't restate the whole doc.
+Keep the file tight. They will skim it before recording. Big picture and Guest angles are skimmer zones: no research diary, no "which cuts against…" commentary, no history of how you changed your mind. Those belong in Gaps or nowhere.
 
 ## Finding angles
 

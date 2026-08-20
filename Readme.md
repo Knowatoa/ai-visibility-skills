@@ -18,7 +18,9 @@ Guesting is earned media that compounds in AI answers. So prep matters: walking 
 
 | Skill | What it does |
 | ----- | ------------ |
-| [podcast-prep](skills/podcast-prep) | Researches a podcast before you guest on it: recent episode threads, show evolution, host profiles, and your stories mapped onto what the show cares about right now. |
+| [podcast-prep](skills/podcast-prep) | Researches a podcast before you guest on it: recent episode threads, show evolution, host profiles, and your stories mapped onto what the show cares about right now. Writes a `<show>-prep.md` in a directory you name. |
+
+More AI visibility skills coming.
 
 ### Agent workflows
 
@@ -28,13 +30,23 @@ Guesting is earned media that compounds in AI answers. So prep matters: walking 
 | [pr-review](skills/pr-review) | Walk open PRs one at a time: summarize, review, verify locally, stop at a merge/skip/close gate. |
 | [cursor-guidance](skills/cursor-guidance) | How git and Cursor should work here: never `main`, PRs not direct pushes, when to run `/issue-pr` vs `/pr-review`. |
 
-More AI visibility skills coming.
+### Skill craft
+
+| Skill | What it does |
+| ----- | ------------ |
+| [create-skill](skills/create-skill) | Draft a new public skill in this repo. Writes `skills/<slug>/SKILL.md` immediately and keeps that file as the working draft. |
+| [audit-skill](skills/audit-skill) | Interrogate a `SKILL.md` against house rules (self-contained, file-on-disk, tight context, action-first). Writes `audit-<slug>.md`. |
+| [exercise-skill](skills/exercise-skill) | Role-play users through a skill and judge whether it actually does the job. Writes `exercise-<slug>.md`. |
+
+These three exist so new skills stay tight. The idea of skills that pressure-test other skills comes from Jason Cohen / [A Smart Bear](https://github.com/asmartbear/asb-skills) (`asb-skills`, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). We did not copy his skill text or his product/pricing/interview frameworks. See [NOTICE.md](NOTICE.md).
 
 ## How the skills work
 
 Skills are markdown files that give your AI of choice specialized workflows. Once installed, the AI recognizes when you're working on a matching task and follows the skill.
 
 Visibility skills read a shared context file first: `.agents/brand-context.md`. It holds your company, your story bank, and your positioning. The first visibility skill you run will interview you and create it. After that, those skills already know who you are. The workflow skills do not use that file.
+
+When a skill produces something you will keep (a podcast brief, an audit), it writes a markdown file in a directory you name — default is the current directory — and resumes from that file if you come back later. Chat stays short. That file-as-memory behavior is also inspired by asb-skills; the files and the wording here are ours.
 
 ## Installation
 
@@ -79,6 +91,12 @@ cp -r ai-visibility-skills/skills/* .agents/skills/
 
 "/pr-review"
 → Uses pr-review
+
+"/create-skill I want a skill that audits our existing blog posts for AI-citation worthiness"
+→ Uses create-skill
+
+"/audit-skill podcast-prep"
+→ Uses audit-skill
 ```
  
 ## Want to start replacing those lost organic traffic?
@@ -111,10 +129,12 @@ Starter template: `npx skills init <skill-name>`, then move the folder under `sk
 
 ## Contributing
 
-Found a way to improve a skill? PRs and issues welcome. New skills belong at `skills/<skill-name>/SKILL.md` with the frontmatter above.
+Found a way to improve a skill? PRs and issues welcome. New skills belong at `skills/<skill-name>/SKILL.md` with the frontmatter above. In this repo, `/create-skill` drafts that file; `/audit-skill` and `/exercise-skill` pressure-test it.
  
 ## License
- 
-[MIT](LICENSE). Use these however you want.
+
+Original work in this repo is [MIT](LICENSE). Use it however you want.
+
+Skill *behavior* (write the deliverable on disk, stay self-contained, keep extra skills that interrogate the other skills) is inspired by Jason Cohen's [asb-skills](https://github.com/asmartbear/asb-skills), licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). We rewrote those ideas in our own words. We did not copy his `SKILL.md` files or restate the frameworks from *Hidden Multipliers* and A Smart Bear. Full credit and reuse rules: [NOTICE.md](NOTICE.md).
 
 Knowatoa is a product of Wafris LLC.
