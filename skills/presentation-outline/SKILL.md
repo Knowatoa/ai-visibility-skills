@@ -79,7 +79,7 @@ Event research is optional and short. Only if they named an event and you need t
 
 ## Outline
 
-Write timed blocks that fit `length`. A 20-minute talk is not a 45-minute talk with the same sections spoken faster.
+Write timed blocks that fit `length`. A 20-minute talk is not a 45-minute talk with the same sections spoken faster. If length is still unknown, write untimed blocks and note it in Gaps. Do not invent a runtime.
 
 For each block: the point, the proof (a story or number from brand context or from what they already gave you), and which box it serves. Opening names the audience's situation. Close restates the audience takeaway and the presenter ask.
 
