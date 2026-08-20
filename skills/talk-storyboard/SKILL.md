@@ -7,7 +7,7 @@ description: "Maps how the audience should feel beat by beat through a presentat
 
 Lock the feeling of the talk before you lock the outline. The walk-away file is a storyboard of the energy and emotion the audience should move through. If that journey does not earn the Monday takeaway, the outline is not the one yet. Chat is a short read, not the file.
 
-Talks get recorded. The feeling in the room is the feeling in the transcript. Storyboard for the person in the seat, then check that the sentence you want quoted later still sits on a beat they will feel.
+The talk is the job. The recording is the asset. The feeling in the room is the feeling in the transcript. Storyboard for the person in the seat, then check that the sentence you want quoted later still sits on a beat they will feel.
 
 ## Do this job
 

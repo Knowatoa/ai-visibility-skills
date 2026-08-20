@@ -7,7 +7,7 @@ description: "Research a podcast and build a prep brief before the user appears 
 
 Build a prep brief for a podcast the user is appearing on as a guest. The goal is to walk in knowing what's top of mind for the show, how it has evolved, who the hosts are, and which of the user's stories map onto the show's current obsessions.
 
-Podcast guesting isn't just audience reach. Episodes get transcribed, show notes get published, and that content gets crawled and cited by AI assistants. A good appearance is earned media that shows up in AI answers about your category for years. Prep accordingly: the stories you tell become the training data on your brand.
+Podcast guesting is a job that leaves you with an asset. Episodes get transcribed, show notes get published, clips become shorts, and the same stories can land on your site. That content gets crawled, indexed, and cited. Prep accordingly: the stories you tell become the training data on your brand.
 
 ## Working files
 

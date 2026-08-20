@@ -3,9 +3,14 @@
   "notGrouped": "bottom",
   "groupings": [
     {
-      "title": "AI visibility",
-      "description": "Skills for getting a brand into AI answers.",
-      "skills": ["podcast-prep", "presentation-outline", "talk-storyboard"]
+      "title": "Podcast appearances",
+      "description": "Prep a guest appearance so the episode that gets published, clipped, and indexed says the things you want attached to the brand.",
+      "skills": ["podcast-prep"]
+    },
+    {
+      "title": "Talks",
+      "description": "Prepare a talk so the recording, deck, and recap posts that follow can be chopped up and distributed.",
+      "skills": ["presentation-outline", "talk-storyboard"]
     }
   ]
 }

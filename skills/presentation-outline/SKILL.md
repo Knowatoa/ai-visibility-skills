@@ -7,7 +7,7 @@ description: "Builds a presentation outline that names the real audience, what t
 
 Lock who the talk is actually for, what that person walks away able to do, and what you want from giving it. The happy path is weeks of throwing lists away. If they have not sat down yet and the talk is about a week out, stay in the sitting: at most three back-and-forths, then stop. If they already know what they want to talk about, one pass. The deliverable is a file, not a chat essay.
 
-Talks get recorded, decks get posted, recap posts get crawled. The stories and numbers you put on stage become training data on your brand. Outline for the room first. Write the one sentence that should survive a transcript if the talk might be public.
+Giving the talk is the job. If you record it and publish it, you leave with an asset that can be clipped, recapped, posted, and indexed. Outline for the room first. Write the one sentence that should survive a transcript if the talk might be public.
 
 ## Do this job
 
