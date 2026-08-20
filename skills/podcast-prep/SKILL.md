@@ -1,6 +1,6 @@
 ---
 name: "podcast-prep"
-description: "Research a podcast and build a prep brief before the user appears as a guest. Use this skill whenever the user says they're going on, returning to, or were invited to a podcast, drops a podcast or episode URL and asks to prep, or asks what a show has been talking about lately, how it's evolved, or who the hosts are. Also trigger for 'help me prep for [show]', 'review their recent episodes', or any phrasing that means 'get me ready for this podcast appearance.'"
+description: "Research a podcast and build a prep brief before the user appears as a guest. Use this skill whenever the user says they're going on, returning to, or were invited to a podcast, drops a podcast or episode URL and asks to prep, or asks what a show has been talking about lately, how it's evolved, or who the hosts are. Also trigger for 'help me prep for [show]', 'review their recent episodes', or any phrasing that means 'get me ready for this podcast appearance.' Do NOT load for picking which show to pitch, writing the host email, editing a transcript after the episode, or general brand positioning with no named show."
 ---
 
 # Podcast Appearance Prep
@@ -102,3 +102,7 @@ Map the brand context onto the show's current threads. Strong angle patterns: fi
 ## Follow-ups to offer
 
 After delivering the brief, offer (don't auto-run): transcribing their prior episode for a word-level review, pulling a full transcript of one pivotal recent episode, or drafting likely Q&A.
+
+## Refuse
+
+Stop in a few sentences if there is no named show and they will not name one, or if they want a different job: which podcasts to pitch, a host outreach email, a post-episode transcript edit, or brand positioning with no appearance attached. Do not half-run those.

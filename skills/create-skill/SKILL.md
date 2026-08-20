@@ -29,7 +29,7 @@ that folder and nothing else. So:
 - Action-oriented. The wielder does the job instead of narrating a plan
   or camping in chat.
 
-House rules: `AGENTS.md`. Spec: [agentskills.io](https://agentskills.io/specification).
+House rules (also in `AGENTS.md` when you are in this repo): self-contained; the deliverable is a file; resume from disk; do not hunt extra context; act first; refuse the wrong job. Spec: [agentskills.io](https://agentskills.io/specification).
 
 ## Do not
 

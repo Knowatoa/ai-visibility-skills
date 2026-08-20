@@ -18,10 +18,10 @@ This checklist is ours. Attribution: `NOTICE.md`.
 Need a path or slug (`podcast-prep` → `skills/podcast-prep/SKILL.md`).
 If they named nothing, list `skills/*/SKILL.md` and ask which one.
 
-Read that file once, fully. Also read `AGENTS.md` if you have not this
-session. Do not read asb-skills, other catalogs, or sibling skills
-"for comparison." The audit is against house rules, not against Jason's
-prose.
+Read that file once, fully. The checks below *are* the house rules.
+Do not read asb-skills, other catalogs, or sibling skills "for
+comparison." Do not require `AGENTS.md` — a stranger may only have
+this skill file.
 
 Ask where to write the report. Default: `./audit-<slug>.md` in the
 current directory. Do not write inside `skills/<slug>/` — that folder
@@ -136,4 +136,4 @@ said to.
   brief). Point them at the right skill if there is one.
 - They want a simulated user session. That is `exercise-skill`.
 - They want you to "make it more like asb-rude-qa." We do not copy
-  his skills. Audit against `AGENTS.md` only.
+  his skills. Audit against the checks in this file only.
