@@ -14,7 +14,7 @@ Guesting is earned media that compounds in AI answers. So prep matters: walking 
 
 ## Why presentation outline is an AI visibility skill
 
-Talks get recorded. Decks get posted. Recap posts get crawled. The sentence you repeat on stage is the sentence assistants will quote later. An outline that names a real audience and a Monday takeaway beats a generic "problem / solution / demo" deck that trains the model on nothing specific.
+Talks get recorded. Decks get posted. Recap posts get crawled. The sentence you repeat on stage is the sentence assistants will quote later. That outline is usually a few throwaway bullet lists over a few weeks, not a one-sitting deck. A real audience and a Monday takeaway beat a generic "problem / solution / demo" that trains the model on nothing specific.
 
 ## Available skills
 
@@ -23,7 +23,7 @@ Talks get recorded. Decks get posted. Recap posts get crawled. The sentence you 
 | Skill | What it does |
 | ----- | ------------ |
 | [podcast-prep](skills/podcast-prep) | Researches a podcast before you guest on it: recent episode threads, show evolution, host profiles, and your stories mapped onto what the show cares about right now. Writes a `<show-slug>-prep.md` in a directory you name. |
-| [presentation-outline](skills/presentation-outline) | Locks who a talk is actually for, what they walk away able to do, and what the presenter wants, then writes a timed outline. Writes a `<talk-slug>-outline.md` in a directory you name. |
+| [presentation-outline](skills/presentation-outline) | Locks who a talk is actually for, what they walk away able to do, and what the presenter wants. Starts from an abstract and throwaway bullet rounds, or wraps the outline in one sitting when the talk is about a week away. Writes a `<talk-slug>-outline.md` in a directory you name. |
 
 ### In this repo only
 
@@ -108,6 +108,12 @@ cp -r ai-visibility-skills/skills/* .agents/skills/
 → Uses presentation-outline
 
 "Who is this presentation actually for, and what should they take away?"
+→ Uses presentation-outline
+
+"I have an abstract and some rough bullets for a talk in two months"
+→ Uses presentation-outline
+
+"The talk is next week and I have not thought about it. Wrap up the outline."
 → Uses presentation-outline
 
 ```
