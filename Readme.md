@@ -113,6 +113,9 @@ cp -r ai-visibility-skills/skills/* .agents/skills/
 "I have an abstract and some rough bullets for a talk in two months"
 → Uses presentation-outline
 
+"The talk is next week and I have not thought about it. Wrap up the outline."
+→ Uses presentation-outline
+
 ```
 
 In this repo only (not installed by `npx skills add`):
