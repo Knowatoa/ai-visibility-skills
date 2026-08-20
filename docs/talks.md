@@ -11,7 +11,7 @@ why a talk belongs in this catalog: not the room, the asset.
 
 Skills in this repo cover the prep that happens before the slides:
 
-- [presentation-outline](../skills/presentation-outline) — who it is
+- [talk-outline](../skills/talk-outline) — who it is
   for, what they can do on Monday, what you get, then a disposable
   outline
 - [talk-storyboard](../skills/talk-storyboard) — the feeling beat by
@@ -30,12 +30,12 @@ substitute for the video, and they are not his words.
 ### What the skills already do
 
 **Wait for something worth saying.** If the only reason to speak is
-wanting the slot, skip it. `presentation-outline` makes you name a
+wanting the slot, skip it. `talk-outline` makes you name a
 presenter win you could check in 30 days. "Thought leadership" is not
 one.
 
 **Give ideas breathing room.** Searls spends a calendar month letting
-the talk chew in the background. `presentation-outline` defaults to
+the talk chew in the background. `talk-outline` defaults to
 scratch: throwaway ~10-bullet rounds, then walk away. The forgetting
 is the filter. Do not marry the first list.
 
@@ -43,7 +43,7 @@ is the filter. Do not marry the first list.
 lightweight outline, sets it aside, draws a storyboard, and repeats
 until the flow feels inevitable. He also reads the outline
 adversarially before calling it done. That split is two skills here:
-`presentation-outline` owns the disposable lists and the locked
+`talk-outline` owns the disposable lists and the locked
 blocks. `talk-storyboard` owns the feeling those blocks are supposed
 to create, then says whether the outline is the one.
 
@@ -54,7 +54,7 @@ feel it is the version that gets quoted. `talk-storyboard` maps that
 journey before you keep the outline.
 
 **Don't write a script.** He never brings a verbatim manuscript on
-stage. `presentation-outline` refuses a word-for-word speech. The
+stage. `talk-outline` refuses a word-for-word speech. The
 file is an outline, not a teleprompter.
 
 **Name who it is for, and who it is not.** His CFP advice is a

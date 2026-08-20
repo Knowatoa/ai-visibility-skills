@@ -32,8 +32,8 @@ How we prepare talks is inspired by Justin Searls' [Secrets of Great Conference 
 
 | Skill | What it does |
 | ----- | ------------ |
-| [presentation-outline](skills/presentation-outline) | Locks who a talk is actually for, what they walk away able to do, and what the presenter wants. Starts from an abstract and throwaway bullet rounds, or wraps the outline in one sitting when the talk is about a week away. Writes a `<talk-slug>-outline.md` in a directory you name. |
-| [talk-storyboard](skills/talk-storyboard) | Maps how the audience should feel beat by beat through a locked presentation outline, then says whether that outline is the one to keep. Writes a `<talk-slug>-storyboard.md` next to the outline. |
+| [talk-outline](skills/talk-outline) | Locks who a talk is actually for, what they walk away able to do, and what the presenter wants. Starts from an abstract and throwaway bullet rounds, or wraps the outline in one sitting when the talk is about a week away. Writes a `<talk-slug>-outline.md` in a directory you name. |
+| [talk-storyboard](skills/talk-storyboard) | Maps how the audience should feel beat by beat through a locked talk outline, then says whether that outline is the one to keep. Writes a `<talk-slug>-storyboard.md` next to the outline. |
 
 ## In this repo only
 
@@ -64,7 +64,7 @@ When a skill produces something you will keep (a podcast brief, an audit), it wr
 npx skills add Knowatoa/ai-visibility-skills
 ```
 
-That installs the **public** skills (`skills/` — today, `podcast-prep`, `presentation-outline`, and `talk-storyboard`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
+That installs the **public** skills (`skills/` — today, `podcast-prep`, `talk-outline`, and `talk-storyboard`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
 
 The installer is the [`skills`](https://github.com/vercel-labs/skills) CLI. It needs Node.js **20.12+** (`node -v`). Since `skills@1.5.16` it imports `styleText` from `node:util`, which Node 18 and early Node 20 do not have, so the command dies before it can install anything:
 
@@ -119,16 +119,16 @@ Podcast appearances:
 Talks:
 
 "I have a 30-minute talk at SaaStr, help me outline it"
-→ Uses presentation-outline
+→ Uses talk-outline
 
 "Who is this presentation actually for, and what should they take away?"
-→ Uses presentation-outline
+→ Uses talk-outline
 
 "I have an abstract and some rough bullets for a talk in two months"
-→ Uses presentation-outline
+→ Uses talk-outline
 
 "The talk is next week and I have not thought about it. Wrap up the outline."
-→ Uses presentation-outline
+→ Uses talk-outline
 
 "Storyboard this talk from the outline"
 → Uses talk-storyboard

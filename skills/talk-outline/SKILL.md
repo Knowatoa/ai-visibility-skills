@@ -1,9 +1,9 @@
 ---
-name: presentation-outline
-description: "Builds a presentation outline that names the real audience, what they walk away able to do, and what the presenter is trying to get. Starts from an abstract and throwaway bullet rounds, or wraps the outline in one sitting when the talk is about a week away. Use when the user asks to outline a talk, keynote, webinar, meetup, or conference session, or says 'help me structure this presentation', 'I have some rough bullets', 'here's my abstract', 'the talk is next week', 'wrap up this outline', 'who is this talk for', or 'what should they take away'. Do NOT load for slide design, writing a full speech, podcast guest prep, picking which event to speak at, or a fundraising pitch deck."
+name: talk-outline
+description: "Builds a talk outline that names the real audience, what they walk away able to do, and what the presenter is trying to get. Starts from an abstract and throwaway bullet rounds, or wraps the outline in one sitting when the talk is about a week away. Use when the user asks to outline a talk, keynote, webinar, meetup, or conference session, or says 'help me structure this presentation', 'I have some rough bullets', 'here's my abstract', 'the talk is next week', 'wrap up this outline', 'who is this talk for', or 'what should they take away'. Do NOT load for slide design, writing a full speech, podcast guest prep, picking which event to speak at, or a fundraising pitch deck."
 ---
 
-# Presentation outline
+# Talk outline
 
 Lock who the talk is actually for, what that person walks away able to do, and what you want from giving it. The happy path is weeks of throwing lists away. If they have not sat down yet and the talk is about a week out, stay in the sitting: at most three back-and-forths, then stop. If they already know what they want to talk about, one pass. The deliverable is a file, not a chat essay.
 
@@ -34,7 +34,7 @@ pace: scratch
 resume: "<exact next step a cold session should do>"
 ---
 
-# Presentation outline — <title>
+# Talk outline — <title>
 
 ## Abstract
 ## Who this is for

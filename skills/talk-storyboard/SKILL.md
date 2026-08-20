@@ -1,6 +1,6 @@
 ---
 name: talk-storyboard
-description: "Maps how the audience should feel beat by beat through a presentation outline, so the speaker can decide whether that outline is the one to keep. Starts from a locked outline file (`*-outline.md`) that names the audience, the Monday takeaway, and the talk blocks. Use when the user says storyboard this talk, map the emotional journey, how should the audience feel throughout, turn this outline into a storyboard, what beats should we hit, or 'is this the outline we want'. Do NOT load for writing the outline from scratch, slide design, a full speech, podcast guest prep, film or product storyboards, or a fundraising pitch deck."
+description: "Maps how the audience should feel beat by beat through a talk outline, so the speaker can decide whether that outline is the one to keep. Starts from a locked outline file (`*-outline.md`) that names the audience, the Monday takeaway, and the talk blocks. Use when the user says storyboard this talk, map the emotional journey, how should the audience feel throughout, turn this outline into a storyboard, what beats should we hit, or 'is this the outline we want'. Do NOT load for writing the outline from scratch, slide design, a full speech, podcast guest prep, film or product storyboards, or a fundraising pitch deck."
 ---
 
 # Talk storyboard
