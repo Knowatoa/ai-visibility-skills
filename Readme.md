@@ -62,7 +62,17 @@ The installer is the [`skills`](https://github.com/vercel-labs/skills) CLI. It n
 SyntaxError: The requested module 'node:util' does not provide an export named 'styleText'
 ```
 
-That is a CLI / Node mismatch, not a bug in these skills ([vercel-labs/skills#1672](https://github.com/vercel-labs/skills/issues/1672)). Upgrade to [Node 22 LTS](https://nodejs.org), pin the last CLI that still runs on older Node (`npx skills@1.5.15 add Knowatoa/ai-visibility-skills`), or skip npx and [copy the files](#manual-install).
+That is a CLI / Node mismatch, not a bug in these skills ([vercel-labs/skills#1672](https://github.com/vercel-labs/skills/issues/1672)). Upgrade Node where you run `npx`, pin the last CLI that still runs on older Node (`npx skills@1.5.15 add Knowatoa/ai-visibility-skills`), or skip npx and [copy the files](#manual-install).
+
+asdf (skip the plugin line if you already have it). This repo's `.tool-versions` pins the same [Node 24 LTS](https://nodejs.org):
+
+```
+asdf plugin add nodejs
+asdf install nodejs 24.19.0
+asdf set nodejs 24.19.0
+```
+
+Older asdf uses `asdf local` instead of `asdf set`. Then `node -v` should print `v24.19.0`. If it still says 18, `which node` and `asdf current` will show why.
 
 This is also how the skills show up on [skills.sh](https://skills.sh). There is no submit form. The directory indexes public GitHub repos from `npx skills add` telemetry, so the first install from a normal local shell is what creates [the listing](https://skills.sh/knowatoa/ai-visibility-skills). (Installs from CI often do not count.)
 
