@@ -1,5 +1,7 @@
 ---
 name: cursor-guidance
+metadata:
+  internal: true
 description: "How to work with Cursor in this repo: feature branches, never main, PRs not direct pushes, and when to suggest /issue-pr or /pr-review. Use when the user asks how to use Cursor here, which slash command to run, how git/PRs should work, or says 'follow the project workflow'. Also use before opening or merging a PR on a non-trivial change."
 ---
 
@@ -39,8 +41,8 @@ When they are ready to ship: `/issue-pr`. When they want to walk open PRs: `/pr-
 
 ## This repo
 
-This is a skills catalog, not the Knowatoa Rails app. There is no `bin/rails test`. Validate with `npx skills add . --list` and by checking `SKILL.md` frontmatter. Visibility skills (`podcast-prep` and later) may read `.agents/brand-context.md`; these workflow skills do not.
+This is a skills catalog, not the Knowatoa Rails app. There is no `bin/rails test`. `npx skills add . --list` must show only public skills under `skills/` (today: `podcast-prep`). Repo-only skills live in `dev-skills/` and load in this clone via symlinks; they are not installed. Visibility skills may read `.agents/brand-context.md`; these workflow skills do not.
 
-New public skills: `create-skill`. For a new skill or a behavior change: `audit-skill` first, then `exercise-skill` if the audit is clean. Skip both for typos. House rules: `AGENTS.md`. Do not copy text from [asb-skills](https://github.com/asmartbear/asb-skills); we took behavior, not prose (`NOTICE.md`).
+New public skills: `create-skill`. For a new public skill or a behavior change: `audit-skill` first, then `exercise-skill` if the audit is clean. Skip both for typos. House rules: `AGENTS.md`. Do not copy text from [asb-skills](https://github.com/asmartbear/asb-skills); we took behavior, not prose (`NOTICE.md`).
 
 Knowatoa-only slash commands (`/issue-fix`, Honeybadger, Playwright QA, newsletters, Buffer) stay in that product repo. Do not invent them here.

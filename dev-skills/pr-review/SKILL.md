@@ -1,5 +1,7 @@
 ---
 name: pr-review
+metadata:
+  internal: true
 description: "Walk open GitHub PRs one at a time: summarize the diff, review correctness/security/quality, verify locally, then stop at a decision gate. Use when the user says /pr-review, asks to review PRs, walk the PR inbox, review PR #<n>, or 'review this PR'. Do not merge unless they explicitly pick merge."
 ---
 

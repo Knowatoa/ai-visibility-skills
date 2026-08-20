@@ -1,5 +1,7 @@
 ---
 name: issue-pr
+metadata:
+  internal: true
 description: "Run tests, merge main into the current branch, do a quality pass, then create or update the PR for this branch. Use when the user says /issue-pr, asks to open a PR, ship this branch, merge this PR, or squash-merge. Never run on main. Identify the PR with gh pr view on the current branch, not directory names. Do not squash-merge until the user explicitly approves."
 ---
 
@@ -60,7 +62,7 @@ For this skills repo (no app test suite):
 npx skills add . --list
 ```
 
-Confirm every `skills/*/SKILL.md` is discovered and that `name` matches the folder. If you changed a skill, also check frontmatter (`name`, `description` ≤ 1024 chars).
+Confirm it lists every `skills/*/SKILL.md` and nothing from `dev-skills/`. Today that is only `podcast-prep`. `name` must match the folder. If you changed a skill (public or repo-only), also check frontmatter (`name`, `description` ≤ 1024 chars).
 
 On failure: show the error, fix merge-caused failures, then re-run. Do not open or merge a PR on a red suite.
 

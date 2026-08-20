@@ -1,5 +1,7 @@
 ---
 name: create-skill
+metadata:
+  internal: true
 description: "Authors a new public skill in this repo: names it, writes SKILL.md as the working file, and stops when the draft is ready for audit-skill and exercise-skill. Use when the user says /create-skill, wants a new AI visibility skill, or asks to forge, draft, or add a skill. Do NOT load for podcast prep, brand research, PR work, or editing an existing skill (edit the file and run audit-skill)."
 ---
 
@@ -41,6 +43,10 @@ House rules (also in `AGENTS.md` when you are in this repo): self-contained; the
   has none of those.
 - Touch `issue-pr`, `pr-review`, or `cursor-guidance` unless the user
   named them.
+- Put a repo-only skill under `skills/`. That tree is what
+  `npx skills add` installs. Workflow and craft skills go in
+  `dev-skills/<slug>/`, then symlink from `.cursor/skills/`,
+  `.agents/skills/`, and `.claude/skills/`.
 
 ## 1. Intake — one batch
 

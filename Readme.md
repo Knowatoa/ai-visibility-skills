@@ -22,29 +22,26 @@ Guesting is earned media that compounds in AI answers. So prep matters: walking 
 
 More AI visibility skills coming.
 
-### Agent workflows
+### In this repo only
+
+These live in `dev-skills/` and load when you work in this clone. They are **not** installed by `npx skills add`.
 
 | Skill | What it does |
 | ----- | ------------ |
-| [issue-pr](skills/issue-pr) | Merge main into this branch, quality-pass the diff, run tests, then open or update the PR. Squash-merge only after you say to. |
-| [pr-review](skills/pr-review) | Walk open PRs one at a time: summarize, review, verify locally, stop at a merge/skip/close gate. |
-| [cursor-guidance](skills/cursor-guidance) | How git and Cursor should work here: never `main`, PRs not direct pushes, when to run `/issue-pr` vs `/pr-review`. |
+| [issue-pr](dev-skills/issue-pr) | Merge main into this branch, quality-pass the diff, run tests, then open or update the PR. Squash-merge only after you say to. |
+| [pr-review](dev-skills/pr-review) | Walk open PRs one at a time: summarize, review, verify locally, stop at a merge/skip/close gate. |
+| [cursor-guidance](dev-skills/cursor-guidance) | How git and Cursor should work here: never `main`, PRs not direct pushes, when to run `/issue-pr` vs `/pr-review`. |
+| [create-skill](dev-skills/create-skill) | Draft a new public skill. Writes `skills/<slug>/SKILL.md` immediately. |
+| [audit-skill](dev-skills/audit-skill) | Interrogate a `SKILL.md` against house rules. Writes `audit-<slug>.md`. |
+| [exercise-skill](dev-skills/exercise-skill) | Role-play users through a skill and judge whether it actually does the job. |
 
-### Skill craft
-
-| Skill | What it does |
-| ----- | ------------ |
-| [create-skill](skills/create-skill) | Draft a new public skill in this repo. Writes `skills/<slug>/SKILL.md` immediately and keeps that file as the working draft. |
-| [audit-skill](skills/audit-skill) | Interrogate a `SKILL.md` against house rules (self-contained, file-on-disk, tight context, action-first). Writes `audit-<slug>.md`. |
-| [exercise-skill](skills/exercise-skill) | Role-play users through a skill and judge whether it actually does the job. Writes `exercise-<slug>.md`. |
-
-These three exist so new skills stay tight. The idea of skills that pressure-test other skills comes from Jason Cohen / [A Smart Bear](https://github.com/asmartbear/asb-skills) (`asb-skills`, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). We did not copy his skill text or his product/pricing/interview frameworks. See [NOTICE.md](NOTICE.md).
+`create-skill`, `audit-skill`, and `exercise-skill` exist so new public skills stay tight. That idea comes from Jason Cohen / [A Smart Bear](https://github.com/asmartbear/asb-skills) (`asb-skills`, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). We did not copy his skill text or his frameworks. See [NOTICE.md](NOTICE.md).
 
 ## How the skills work
 
 Skills are markdown files that give your AI of choice specialized workflows. Once installed, the AI recognizes when you're working on a matching task and follows the skill.
 
-Visibility skills read a shared context file first: `.agents/brand-context.md`. It holds your company, your story bank, and your positioning. The first visibility skill you run will interview you and create it. After that, those skills already know who you are. The workflow skills do not use that file.
+Visibility skills read a shared context file first: `.agents/brand-context.md`. It holds your company, your story bank, and your positioning. The first visibility skill you run will interview you and create it. After that, those skills already know who you are. Repo-only skills do not use that file.
 
 When a skill produces something you will keep (a podcast brief, an audit), it writes a markdown file in a directory you name — default is the current directory — and resumes from that file if you come back later. Chat stays short. That file-as-memory behavior is also inspired by asb-skills; the files and the wording here are ours.
 
@@ -54,7 +51,7 @@ When a skill produces something you will keep (a podcast brief, an audit), it wr
 npx skills add Knowatoa/ai-visibility-skills
 ```
 
-That installs every skill in this repo into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`.
+That installs the **public** skills (`skills/` — today, only `podcast-prep`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
 
 This is also how the skills show up on [skills.sh](https://skills.sh). There is no submit form. The directory indexes public GitHub repos from `npx skills add` telemetry, so the first install from a normal local shell is what creates [the listing](https://skills.sh/knowatoa/ai-visibility-skills). (Installs from CI often do not count.)
 
@@ -86,11 +83,13 @@ cp -r ai-visibility-skills/skills/* .agents/skills/
 "What has Startups for the Rest of Us been talking about lately?"
 → Uses podcast-prep
 
+```
+
+In this repo only (not installed by `npx skills add`):
+
+```
 "/issue-pr"
 → Uses issue-pr
-
-"/pr-review"
-→ Uses pr-review
 
 "/create-skill I want a skill that audits our existing blog posts for AI-citation worthiness"
 → Uses create-skill
@@ -105,15 +104,15 @@ cp -r ai-visibility-skills/skills/* .agents/skills/
  
 ## Repo layout
 
-This repo follows the [Agent Skills specification](https://agentskills.io/specification). The `skills` CLI discovers `SKILL.md` files automatically; the layout people copy is:
+This repo follows the [Agent Skills specification](https://agentskills.io/specification). The `skills` CLI discovers public `SKILL.md` files under `skills/`. Repo-only skills live in `dev-skills/` and are not installed.
 
 ```
-skills/
+skills/                 # public — what `npx skills add` installs
   <skill-name>/
-    SKILL.md          # required: YAML frontmatter + instructions
-    references/       # optional, loaded on demand
-    scripts/          # optional
-    assets/           # optional
+    SKILL.md
+dev-skills/             # this repo only
+  <skill-name>/
+    SKILL.md
 ```
 
 Each `SKILL.md` starts with YAML frontmatter. `name` must be kebab-case and match the folder name. `description` should say what the skill does **and** when to trigger it (max 1024 characters).
@@ -129,7 +128,7 @@ Starter template: `npx skills init <skill-name>`, then move the folder under `sk
 
 ## Contributing
 
-Found a way to improve a skill? PRs and issues welcome. New skills belong at `skills/<skill-name>/SKILL.md` with the frontmatter above. In this repo, `/create-skill` drafts that file; `/audit-skill` and `/exercise-skill` pressure-test it.
+Found a way to improve a skill? PRs and issues welcome. New **public** skills belong at `skills/<skill-name>/SKILL.md` with the frontmatter above. In this repo, `/create-skill` drafts that file; `/audit-skill` and `/exercise-skill` pressure-test it.
  
 ## License
 
