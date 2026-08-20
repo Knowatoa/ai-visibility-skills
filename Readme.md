@@ -23,7 +23,7 @@ Talks get recorded. Decks get posted. Recap posts get crawled. The sentence you 
 | Skill | What it does |
 | ----- | ------------ |
 | [podcast-prep](skills/podcast-prep) | Researches a podcast before you guest on it: recent episode threads, show evolution, host profiles, and your stories mapped onto what the show cares about right now. Writes a `<show-slug>-prep.md` in a directory you name. |
-| [presentation-outline](skills/presentation-outline) | Locks who a talk is actually for, what they walk away able to do, and what the presenter wants. Starts from an abstract and throwaway bullet rounds, then writes a timed outline from what survived. Writes a `<talk-slug>-outline.md` in a directory you name. |
+| [presentation-outline](skills/presentation-outline) | Locks who a talk is actually for, what they walk away able to do, and what the presenter wants. Starts from an abstract and throwaway bullet rounds, or wraps the outline in one sitting when the talk is about a week away. Writes a `<talk-slug>-outline.md` in a directory you name. |
 
 ### In this repo only
 
