@@ -18,7 +18,7 @@ Guesting is earned media that compounds in AI answers. So prep matters: walking 
 
 | Skill | What it does |
 | ----- | ------------ |
-| [podcast-prep](skills/podcast-prep) | Researches a podcast before you guest on it: recent episode threads, show evolution, host profiles, and your stories mapped onto what the show cares about right now. Writes a `<show>-prep.md` in a directory you name. |
+| [podcast-prep](skills/podcast-prep) | Researches a podcast before you guest on it: recent episode threads, show evolution, host profiles, and your stories mapped onto what the show cares about right now. Writes a `<show-slug>-prep.md` in a directory you name. |
 
 More AI visibility skills coming.
 

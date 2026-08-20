@@ -151,9 +151,11 @@ When the draft has no `TODO` markers:
 3. Tell them the next commands: `audit-skill` on this path, then
    `exercise-skill`. Do not pretend those ran.
 
-If this session dies mid-draft, leave `status` notes in an HTML comment
-at the top of the body (`<!-- in-progress: waiting on refuse cases -->`)
-so the next session can continue from disk.
+If this session dies mid-draft, put one HTML comment at the top of the
+body so the next session can continue from disk. Do not invent a second
+progress scheme:
+
+`<!-- status: in-progress resume: <exact next step> -->`
 
 ## Refuse
 

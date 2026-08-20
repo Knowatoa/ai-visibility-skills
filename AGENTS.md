@@ -46,8 +46,10 @@ see `NOTICE.md`. The wording here is ours.
 6. **Refuse cleanly.** If the request is the wrong job for this skill,
    say so in a few sentences and stop. Do not half-run it.
 
-When writing or revising a skill, run `audit-skill` on the draft, then
-`exercise-skill`. Use `create-skill` to start a new public skill.
+When writing a new skill, or changing how an existing one behaves, run
+`audit-skill` first. If that audit has FAILs, patch those before
+`exercise-skill`. Skip both for typo or one-line copy edits.
+Use `create-skill` to start a new public skill.
 
 ## Git
 

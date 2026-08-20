@@ -11,9 +11,9 @@ Podcast guesting isn't just audience reach. Episodes get transcribed, show notes
 
 ## Working files
 
-The brief is a file, not a chat essay. Ask where this appearance's files should live before creating any (default: the current directory). If they already pointed at a folder or an existing prep file, use that directory.
+The brief is a file, not a chat essay. Ask where this appearance's files should live before creating any (default: the current directory). If they already pointed at a folder or an existing prep file, use that directory. Do not ask this again in Inputs.
 
-Write `<show-slug>-prep.md` there as soon as the first real section is settled (usually after recent-episode notes exist). Do not wait until the whole brief is done — sessions die, and the file is the memory.
+Write `<show-slug>-prep.md` there as soon as the show is named, even if research has not started. Sessions die; the file is the memory. `resume` is the only progress pointer — do not also keep a Status heading in the body.
 
 ```markdown
 ---
@@ -25,9 +25,6 @@ resume: "<exact next step a cold session should do>"
 
 # Podcast prep — <show>
 
-## Status
-IN PROGRESS — <one line: what is done, what is next>
-
 ## Big picture
 ## Show progression
 ## Recent episodes
@@ -36,7 +33,7 @@ IN PROGRESS — <one line: what is done, what is next>
 ## Gaps
 ```
 
-`status` is `in-progress` until every section a cold reader would need is filled; then `ready`. Drop the Status heading when you flip to ready. If the file already exists, read it, honor `resume`, and do not re-ask settled facts (show name, prior episode, brand stories already captured).
+`status` is `in-progress` until every section a cold reader would need is filled; then `ready`. If the file already exists, read it, honor `resume`, and do not re-ask settled facts (show name, prior episode, brand stories already captured, file path).
 
 In chat: path + a short read of the big picture and the two or three angles they should walk in with. Do not paste the file.
 
@@ -57,9 +54,9 @@ Then write their answers to `.agents/brand-context.md` so the next visibility sk
 
 ## Inputs to establish
 
-From the user's message (ask only if missing and it matters): the podcast name or URL, whether they've appeared before (and a link to that episode if so), roughly when they're recording, and where the prep file should live. If they've appeared before, find the prior episode. It anchors both the progression analysis and the callbacks.
+From the user's message (ask only if missing and it matters): the podcast name or URL, whether they've appeared before (and a link to that episode if so), and roughly when they're recording. File location is asked once, in Working files. If they've appeared before, find the prior episode. It anchors both the progression analysis and the callbacks.
 
-Ask those in one batch with the brand-context questions when both are missing. Do not drip.
+Ask the missing show/appearance facts in one batch with the brand-context questions when both are missing. Do not drip.
 
 ## Research sequence
 
