@@ -4,7 +4,7 @@ Skills for showing up in AI search.
 
 [![skills.sh](https://skills.sh/b/knowatoa/ai-visibility-skills)](https://skills.sh/knowatoa/ai-visibility-skills)
 
-[Knowatoa](https://knowatoa.com?ref=github) tells you where you stand, what to write, and which channels to publish on. These skills are the publishing step: guest the podcast, give the talk, leave with an asset you can clip, post, and keep distributing.
+[Knowatoa](https://knowatoa.com?ref=github) tells you where you stand, what to write, and which channels to publish on. These skills are the publishing step: guest on a podcast, give the talk, leave with an asset you can clip, post, and keep distributing.
 
 Models we check: ChatGPT, Claude, Perplexity, Google AI Overviews, Google's AI Mode, Gemini, and Meta AI.
 
