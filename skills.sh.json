@@ -1,0 +1,16 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "AI visibility",
+      "description": "Skills for getting a brand into AI answers.",
+      "skills": ["podcast-prep"]
+    },
+    {
+      "title": "Agent workflows",
+      "description": "Review, ship, and work with Cursor on a branch.",
+      "skills": ["issue-pr", "pr-review", "cursor-guidance"]
+    }
+  ]
+}

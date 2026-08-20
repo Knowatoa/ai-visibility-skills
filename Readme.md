@@ -14,17 +14,27 @@ Guesting is earned media that compounds in AI answers. So prep matters: walking 
 
 ## Available skills
 
+### AI visibility
+
 | Skill | What it does |
 | ----- | ------------ |
 | [podcast-prep](skills/podcast-prep) | Researches a podcast before you guest on it: recent episode threads, show evolution, host profiles, and your stories mapped onto what the show cares about right now. |
 
-More coming. This repo will grow into a full AI search visibility toolkit.
+### Agent workflows
+
+| Skill | What it does |
+| ----- | ------------ |
+| [issue-pr](skills/issue-pr) | Merge main into this branch, quality-pass the diff, run tests, then open or update the PR. Squash-merge only after you say to. |
+| [pr-review](skills/pr-review) | Walk open PRs one at a time: summarize, review, verify locally, stop at a merge/skip/close gate. |
+| [cursor-guidance](skills/cursor-guidance) | How git and Cursor should work here: never `main`, PRs not direct pushes, when to run `/issue-pr` vs `/pr-review`. |
+
+More AI visibility skills coming.
 
 ## How the skills work
 
 Skills are markdown files that give your AI of choice specialized workflows. Once installed, the AI recognizes when you're working on a matching task and follows the skill.
 
-Every skill in this repo reads a shared context file first: `.agents/brand-context.md`. It holds your company, your story bank, and your positioning. The first skill you run will interview you and create it. After that, every skill already knows who you are.
+Visibility skills read a shared context file first: `.agents/brand-context.md`. It holds your company, your story bank, and your positioning. The first visibility skill you run will interview you and create it. After that, those skills already know who you are. The workflow skills do not use that file.
 
 ## Installation
 
@@ -36,7 +46,7 @@ That installs every skill in this repo into the agents you have locally: Claude 
 
 This is also how the skills show up on [skills.sh](https://skills.sh). There is no submit form. The directory indexes public GitHub repos from `npx skills add` telemetry, so the first install from a normal local shell is what creates [the listing](https://skills.sh/knowatoa/ai-visibility-skills). (Installs from CI often do not count.)
 
-**Claude.ai or ChatGPT:** open [skills/podcast-prep/SKILL.md](skills/podcast-prep/SKILL.md), copy the contents, and paste it into a project's instructions (in Claude.ai you can also add it as a skill in settings).
+**Claude.ai or ChatGPT:** open the `SKILL.md` for the skill you want (for example [skills/podcast-prep/SKILL.md](skills/podcast-prep/SKILL.md)), copy it, and paste it into a project's instructions (in Claude.ai you can also add it as a skill in settings).
 
 ### Manual install
 
@@ -60,9 +70,15 @@ cp -r ai-visibility-skills/skills/* .agents/skills/
 ```
 "I'm going on the Bootstrapped Founder podcast next week, help me prep"
 → Uses podcast-prep
- 
+
 "What has Startups for the Rest of Us been talking about lately?"
 → Uses podcast-prep
+
+"/issue-pr"
+→ Uses issue-pr
+
+"/pr-review"
+→ Uses pr-review
 ```
  
 ## Want to start replacing those lost organic traffic?
