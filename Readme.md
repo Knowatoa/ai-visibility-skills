@@ -12,6 +12,10 @@ Podcast episodes get transcribed. Show notes get published. That content gets cr
 
 Guesting is earned media that compounds in AI answers. So prep matters: walking into an episode with the right stories and concrete numbers isn't just a better interview, it's better training data on your brand.
 
+## Why a talk adversary is an AI visibility skill
+
+Talks get recorded. Decks get posted. Transcripts get crawled. A skeptic's unanswered objection in that recording becomes part of how AI systems describe you. Addressing the real ones in the slides is how the published talk still makes your case.
+
 ## Available skills
 
 ### AI visibility
@@ -19,8 +23,7 @@ Guesting is earned media that compounds in AI answers. So prep matters: walking 
 | Skill | What it does |
 | ----- | ------------ |
 | [podcast-prep](skills/podcast-prep) | Researches a podcast before you guest on it: recent episode threads, show evolution, host profiles, and your stories mapped onto what the show cares about right now. Writes a `<show-slug>-prep.md` in a directory you name. |
-
-More AI visibility skills coming.
+| [talk-adversary](skills/talk-adversary) | Red-teams a talk from the storyboard, a recent transcript, and any existing outline. Writes `outline.md` with the objections worth addressing folded into the talk. |
 
 ### In this repo only
 
@@ -41,9 +44,9 @@ These live in `dev-skills/` and load when you work in this clone. They are **not
 
 Skills are markdown files that give your AI of choice specialized workflows. Once installed, the AI recognizes when you're working on a matching task and follows the skill.
 
-Visibility skills read a shared context file first: `.agents/brand-context.md`. It holds your company, your story bank, and your positioning. The first visibility skill you run will interview you and create it. After that, those skills already know who you are. Repo-only skills do not use that file.
+Visibility skills may read a shared context file: `.agents/brand-context.md`. It holds your company, your story bank, and your positioning. Podcast prep creates that file if it is missing. Other visibility skills read it when it exists and do not start a brand interview. Repo-only skills do not use that file.
 
-When a skill produces something you will keep (a podcast brief, an audit), it writes a markdown file in a directory you name — default is the current directory — and resumes from that file if you come back later. Chat stays short. That file-as-memory behavior is also inspired by asb-skills; the files and the wording here are ours.
+When a skill produces something you will keep (a podcast brief, an outline, an audit), it writes a markdown file in a directory you name — default is the current directory — and resumes from that file if you come back later. Chat stays short. That file-as-memory behavior is also inspired by asb-skills; the files and the wording here are ours.
 
 ## Installation
 
@@ -51,7 +54,7 @@ When a skill produces something you will keep (a podcast brief, an audit), it wr
 npx skills add Knowatoa/ai-visibility-skills
 ```
 
-That installs the **public** skills (`skills/` — today, only `podcast-prep`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
+That installs the **public** skills (`skills/` — today, `podcast-prep` and `talk-adversary`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
 
 This is also how the skills show up on [skills.sh](https://skills.sh). There is no submit form. The directory indexes public GitHub repos from `npx skills add` telemetry, so the first install from a normal local shell is what creates [the listing](https://skills.sh/knowatoa/ai-visibility-skills). (Installs from CI often do not count.)
 
@@ -82,6 +85,9 @@ cp -r ai-visibility-skills/skills/* .agents/skills/
 
 "What has Startups for the Rest of Us been talking about lately?"
 → Uses podcast-prep
+
+"Red-team this talk using outline.md, storyboard.md, and the latest transcript"
+→ Uses talk-adversary
 
 ```
 
