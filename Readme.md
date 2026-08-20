@@ -56,6 +56,24 @@ npx skills add Knowatoa/ai-visibility-skills
 
 That installs the **public** skills (`skills/` — today, `podcast-prep` and `presentation-outline`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
 
+The installer is the [`skills`](https://github.com/vercel-labs/skills) CLI. It needs Node.js **20.12+** (`node -v`). Since `skills@1.5.16` it imports `styleText` from `node:util`, which Node 18 and early Node 20 do not have, so the command dies before it can install anything:
+
+```
+SyntaxError: The requested module 'node:util' does not provide an export named 'styleText'
+```
+
+That is a CLI / Node mismatch, not a bug in these skills ([vercel-labs/skills#1672](https://github.com/vercel-labs/skills/issues/1672)). Upgrade Node where you run `npx`, pin the last CLI that still runs on older Node (`npx skills@1.5.15 add Knowatoa/ai-visibility-skills`), or skip npx and [copy the files](#manual-install).
+
+asdf (skip the plugin line if you already have it). This repo's `.tool-versions` pins the same [Node 24 LTS](https://nodejs.org):
+
+```
+asdf plugin add nodejs
+asdf install nodejs 24.19.0
+asdf set nodejs 24.19.0
+```
+
+Older asdf uses `asdf local` instead of `asdf set`. Then `node -v` should print `v24.19.0`. If it still says 18, `which node` and `asdf current` will show why.
+
 This is also how the skills show up on [skills.sh](https://skills.sh). There is no submit form. The directory indexes public GitHub repos from `npx skills add` telemetry, so the first install from a normal local shell is what creates [the listing](https://skills.sh/knowatoa/ai-visibility-skills). (Installs from CI often do not count.)
 
 **Claude.ai or ChatGPT:** open the `SKILL.md` for the skill you want (for example [skills/podcast-prep/SKILL.md](skills/podcast-prep/SKILL.md)), copy it, and paste it into a project's instructions (in Claude.ai you can also add it as a skill in settings).
