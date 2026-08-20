@@ -2,7 +2,7 @@
 
 AI skills for getting your brand into AI answers.
 
-[![skills.sh](https://skills.sh/b/Knowatoa/ai-visibility-skills)](https://skills.sh/Knowatoa/ai-visibility-skills)
+[![skills.sh](https://skills.sh/b/knowatoa/ai-visibility-skills)](https://skills.sh/knowatoa/ai-visibility-skills)
 
 Built by [Knowatoa](https://knowatoa.com?ref=github), the AI search visibility platform. We analyze how ChatGPT, Claude, Perplexity, Google AI Overviews, Google's AI Mode, Gemini, and Meta AI see and recommend brands. These skills are the manual versions of workflows we run every day.
 
@@ -34,7 +34,7 @@ npx skills add Knowatoa/ai-visibility-skills
 
 That installs every skill in this repo into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`.
 
-This is also how the skills show up on [skills.sh](https://skills.sh). There is no submit form. The directory indexes public GitHub repos from `npx skills add` telemetry, so the first install is what creates the listing.
+This is also how the skills show up on [skills.sh](https://skills.sh). There is no submit form. The directory indexes public GitHub repos from `npx skills add` telemetry, so the first install from a normal local shell is what creates [the listing](https://skills.sh/knowatoa/ai-visibility-skills). (Installs from CI often do not count.)
 
 **Claude.ai or ChatGPT:** open [skills/podcast-prep/SKILL.md](skills/podcast-prep/SKILL.md), copy the contents, and paste it into a project's instructions (in Claude.ai you can also add it as a skill in settings).
 
