@@ -81,6 +81,8 @@ Ask only if missing and it matters, in one batch:
 2. Path or paste for the storyboard.
 3. Path or paste for the recent transcript.
 
+If you also do not know where to write the brief, include that here. Do not drip.
+
 Do not ask for audience size, slide tool, brand story, or a target number of objections.
 
 ## Refuse
