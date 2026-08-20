@@ -23,7 +23,7 @@ Talks get recorded. Decks get posted. Transcripts get crawled. A skeptic's unans
 | Skill | What it does |
 | ----- | ------------ |
 | [podcast-prep](skills/podcast-prep) | Researches a podcast before you guest on it: recent episode threads, show evolution, host profiles, and your stories mapped onto what the show cares about right now. Writes a `<show-slug>-prep.md` in a directory you name. |
-| [talk-adversary](skills/talk-adversary) | Red-teams a talk from `outline.md`, the storyboard, and a recent transcript. Writes a `<talk-slug>-adversary.md` of objections worth addressing in the slides or on stage. |
+| [talk-adversary](skills/talk-adversary) | Red-teams a talk from the storyboard, a recent transcript, and any existing outline. Writes `outline.md` with the objections worth addressing folded into the talk. |
 
 ### In this repo only
 
@@ -46,7 +46,7 @@ Skills are markdown files that give your AI of choice specialized workflows. Onc
 
 Visibility skills may read a shared context file: `.agents/brand-context.md`. It holds your company, your story bank, and your positioning. Podcast prep creates that file if it is missing. Other visibility skills read it when it exists and do not start a brand interview. Repo-only skills do not use that file.
 
-When a skill produces something you will keep (a podcast brief, an adversary brief, an audit), it writes a markdown file in a directory you name — default is the current directory — and resumes from that file if you come back later. Chat stays short. That file-as-memory behavior is also inspired by asb-skills; the files and the wording here are ours.
+When a skill produces something you will keep (a podcast brief, an outline, an audit), it writes a markdown file in a directory you name — default is the current directory — and resumes from that file if you come back later. Chat stays short. That file-as-memory behavior is also inspired by asb-skills; the files and the wording here are ours.
 
 ## Installation
 
