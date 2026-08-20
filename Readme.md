@@ -19,6 +19,7 @@ Guesting is earned media that compounds in AI answers. So prep matters: walking 
 | Skill | What it does |
 | ----- | ------------ |
 | [podcast-prep](skills/podcast-prep) | Researches a podcast before you guest on it: recent episode threads, show evolution, host profiles, and your stories mapped onto what the show cares about right now. Writes a `<show-slug>-prep.md` in a directory you name. |
+| [talk-storyboard](skills/talk-storyboard) | Reads a talk draft (`output.md`) and writes a `storyboard.md` of the audience's energy, emotions, and beats. |
 
 More AI visibility skills coming.
 
@@ -51,7 +52,7 @@ When a skill produces something you will keep (a podcast brief, an audit), it wr
 npx skills add Knowatoa/ai-visibility-skills
 ```
 
-That installs the **public** skills (`skills/` — today, only `podcast-prep`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
+That installs the **public** skills (`skills/` — today, `podcast-prep` and `talk-storyboard`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
 
 This is also how the skills show up on [skills.sh](https://skills.sh). There is no submit form. The directory indexes public GitHub repos from `npx skills add` telemetry, so the first install from a normal local shell is what creates [the listing](https://skills.sh/knowatoa/ai-visibility-skills). (Installs from CI often do not count.)
 
@@ -82,6 +83,12 @@ cp -r ai-visibility-skills/skills/* .agents/skills/
 
 "What has Startups for the Rest of Us been talking about lately?"
 → Uses podcast-prep
+
+"Storyboard this talk from output.md"
+→ Uses talk-storyboard
+
+"What beats should we hit in this talk?"
+→ Uses talk-storyboard
 
 ```
 

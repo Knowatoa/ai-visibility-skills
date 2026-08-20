@@ -20,7 +20,8 @@ Public visibility skills may read `.agents/brand-context.md`. Repo-only
 skills do not.
 
 Validate a change with `npx skills add . --list`. It must list every
-`skills/*/SKILL.md` and **nothing else**. Today that is `podcast-prep`.
+`skills/*/SKILL.md` and **nothing else**. Today that is `podcast-prep`
+and `talk-storyboard`.
 Also check frontmatter (`name` matches the folder; `description` ≤ 1024
 chars) on any skill you touched, including repo-only ones.
 
