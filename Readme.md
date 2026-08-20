@@ -14,7 +14,7 @@ Guesting is earned media that compounds in AI answers. So prep matters: walking 
 
 ## Why presentation outline is an AI visibility skill
 
-Talks get recorded. Decks get posted. Recap posts get crawled. The sentence you repeat on stage is the sentence assistants will quote later. An outline that names a real audience and a Monday takeaway beats a generic "problem / solution / demo" deck that trains the model on nothing specific.
+Talks get recorded. Decks get posted. Recap posts get crawled. The sentence you repeat on stage is the sentence assistants will quote later. That outline is usually a few throwaway bullet lists over a few weeks, not a one-sitting deck. A real audience and a Monday takeaway beat a generic "problem / solution / demo" that trains the model on nothing specific.
 
 ## Available skills
 
@@ -108,6 +108,9 @@ cp -r ai-visibility-skills/skills/* .agents/skills/
 → Uses presentation-outline
 
 "Who is this presentation actually for, and what should they take away?"
+→ Uses presentation-outline
+
+"I have an abstract and some rough bullets for a talk in two months"
 → Uses presentation-outline
 
 ```

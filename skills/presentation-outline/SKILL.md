@@ -17,8 +17,8 @@ Talks get recorded, decks get posted, recap posts get crawled. The stories and n
 4. Fill **Who this is for**, **What the audience gets**, and **What I get** before **Outline**. Scratch can start while a box is still mush. If a box is mush, ask. Do not invent an audience or a presenter win.
 5. Put their abstract in **Abstract**. Put their existing bullets in **Scratch** as Round 1. If they have none, write one ~10-bullet dump this sitting from the abstract, the boxes you can fill, and brand stories. Do not copy that list into Outline.
 6. Stop after one scratch round unless they ask for another now. Set `resume` to the next sitting: ask what stuck, write a new ~10 that does not repeat discarded rounds. The forgetting is the filter. Same-day extra rounds do not test it.
-7. Write **Outline** only from **What survived**, or this sitting if they name the keepers, ask for the locked outline, or the talk is about a week away. Every block must serve the audience takeaway, the presenter win, or both. Cut the rest.
-8. Set `status: ready` when a cold reader could give the talk from the file. In chat while scratching: path + the three boxes + which round is in the file + that the list is disposable. Come back when they have forgotten it. Do not paste the bullets. Once Outline is locked: path + the three boxes + section titles only. Do not paste the file.
+7. Write **Outline** only from **What survived**. This sitting can lock if they name the keepers or ask for the finished outline. A talk next week does not skip that. Every block must serve the audience takeaway, the presenter win, or both. Cut the rest.
+8. Set `status: ready` when a cold reader could give the talk from the file. In chat while scratching: path + the three boxes + which round is in the file. Tell them the list is disposable and to come back when they have forgotten it. Do not paste the bullets. Once Outline is locked: path + the three boxes + section titles only. Do not paste the file.
 
 ## Working files
 
