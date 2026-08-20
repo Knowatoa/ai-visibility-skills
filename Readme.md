@@ -16,6 +16,10 @@ Guesting is earned media that compounds in AI answers. So prep matters: walking 
 
 Talks get recorded. Decks get posted. Recap posts get crawled. The sentence you repeat on stage is the sentence assistants will quote later. That outline is usually a few throwaway bullet lists over a few weeks, not a one-sitting deck. A real audience and a Monday takeaway beat a generic "problem / solution / demo" that trains the model on nothing specific.
 
+## Why talk storyboard is an AI visibility skill
+
+The outline names the points. The storyboard names the feeling those points are supposed to create. A recorded talk that only states the takeaway trains assistants on a claim. A recorded talk that makes the room feel the takeaway is the version that gets quoted. Map that journey before you decide the outline is the one.
+
 ## Available skills
 
 ### AI visibility
@@ -24,6 +28,7 @@ Talks get recorded. Decks get posted. Recap posts get crawled. The sentence you 
 | ----- | ------------ |
 | [podcast-prep](skills/podcast-prep) | Researches a podcast before you guest on it: recent episode threads, show evolution, host profiles, and your stories mapped onto what the show cares about right now. Writes a `<show-slug>-prep.md` in a directory you name. |
 | [presentation-outline](skills/presentation-outline) | Locks who a talk is actually for, what they walk away able to do, and what the presenter wants. Starts from an abstract and throwaway bullet rounds, or wraps the outline in one sitting when the talk is about a week away. Writes a `<talk-slug>-outline.md` in a directory you name. |
+| [talk-storyboard](skills/talk-storyboard) | Maps how the audience should feel beat by beat through a locked presentation outline, then says whether that outline is the one to keep. Writes a `<talk-slug>-storyboard.md` next to the outline. |
 
 ### In this repo only
 
@@ -54,7 +59,7 @@ When a skill produces something you will keep (a podcast brief, an audit), it wr
 npx skills add Knowatoa/ai-visibility-skills
 ```
 
-That installs the **public** skills (`skills/` — today, `podcast-prep` and `presentation-outline`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
+That installs the **public** skills (`skills/` — today, `podcast-prep`, `presentation-outline`, and `talk-storyboard`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
 
 The installer is the [`skills`](https://github.com/vercel-labs/skills) CLI. It needs Node.js **20.12+** (`node -v`). Since `skills@1.5.16` it imports `styleText` from `node:util`, which Node 18 and early Node 20 do not have, so the command dies before it can install anything:
 
@@ -115,6 +120,15 @@ cp -r ai-visibility-skills/skills/* .agents/skills/
 
 "The talk is next week and I have not thought about it. Wrap up the outline."
 → Uses presentation-outline
+
+"Storyboard this talk from the outline"
+→ Uses talk-storyboard
+
+"How should the audience feel throughout this talk?"
+→ Uses talk-storyboard
+
+"Is this the outline we want? Map the emotional journey."
+→ Uses talk-storyboard
 
 ```
 
