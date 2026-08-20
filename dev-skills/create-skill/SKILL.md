@@ -41,8 +41,9 @@ House rules (also in `AGENTS.md` when you are in this repo): self-contained; the
 - Open a long interview. Missing facts: one batch, then write the file.
 - Write a website wrapper, plugin manifest, or marketing page. This repo
   has none of those.
-- Touch `issue-pr`, `pr-review`, or `cursor-guidance` unless the user
-  named them.
+- Rewrite `issue-pr`, `pr-review`, or `cursor-guidance` unless the
+  user named them. Adding the new slug to their public-skill "today"
+  list is required handoff, not a rewrite.
 - Put a repo-only skill under `skills/`. That tree is what
   `npx skills add` installs. Workflow and craft skills go in
   `dev-skills/<slug>/`, then symlink from `.cursor/skills/`,
@@ -154,8 +155,14 @@ When the draft has no `TODO` markers:
 1. Add the slug to the right group in `skills.sh.json` (usually
    "AI visibility").
 2. Add a one-line row to the skills table in `Readme.md`.
-3. Tell them the next commands: `audit-skill` on this path, then
-   `exercise-skill`. Do not pretend those ran.
+3. Add the slug to every "today" list of public skills: `AGENTS.md`,
+   `dev-skills/issue-pr/SKILL.md`, and
+   `dev-skills/cursor-guidance/SKILL.md` (the sentence that says
+   what `npx skills add . --list` must show). Do not rewrite those
+   files beyond that line.
+4. Tell them the next commands: `audit-skill` on this path, then
+   `exercise-skill`. Do not pretend those ran. Do not skip naming
+   them.
 
 If this session dies mid-draft, put one HTML comment at the top of the
 body so the next session can continue from disk. Do not invent a second
