@@ -1,10 +1,12 @@
 # AI Visibility Skills
 
-AI skills for getting your brand into AI answers.
+Skills for showing up in AI search.
 
 [![skills.sh](https://skills.sh/b/knowatoa/ai-visibility-skills)](https://skills.sh/knowatoa/ai-visibility-skills)
 
-Built by [Knowatoa](https://knowatoa.com?ref=github), the AI search visibility platform. We analyze how ChatGPT, Claude, Perplexity, Google AI Overviews, Google's AI Mode, Gemini, and Meta AI see and recommend brands. These skills are the manual versions of workflows we run every day.
+[Knowatoa](https://knowatoa.com?ref=github) tells you where you stand, what to write, and which channels to publish on. These skills are the publishing step: guest the podcast, give the talk, leave with an asset you can clip, post, and keep distributing.
+
+Models we check: ChatGPT, Claude, Perplexity, Google AI Overviews, Google's AI Mode, Gemini, and Meta AI.
 
 ## Jobs
 
@@ -154,9 +156,9 @@ In this repo only (not installed by `npx skills add`):
 → Uses audit-skill
 ```
  
-## Want to start replacing those lost organic traffic?
- 
-[Knowatoa](https://knowatoa.com?ref=github) tells you exactly what to write about and show you every place you should publish it, so you show up when buyers ask ChatGPT, Claude, and Perplexity about your category.
+## Knowatoa
+
+The topics and the channel list come from the [product](https://knowatoa.com?ref=github). These skills are the publishing step.
  
 ## Repo layout
 
