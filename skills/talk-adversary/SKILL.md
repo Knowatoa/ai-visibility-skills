@@ -9,29 +9,31 @@ Pressure-test a talk before it is given. Read the outline, the storyboard, and a
 
 ## Do this job
 
-1. Find the inputs. If the user pointed at a folder, look there for `outline.md`, `storyboard.md` (also `storyboar.md`), and a transcript (`.md`, `.txt`, `.vtt`, `.srt`). Use any paths they gave. Content pasted in chat counts. If a file is missing, ask once, in one batch, for the paths. If they say they do not have it, proceed with what exists and record the hole in Gaps. Do not invent a talk. Do not search the web for the topic, competitors, or "what critics say." The files you were given are the corpus.
+1. Find the inputs. If the user pointed at a folder, look there for `outline.md` or `*-outline.md`, `storyboard.md` / `storyboar.md` / `*-storyboard.md`, and a transcript (`.md`, `.txt`, `.vtt`, `.srt`). Use any paths they gave. Content pasted in chat counts. If more than one outline or storyboard matches, ask which one. If a file is missing, ask once, in one batch, for the paths. If they say they do not have it, proceed with what exists and record the hole in Gaps. Do not invent a talk. Do not search the web for the topic, competitors, or "what critics say." The files you were given are the corpus.
 
-2. Ask where this talk's files should live before creating any, unless an input file already anchors the location. Default: the directory that holds the outline, or the current directory if the outline was pasted. Write siblings next to that outline.
+2. Ask where this talk's files should live before creating any, unless an input file already anchors the location. Default: the directory that holds the outline, or the current directory if the outline was pasted. Write siblings next to that outline. If location and input paths are both unknown, ask for them in the same batch. Do not ask where to write, wait, then ask for the outline.
 
-3. Derive a talk slug from the outline title or the parent folder. Write `<talk-slug>-adversary.md` as soon as the talk is identified, even before the critique. Sessions die. The file is the memory.
+3. Derive a talk slug from the outline title or the parent folder. Write `<talk-slug>-adversary.md` as soon as the talk is identified, before the first objection. An empty Claims section and a `resume` line is enough. Sessions die. The file is the memory.
 
 4. Read the outline, then the storyboard, then the transcript, in that order. Then, if it exists, `.agents/brand-context.md` (fallback `.claude/brand-context.md`). Brand context is only so you do not treat a take they already own as a hole. If it is missing, do not interview. The talk files are enough.
 
-5. Extract load-bearing claims. Each claim needs a location in the outline and, if the storyboard has it, a slide. A claim with no slide is a finding, not a skip. If the outline and the storyboard argue different things, that mismatch is an objection.
+5. Extract load-bearing claims. Include the talk's named audience, takeaway, or presenter win when the outline has those boxes. Each claim needs a location in the outline and, if the storyboard has it, a slide. A claim with no slide is a finding, not a skip. If the outline and the storyboard argue different things, that mismatch is an objection.
 
 6. Read the transcript as the lived version of those claims, whether it is a prior run of this talk or a recent appearance on the same material. Mine it for questions actually asked, hedges and walk-backs, beats the outline promised and the speaker skipped, and wording that was weaker or stronger than the deck. Do not summarize the transcript.
 
-7. Write an objection only when you can point at a claim or a transcript moment. Drop anything you cannot locate. Do not invent the missing number, customer, or competitor. If a claim needs a fact you do not have, put it in Gaps.
+7. Write an objection only when you can point at a claim or a transcript moment. The attack must use nouns from the files (a named claim, slide, story, or number). If you could paste the attack onto a different talk and it would still read true, drop it. Do not invent the missing number, customer, or competitor. If a claim needs a fact you do not have, put it in Gaps.
 
 8. Cap **Address in the talk** at five. Rank by whether a smart person in the room would actually say it, and whether leaving it unsaid makes the recording weaker. That is "within reason." Do not turn the talk into a FAQ. Each Address item gets one patch: a slide change or a spoken line, written as the actual beat or sentence. Real objections that would derail, are already the speaker's position, or cannot be handled in this talk go in **Leave it**. Do not pad Leave it with hypotheticals.
 
-9. Do not edit `outline.md` or the storyboard unless they ask. After the brief is `ready`, offer to apply the patches. Do not auto-run that.
+9. Do not edit the outline or the storyboard unless they ask. After the brief is `ready`, offer to apply the patches. Do not auto-run that.
 
 10. In chat: the path plus the patches worth making. Do not paste the file.
 
 ## Working files
 
-The brief is a file, not a chat essay. `resume` is the only progress pointer. Do not also keep a Status heading in the body.
+The brief is a file, not a chat essay. Ask where this talk's files should live before creating any (default: the current directory). If they already pointed at a folder or an existing outline, use that directory and write the adversary next to the outline. Do not ask this again in Inputs.
+
+`resume` is the only progress pointer. Do not also keep a Status heading in the body.
 
 ```markdown
 ---
@@ -40,7 +42,7 @@ talk: "<title>"
 resume: "<exact next step a cold session should do>"
 ---
 
-# Adversary — <talk>
+# Adversary: <talk>
 
 ## Claims
 ## From the transcript
