@@ -12,6 +12,10 @@ Podcast episodes get transcribed. Show notes get published. That content gets cr
 
 Guesting is earned media that compounds in AI answers. So prep matters: walking into an episode with the right stories and concrete numbers isn't just a better interview, it's better training data on your brand.
 
+## Why presentation outline is an AI visibility skill
+
+Talks get recorded. Decks get posted. Recap posts get crawled. The sentence you repeat on stage is the sentence assistants will quote later. An outline that names a real audience and a Monday takeaway beats a generic "problem / solution / demo" deck that trains the model on nothing specific.
+
 ## Available skills
 
 ### AI visibility
@@ -19,8 +23,7 @@ Guesting is earned media that compounds in AI answers. So prep matters: walking 
 | Skill | What it does |
 | ----- | ------------ |
 | [podcast-prep](skills/podcast-prep) | Researches a podcast before you guest on it: recent episode threads, show evolution, host profiles, and your stories mapped onto what the show cares about right now. Writes a `<show-slug>-prep.md` in a directory you name. |
-
-More AI visibility skills coming.
+| [presentation-outline](skills/presentation-outline) | Locks who a talk is actually for, what they walk away able to do, and what the presenter wants, then writes a timed outline. Writes a `<talk-slug>-outline.md` in a directory you name. |
 
 ### In this repo only
 
@@ -51,7 +54,7 @@ When a skill produces something you will keep (a podcast brief, an audit), it wr
 npx skills add Knowatoa/ai-visibility-skills
 ```
 
-That installs the **public** skills (`skills/` — today, only `podcast-prep`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
+That installs the **public** skills (`skills/` — today, `podcast-prep` and `presentation-outline`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
 
 This is also how the skills show up on [skills.sh](https://skills.sh). There is no submit form. The directory indexes public GitHub repos from `npx skills add` telemetry, so the first install from a normal local shell is what creates [the listing](https://skills.sh/knowatoa/ai-visibility-skills). (Installs from CI often do not count.)
 
@@ -82,6 +85,12 @@ cp -r ai-visibility-skills/skills/* .agents/skills/
 
 "What has Startups for the Rest of Us been talking about lately?"
 → Uses podcast-prep
+
+"I have a 30-minute talk at SaaStr, help me outline it"
+→ Uses presentation-outline
+
+"Who is this presentation actually for, and what should they take away?"
+→ Uses presentation-outline
 
 ```
 
