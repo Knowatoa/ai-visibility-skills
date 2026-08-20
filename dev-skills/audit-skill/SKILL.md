@@ -1,5 +1,7 @@
 ---
 name: audit-skill
+metadata:
+  internal: true
 description: "Reads a SKILL.md and writes a pass/fail audit against this repo's house rules: self-contained, working-directory artifact, tight context, action-first, portable frontmatter. Use when the user says /audit-skill, asks to interrogate, lint, or pressure-test a skill's text, or wants to know if a draft is tight enough. Do NOT load for using podcast-prep, reviewing a product PR, or role-playing a user through a skill (that is exercise-skill)."
 ---
 
@@ -15,8 +17,9 @@ This checklist is ours. Attribution: `NOTICE.md`.
 
 ## 1. Target
 
-Need a path or slug (`podcast-prep` → `skills/podcast-prep/SKILL.md`).
-If they named nothing, list `skills/*/SKILL.md` and ask which one.
+Need a path or slug. Resolve `podcast-prep` → `skills/podcast-prep/SKILL.md`
+if that exists, otherwise `dev-skills/<slug>/SKILL.md`. If they named
+nothing, list both trees and ask which one.
 
 Read that file once, fully. The checks below *are* the house rules.
 Do not read asb-skills, other catalogs, or sibling skills "for

@@ -1,22 +1,28 @@
 # This repo
 
 A catalog of Agent Skills for AI visibility (how a brand shows up in
-ChatGPT, Claude, Perplexity, and the rest) plus a few workflow skills
-for shipping work in this repo.
+ChatGPT, Claude, Perplexity, and the rest).
 
 This is not the Knowatoa product app. There is no Rails test suite.
-Validate with `npx skills add . --list` and by checking `SKILL.md`
-frontmatter (`name` matches the folder; `description` ≤ 1024 chars).
 
 ## Two kinds of skill
 
-| Kind | Where | Installed by `npx skills add` | Job |
-| ---- | ----- | ----------------------------- | --- |
-| Public | `skills/<name>/` except the three craft skills below | Yes | Do a job for a stranger who copied one folder. |
-| Craft | `skills/create-skill`, `skills/audit-skill`, `skills/exercise-skill` | Yes, grouped separately | Author and pressure-test skills in this repo. |
+| Kind | Where | `npx skills add` | Job |
+| ---- | ----- | ---------------- | --- |
+| Public | `skills/<name>/` | Yes — this is the only tree it installs | A job for a stranger who copied one folder. |
+| Repo-only | `dev-skills/<name>/` | No | Author, review, and ship work **in this repo**. |
 
-Public visibility skills may read `.agents/brand-context.md`. Workflow
-and craft skills do not.
+Repo-only skills are symlinked into `.cursor/skills/`, `.agents/skills/`,
+and `.claude/skills/` so agents working in this clone load them. The
+skills CLI does not follow those symlinks.
+
+Public visibility skills may read `.agents/brand-context.md`. Repo-only
+skills do not.
+
+Validate a change with `npx skills add . --list`. It must list every
+`skills/*/SKILL.md` and **nothing else**. Today that is `podcast-prep`.
+Also check frontmatter (`name` matches the folder; `description` ≤ 1024
+chars) on any skill you touched, including repo-only ones.
 
 ## How a public skill should behave
 
@@ -46,13 +52,14 @@ see `NOTICE.md`. The wording here is ours.
 6. **Refuse cleanly.** If the request is the wrong job for this skill,
    say so in a few sentences and stop. Do not half-run it.
 
-When writing a new skill, or changing how an existing one behaves, run
+When writing a new **public** skill, or changing how one behaves, run
 `audit-skill` first. If that audit has FAILs, patch those before
 `exercise-skill`. Skip both for typo or one-line copy edits.
-Use `create-skill` to start a new public skill.
+Use `create-skill` to start a new public skill. Those three commands
+are repo-only.
 
 ## Git
 
 Never work on `main`. Feature branch → PR. `/issue-pr` prepares the
 current branch; `/pr-review` walks open PRs. Neither squash-merges
-unless the user says to merge. Details: `skills/cursor-guidance`.
+unless the user says to merge. Details: `dev-skills/cursor-guidance`.

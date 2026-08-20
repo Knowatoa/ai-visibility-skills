@@ -1,5 +1,7 @@
 ---
 name: exercise-skill
+metadata:
+  internal: true
 description: "Role-plays realistic users through a SKILL.md and judges whether the wielder actually does the job: writes the artifact, stays tight, refuses the wrong request. Use when the user says /exercise-skill, wants a wind-tunnel, simulated use, or to see if a skill works in conversation. Do NOT load for a static checklist (that is audit-skill), for podcast prep, or for authoring a new skill from scratch (that is create-skill)."
 ---
 
@@ -16,7 +18,8 @@ The rubric below is ours. Attribution: `NOTICE.md`.
 ## 1. Target and quarantine
 
 Resolve the `SKILL.md` (`podcast-prep` → `skills/podcast-prep/SKILL.md`,
-or a path they give). Read it once, fully.
+a repo-only slug → `dev-skills/<slug>/SKILL.md`, or a path they give).
+Read it once, fully.
 
 Then **quarantine**: for every role-play, the wielder side may use
 only that file. No `AGENTS.md`, no forging chat, no "we usually also…".
