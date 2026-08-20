@@ -44,7 +44,7 @@ When they are ready to ship: `/issue-pr`. When they want to walk open PRs: `/pr-
 
 ## This repo
 
-This is a skills catalog, not the Knowatoa Rails app. There is no `bin/rails test`. `npx skills add . --list` must show only public skills under `skills/` (today: `podcast-prep`, `presentation-outline`, and `talk-storyboard`). Repo-only skills live in `dev-skills/` and load in this clone via symlinks; they are not installed. Visibility skills may read `.agents/brand-context.md`; these workflow skills do not.
+This is a skills catalog, not the Knowatoa Rails app. There is no `bin/rails test`. `npx skills add . --list` must show only public skills under `skills/` (today: `podcast-prep`, `talk-outline`, and `talk-storyboard`). Repo-only skills live in `dev-skills/` and load in this clone via symlinks; they are not installed. Visibility skills may read `.agents/brand-context.md`; these workflow skills do not.
 
 New public skills: `create-skill`, then remind them to run `audit-skill` and `exercise-skill` (see Commands to suggest). House rules: `AGENTS.md`. Do not copy text from [asb-skills](https://github.com/asmartbear/asb-skills); we took behavior, not prose (`NOTICE.md`).
 

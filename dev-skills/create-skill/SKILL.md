@@ -152,9 +152,12 @@ to go through the whole loop.
 
 When the draft has no `TODO` markers:
 
-1. Add the slug to the right group in `skills.sh.json` (usually
-   "AI visibility").
-2. Add a one-line row to the skills table in `Readme.md`.
+1. Add the slug to the matching job group in `skills.sh.json`.
+   If this is a new job, add a grouping (title, why the public
+   asset compounds, skills).
+2. Add a one-line row under the matching job in `Readme.md`.
+   If this is a new job, add the job section first (why you
+   leave with a publishable asset, then the skill table).
 3. Add the slug to every "today" list of public skills: `AGENTS.md`,
    `dev-skills/issue-pr/SKILL.md`, and
    `dev-skills/cursor-guidance/SKILL.md` (the sentence that says
