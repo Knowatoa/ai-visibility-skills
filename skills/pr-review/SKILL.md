@@ -1,6 +1,6 @@
 ---
 name: pr-review
-description: "Walk open GitHub PRs one at a time: summarize the diff, review correctness/security/quality, verify locally, then stop at a decision gate. Use when the user says /pr-review, asks to review PRs, walk the PR inbox, review PR #<n>, or 'review this PR'. Do not merge unless they explicitly pick merge or /issue-pr."
+description: "Walk open GitHub PRs one at a time: summarize the diff, review correctness/security/quality, verify locally, then stop at a decision gate. Use when the user says /pr-review, asks to review PRs, walk the PR inbox, review PR #<n>, or 'review this PR'. Do not merge unless they explicitly pick merge."
 ---
 
 # PR Review
@@ -9,7 +9,7 @@ Inbox walker. Stops after review and local verify. Merge is a separate `/issue-p
 
 ## Do not
 
-- Merge without explicit approval (option A below, or they say `/issue-pr` / "merge it").
+- Merge without explicit approval (option A below, or they clearly say merge / squash-merge). `/issue-pr` by itself opens or updates the PR; it is not merge approval.
 - Make code changes on `main`. If you are on `main`, check out the PR branch first.
 - Force-push unless they asked.
 - Create worktrees unless this repo has `bin/pr-worktree` / `bin/worktree-*`.
@@ -41,7 +41,7 @@ Prefer non-draft PRs, ones from this user or cloud agents if the list is noisy, 
 
 ## 3. Checkout
 
-Knowatoa: `bin/pr-worktree <n>` then `cd` into the printed path. Everywhere else: `gh pr checkout <n>` (or this repo's helper). Confirm with `git branch --show-current`.
+If this repo has `bin/pr-worktree` (or `bin/worktree-*`), use that and `cd` into the printed path. Otherwise `gh pr checkout <n>`. Confirm with `git branch --show-current`.
 
 ## 4. Understand
 
@@ -81,7 +81,7 @@ Run the project's test suite. For this skills repo: `npx skills add . --list`. M
    D. Close PR — explain why
 ```
 
-Do not merge unless they pick A (or clearly say merge). For A: stay on the PR branch and run the `issue-pr` skill.
+Do not merge unless they pick A (or clearly say merge / squash-merge). For A: stay on the PR branch and run the `issue-pr` skill, which still asks before squash-merge unless they already said merge.
 
 ## 8. Next PR
 

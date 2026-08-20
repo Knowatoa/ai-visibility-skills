@@ -87,7 +87,7 @@ Only implement what they pick, then commit.
 
 ## 6. Merge (explicit approval only)
 
-If tests passed and they said to squash-merge:
+If tests passed and they said to merge (any of: merge, squash merge, squash-merge):
 
 - Do **not** pass `--delete-branch` unless they asked to delete it.
 - `gh pr merge --squash` (or the repo's equivalent).
