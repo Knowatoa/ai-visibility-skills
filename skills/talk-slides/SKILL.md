@@ -97,7 +97,7 @@ They can reorder ("move 12 before 4"), merge, split, rewrite a cue, or drop a sl
 
 Approve when they say the plan is good, build it, generate the pptx, or equivalent. Set `plan: approved` and render.
 
-Skip this gate only when they already said to skip the review or just generate the pptx, or `plan` is already `approved` on disk. Do not skip because you think the count looks right.
+Skip this gate only when they already said to skip the review, not to workshop the plan, or to generate without looking at the markdown, or `plan` is already `approved` on disk. Naming the job (build the slides, generate the pptx, make the deck) is not a skip. Do not skip because you think the count looks right.
 
 Three passes is the cap on the plan: your first cut, then at most two revisions. If they accept earlier, approve and render. After the third pass, set `plan: approved` and render anyway. Leftover mush goes in Gaps. Do not ask "one more?"
 
