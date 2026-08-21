@@ -7,6 +7,8 @@ description: "Maps how the audience should feel beat by beat through a talk outl
 
 Lock the feeling of the talk before you lock the outline. The walk-away file is a storyboard of the energy and emotion the audience should move through. If that journey does not earn the Monday takeaway, the outline is not the one yet. Chat is a short read, not the file.
 
+Understate throughout. If a line would be embarrassing to read aloud to the audience, flatten it.
+
 The talk is the job. The recording is the asset. The feeling in the room is the feeling in the transcript. Storyboard for the person in the seat, then check that the sentence you want quoted later still sits on a beat they will feel.
 
 ## Do this job
@@ -16,14 +18,14 @@ The talk is the job. The recording is the asset. The feeling in the room is the 
 3. If they already pointed at an outline, write the storyboard next to it. If not, ask where files should live (default: the directory that holds the outline, or the current directory) in the same message as any missing Inputs. Do not ask the directory first and the outline second.
 4. Write the storyboard stub in the same turn as any missing-input questions, even if the talk has no title yet. Do not wait for the outline to create the file. Sessions die. The file is the memory. Name it from the outline file: `foo-outline.md` → `foo-storyboard.md`. If the source is `outline.md` or a paste, slug the talk title (`AI search in 2026` → `ai-search-in-2026-storyboard.md`). If there is no title yet, use `talk-storyboard.md`. Do not fill Beats until an outline is on disk. If they ask for the storyboard only in chat, write the file anyway and keep chat short.
 5. Read **Who this is for**, **What the audience gets**, **What I get**, and **Outline** from the source. Those headings are the usual shape. If the file uses different names, use the closest equivalents. Scratch rounds are not the source. If **Outline** is empty and they have not said which points to keep, stop and say the outline is not ready to storyboard. Do not invent blocks. Do not start outlining.
-6. Write **The journey** before **Beats**. One paragraph: what the named audience believes or feels walking in, what they should feel walking out, and the change this talk is for. Take walking-in from Who this is for. Take walking-out from What the audience gets. If either box is mush, ask, then keep writing. Do not invent an audience or a Monday action.
+6. Write **The journey** before **Beats**. One plain paragraph, no narrative flourish: what the named audience believes or feels walking in, what they should feel walking out, and the change this talk is for. Take walking-in from Who this is for. Take walking-out from What the audience gets. If either box is mush, ask, then keep writing. Do not invent an audience or a Monday action.
 7. Cut the outline into **beats**. A beat is a change in energy or emotion, not an outline heading. If two blocks feel the same, they are one beat. Do not force a three-act shape. Do not map every heading to its own beat. A twenty-minute talk is often five to eight beats. Honor `length` from the outline header when it is set. If length is unknown, do not invent a runtime; note it in Gaps and keep the beat count honest.
 8. Fill **Energy map** as a numbered list: beat name, energy, feel. Someone late to the file should understand the whole talk from this list.
 9. Fill **Beats**. For each beat use this shape:
 
    - **Place** — the outline block this sits on (heading or short paraphrase), so a later session can find it
-   - **Energy** — the room, in words a speaker could direct to. Quiet lean-in, rising unease, laugh-release, peak, still. Not "high energy" and not "engaging"
-   - **Feel** — the audience's emotion in their mouth ("that's me", "wait, we're the problem", "I can try this Monday"). Not "inspiring"
+   - **Energy** — the room, described plainly: attentive, relaxed, a laugh, quiet, taking notes. Not "high energy," not "engaging," and no cinematic phrasing — no "the floor drops," "the room exhales," or "peak"
+   - **Feel** — the audience's emotion in their mouth ("that's me", "wait, we're the problem", "I can try this Monday"). Not "inspiring". Write it the way a person would actually mutter it: one short, flat sentence. No staged monologues, no em-dash reveals
    - **Hit** — the one thing this beat must land. One sentence
    - **From the outline** — quote or tight paraphrase of the point or proof this beat uses. If you cannot point at the outline, the beat is invented: cut it or move it to Gaps
 
