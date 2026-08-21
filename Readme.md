@@ -36,7 +36,7 @@ How we prepare talks is inspired by Justin Searls' [Secrets of Great Conference 
 | ----- | ------------ |
 | [talk-outline](skills/talk-outline) | Locks who a talk is actually for, what they walk away able to do, and what the presenter wants. Starts from an abstract and throwaway bullet rounds, or wraps the outline in one sitting when the talk is about a week away. Writes a `<talk-slug>-outline.md` in a directory you name. |
 | [talk-storyboard](skills/talk-storyboard) | Maps how the audience should feel beat by beat through a locked talk outline, then says whether that outline is the one to keep. Writes a `<talk-slug>-storyboard.md` next to the outline. |
-| [talk-slides](skills/talk-slides) | Cuts a storyboard into a sparse PowerPoint: about 15-30 seconds per slide, a cue not the spoken line on screen, a visual note for a later pass, notes that point back at the outline and the beats. Writes a `<talk-slug>-slides.md` plan, waits for that plan to be approved so they can reorder and rewrite looks, then writes a `<talk-slug>-slides.pptx` next to the storyboard. |
+| [talk-slides](skills/talk-slides) | Cuts a storyboard into a sparse PowerPoint: about 15-30 seconds per slide, a cue not the spoken line on screen, a visual note for a later pass, notes that point back at the outline and the beats. Writes a `<talk-slug>-slides.md` plan, walks it one look at a time (previous, this, next) so they can keep, combine, or rewrite, then writes a `<talk-slug>-slides.pptx` next to the storyboard. |
 
 ## In this repo only
 
@@ -145,7 +145,7 @@ Talks:
 "Build the slides from this storyboard"
 → Uses talk-slides
 
-"Review the slide plan before you generate the PowerPoint"
+"Walk through each slide before you generate the PowerPoint"
 → Uses talk-slides
 
 "Turn this storyboard into a PowerPoint. Keep each slide to a sentence."

@@ -17,8 +17,8 @@ Skills in this repo cover the prep through the deck:
 - [talk-storyboard](../skills/talk-storyboard) — the feeling beat by
   beat, then whether that outline is the one to keep
 - [talk-slides](../skills/talk-slides) — a sparse PowerPoint cut
-  from that storyboard: approve the markdown plan first, then a
-  cue each look, about 15-30 seconds
+  from that storyboard: walk the markdown plan one look at a
+  time, then a cue each look, about 15-30 seconds
 
 ## How we prepare talks
 
@@ -67,7 +67,8 @@ who should skip it. A talk for everyone is a talk for no one.
 
 **Pair the words with a look.** Talks are audio-visual. A slide that
 stays up for two minutes trains the room to read. `talk-slides`
-cuts the storyboard into a markdown plan you approve, then a
+cuts the storyboard into a markdown plan you walk one look at a
+time (the slide before, this one, the one coming up), then a
 PowerPoint: a cue, not the spoken line, about 15-30 seconds a
 look, a visual note for a later pass, notes that point back at
 the beat and the outline block. The click count from length and
