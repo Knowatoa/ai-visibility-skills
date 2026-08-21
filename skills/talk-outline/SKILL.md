@@ -125,6 +125,8 @@ In wrap-up, source blocks from their keepers or from the live Outline they are r
 
 For each block: the point, the proof (a story or number from brand context or from what they already gave you), and which box it serves. Opening names the audience's situation. Close restates the audience takeaway and the presenter ask.
 
+State each block's point and proof flatly. Delivery and staging notes — what the room feels, when to pause — belong to the storyboard, not the outline.
+
 Do not write slide titles as decoration. Do not write a full speech. Do not add a demo, origin story, or company overview unless it serves a box.
 
 Map brand-context stories onto the audience's existing belief. The proof should change that belief or make the Monday action obvious. If a story does not do that, leave it out.
