@@ -1,11 +1,11 @@
 ---
 name: talk-slides
-description: "Builds a sparse PowerPoint deck from a talk storyboard: about 15-30 seconds per slide, a cue not the spoken line on screen, a visual note for a later pass, and speaker notes that tie each slide back to the outline and the beats. Use when the user says build the slides, make the deck, turn this storyboard into PowerPoint, generate the pptx, I want build-style slides, keep each slide to a sentence, these slides read like a script, or 'visually engaging slides that move fast'. Do NOT load for writing the outline, mapping the emotional journey from scratch, a word-for-word speech, illustrating the deck, podcast guest prep, Keynote or Google Slides as the only output, or a fundraising pitch deck."
+description: "Builds a sparse PowerPoint deck from a talk storyboard: about 15-30 seconds per slide, a cue not the spoken line on screen, a visual note for a later pass, and speaker notes that tie each slide back to the outline and the beats. Walks the slides markdown one look at a time (previous, this, next) so the user can keep, combine, or rewrite before the pptx. Use when the user says build the slides, make the deck, turn this storyboard into PowerPoint, generate the pptx, walk through the slides, approve this slide, review the slides markdown, do not generate the pptx yet, I want build-style slides, keep each slide to a sentence, these slides read like a script, or 'visually engaging slides that move fast'. Do NOT load for writing the outline, mapping the emotional journey from scratch, a word-for-word speech, illustrating the deck, podcast guest prep, Keynote or Google Slides as the only output, or a fundraising pitch deck."
 ---
 
 # Talk slides
 
-Cut the talk into a deck people can watch without reading a paragraph. The walk-away is a PowerPoint: a cue on each slide, about 15 to 30 seconds a look, a visual note for a later pass, speaker notes that point at the storyboard beat and the outline block. Chat is a short status, not the deck.
+Cut the talk into a deck people can watch without reading a paragraph. The walk-away is a PowerPoint, after they approve the slides markdown. The plan is the deck they can still move around. Each look is a cue, about 15 to 30 seconds, a visual note for a later pass, speaker notes that point at the storyboard beat and the outline block. Chat is a short status, not the deck.
 
 The recording is the asset. A slide that stays up while you talk for two minutes trains the room to read instead of listen. Keep the click moving. A slide that is the sentence you are about to say trains you to read. You say the sentence. The slide does not. Someone who only has the deck should still follow the argument. That is the leave-behind. It is not a reason to paste the talk onto the slides.
 
@@ -18,8 +18,8 @@ The recording is the asset. A slide that stays up while you talk for two minutes
 5. Read **The journey**, **Energy map**, **Beats**, and **Leave them** from the storyboard. Those headings are the usual shape. If the file uses different names, use the closest equivalents. If **Beats** is empty, stop and say the storyboard is not ready to cut into slides. Do not invent beats. Do not start storyboarding.
 6. If the storyboard header names an outline file, read that outline. Use it to make the notes' Outline line precise. If the outline is missing, use each beat's **Place** and **From the outline**. Do not fetch a new outline. Do not rewrite the outline or the storyboard.
 7. Resolve **Palette** before filling Slides. If the plan file, brand context, or their message already has background, text, and accent colors, copy them into the plan and keep going. If any of those three is missing, ask once in the same batch as other missing Inputs. Do not invent a brand palette. Hex values. A logo file they pointed at is optional and only goes on a title slide if they asked.
-8. Set `pace` from what they said. Default `20`. Allowed range is 15-30 unless they overrode it. Honor `length` from the storyboard or outline header. Target slide count is `length minutes * 60 / pace`, rounded to a whole number. A 20-minute talk at 20 seconds is about 60 slides. If length is unknown, do not invent a runtime. Cut from the beats at the default pace and note the missing length in Gaps.
-9. Fill **Slides** in the plan before you render the deck. One row per look. A beat is a run of slides, not one slide. Split when the look changes: a new number, a turn, a claim the room must see. Do not split just to park the next spoken sentence on its own slide. If reading the On screen column would give the talk, rewrite each line to the word, number, or fragment they need to see while you say the rest. A bullet list is one slide per idea, or throw the list away. Title and close are short runs, not a paragraph bio. One slide per beat is almost always a merge: if that beat's Hit has more than one thing the room should see, split it before you render. If length is known and the plan is under about 80% of the target count, re-read the beats for looks you skipped. Split those. Do not invent a fragment to hit the count. If you are still short after that, write the shortfall in Gaps and keep the cut. Do not change pace unless they named a new pace.
+8. Set `pace` from what they said. Default `20`. Allowed range is 15-30 unless they overrode it. Honor `length` from the storyboard or outline header. Guide slide count is `length minutes * 60 / pace`, rounded to a whole number. A 20-minute talk at 20 seconds is about 60 slides. That number is a guide, not a quota. If length is unknown, do not invent a runtime. Cut from the beats at the default pace and note the missing length in Gaps.
+9. Fill **Slides** in the plan before you ask them to approve it. One row per look. A beat is a run of slides, not one slide. Split when the look changes: a new number, a turn, a claim the room must see. Do not split just to park the next spoken sentence on its own slide. If reading the On screen column would give the talk, rewrite each line to the word, number, or fragment they need to see while you say the rest. A bullet list is one slide per idea, or throw the list away. Title and close are short runs, not a paragraph bio. One slide per beat is almost always a merge: if that beat's Hit has more than one thing the room should see, split it. Do not invent a fragment to hit the guide. Do not pad, merge, or refuse because the count is off the guide. Write the actual count next to the guide in Pace. They decide during approval whether to split, merge, or reorder. Do not change pace unless they named a new pace.
 10. For each slide use this shape in the plan:
 
     - **On screen** — a cue. One sentence max, and only when that sentence is the claim the room should read. A fragment, a number, or a single word is better. No bullets. No clause pile. No story. No connective tissue.
@@ -31,9 +31,10 @@ The recording is the asset. A slide that stays up while you talk for two minutes
 
     If you cannot point at a beat, the slide is invented: cut it or move it to Gaps.
 11. Write **Gaps**. What the storyboard or palette did not give you, visuals you named without an asset, and what you refused to invent.
-12. Render `<same-slug>-slides.pptx` from the plan. See **Build the pptx**. Do not add slides that are not in the plan. Do not call the plan the deck.
-13. Set `status: ready` and `resume: done` when the pptx exists, the slide count matches the plan, the On screen column is not the talk, and a cold reader could click the deck with only the notes. Ready is about the deck, not about locking the outline. Missing visuals do not block ready.
-14. In chat: the plan path, the pptx path, slide count vs the target from length and pace, the palette in a few words, the first and last on-screen lines, and how many Visual rows still need an asset. Do not paste the plan. Do not paste slide text. If they want a revision, change the plan, then rebuild the pptx. Three passes is the cap: your first deck, then at most two revisions. If they accept earlier, stop. After the third pass, lock the deck anyway and leave leftover mush in Gaps. Do not start illustrating.
+12. Approve the plan. See **Approve the plan**. Do not render until `plan` is `approved`.
+13. Render `<same-slug>-slides.pptx` from the approved plan. See **Build the pptx**. Do not add slides that are not in the plan. Do not call the plan the deck.
+14. Set `status: ready` and `resume: done` when the pptx exists, the slide count matches the approved plan, the On screen column is not the talk, and a cold reader could click the deck with only the notes. Ready is about the deck, not about locking the outline. Missing visuals do not block ready.
+15. In chat after the pptx exists: the plan path, the pptx path, slide count vs the pace guide, the palette in a few words, the first and last on-screen lines, and how many Visual rows still need an asset. Do not paste the plan. Do not paste slide text. If they want a change, edit the plan, then rebuild the pptx. Do not start a new walkthrough unless the storyboard journey changed. Do not start illustrating.
 
 ## Working files
 
@@ -46,6 +47,8 @@ outline: "<path from the storyboard header, or unknown>"
 length: "<minutes from the storyboard or outline, or unknown>"
 pace: 20
 palette: missing
+plan: draft
+cursor: unset
 deck: "<path to the pptx once written, or unset>"
 resume: "<exact next step a cold session should do>"
 ---
@@ -58,7 +61,7 @@ resume: "<exact next step a cold session should do>"
 - accent: <#hex or unset>
 
 ## Pace
-<seconds per look, target count, how you got there>
+<seconds per look, guide count, actual count, how you got there>
 
 ## Slides
 ### 1. <first words of on-screen text>
@@ -72,11 +75,46 @@ resume: "<exact next step a cold session should do>"
 ## Gaps
 ```
 
-`palette` in the header is `set` or `missing`. `status` is `in-progress` until the pptx exists and matches the plan; then `ready`. `resume` is the only progress pointer. Do not also keep a Status heading in the body.
+`palette` in the header is `set` or `missing`. `plan` is `draft` until the walkthrough finishes or they skip the rest; then `approved`. `cursor` is the slide number during the walkthrough, or `unset` before it starts and after the plan is approved. `status` is `in-progress` until the pptx exists and matches the approved plan; then `ready`. `resume` is the only progress pointer. Do not also keep a Status heading in the body.
 
-If the file already exists, read it, honor `resume`, and do not re-ask settled facts (talk name, storyboard path, outline path, length, pace, palette, file paths, slides already planned, deck path). If they come back with a changed storyboard, read both files and revise the plan, then rebuild the pptx. If they say the deck reads like a script, or they want visual notes (not illustrations), rewrite On screen to cues and fill Visual. Do not restart from slide 1 unless the journey changed. Do not generate images.
+If the file already exists, read it, honor `resume`, and do not re-ask settled facts (talk name, storyboard path, outline path, length, pace, palette, file paths, slides already planned, walkthrough place, plan approval, deck path). If `resume` is wait for approval of slide N, show the previous / this / next frame for that slide and wait. Do not recut. Do not restart at slide 1. Do not dump the Slides list. Do not render. If `resume` is render from the approved plan, render. If they come back with a changed storyboard, read both files, revise the plan, set `plan: draft` and `cursor: unset`, and return to **Approve the plan**. If they say the deck reads like a script, or they want visual notes (not illustrations), rewrite On screen to cues and fill Visual. After a pptx already exists, rebuild. During the walkthrough, stay on `draft`. Do not generate images.
 
 Palette, Pace, and the on-screen lines are skimmer zones. No storyboard recap, no "I considered…", no history of how you changed your mind. That belongs in Gaps or nowhere.
+
+## Approve the plan
+
+The plan is the deck they can still move around. The pptx is the hard work. Do not render until the plan is approved.
+
+After Slides and Gaps are filled, start a walkthrough at slide 1. Do not dump the Slides list. Set `cursor` to `1` and `resume` to wait for approval of slide 1.
+
+Each turn, chat only this frame:
+
+- `N of <count>`. Guide count if length is known, and that the guide is not a quota
+- **Previous** — On screen of N-1, or `none` on slide 1
+- **This** — On screen, Visual, Beat, Seconds, and the Notes Hit / why this look exists
+- **Next** — On screen of N+1, or `none` on the last slide
+- One ask: keep this look, combine it with next, rewrite the cue, or drop it
+
+Wait. Do not render. Do not paste the rest of the file. Do not ask a second question in the same turn (count, palette, the spoken paragraph). The frame is the ask.
+
+They are deciding what the room should see, and whether this look and the next one are the same look. If they start dictating the talk onto the slide, keep On screen as a cue and put the point in Notes. Do not write a speech.
+
+Apply the answer in the plan, then:
+
+- **Keep** — advance `cursor` to N+1 and show that frame in the same turn, unless that was the last slide
+- **Combine with next** — merge this row and the next into one look. Keep the cue that is the claim the room should read. Fold the leftover Hit into Notes. Renumber. Stay on this number (it is now the merged look) and show the new frame
+- **Rewrite** — change On screen, Visual, or Notes as they said. Stay on N. Show the frame again
+- **Drop** — delete this row, renumber, stay on this number (old next). Show the frame
+- **Go to K / back** — set `cursor` to that number. Show that frame
+- **Approve the rest / skip the review / just generate** — set `plan: approved`, set `cursor: unset`, and render. Mid-walk is a skip only when they said it now
+
+When they keep the last slide, or skip the rest, set `plan: approved`, set `cursor: unset`, and render.
+
+Skip the whole walkthrough only when they already said to skip the review, not to workshop the plan, or to generate without looking at the markdown, or `plan` is already `approved` on disk. Naming the job (build the slides, generate the pptx, make the deck) is not a skip. Do not skip because you think the count looks right.
+
+One walkthrough is the approval. Going back during it is fine. After the last slide, render. Do not ask "one more?" If they ask to walk the plan again before the pptx, do that once, then render anyway. Leftover mush goes in Gaps.
+
+`resume` during the walk: wait for approval of slide N of `<count>`.
 
 ## Palette
 
@@ -95,7 +133,7 @@ Write the three hex values into **Palette** and set `palette: set`. If brand con
 
 ## Build the pptx
 
-The plan is the source. The deck is `<same-slug>-slides.pptx` next to it.
+The approved plan is the source. The deck is `<same-slug>-slides.pptx` next to it. Do not render a `draft` plan.
 
 Use Python and `python-pptx`. If the package is missing, `pip install python-pptx`. Do not switch to Keynote, Google Slides, HTML, Markdown-as-slides, or a PDF and call that done.
 
@@ -126,7 +164,7 @@ From the user's message (ask only if missing and it would make the deck wrong), 
 3. Which storyboard, if more than one matches.
 4. Background, text, and accent hex colors, if those are not already in the plan, brand context, or this message.
 
-Do not ask for brand stories, a font, a logo, a target slide count, a design tool, or images. Do not fetch the topic on the web. Do not read other skills or the rest of the repo.
+Do not ask for brand stories, a font, a logo, a target slide count, a design tool, or images. Do not fetch the topic on the web. Do not read other skills or the rest of the repo. Do not ask them to approve a plan you have not written yet.
 
 If they name a pace, use it. If they do not, use 20 seconds and do not ask.
 
