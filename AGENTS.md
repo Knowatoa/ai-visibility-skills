@@ -21,7 +21,7 @@ skills do not.
 
 Validate a change with `npx skills add . --list`. It must list every
 `skills/*/SKILL.md` and **nothing else**. Today that is `podcast-prep`,
-`talk-outline`, and `talk-storyboard`.
+`talk-outline`, `talk-storyboard`, and `talk-slides`.
 Also check frontmatter (`name` matches the folder; `description` ≤ 1024
 chars) on any skill you touched, including repo-only ones.
 

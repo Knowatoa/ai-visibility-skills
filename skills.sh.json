@@ -10,7 +10,7 @@
     {
       "title": "Talks",
       "description": "Prepare a talk so the recording, deck, and recap posts that follow can be chopped up and distributed.",
-      "skills": ["talk-outline", "talk-storyboard"]
+      "skills": ["talk-outline", "talk-storyboard", "talk-slides"]
     }
   ]
 }

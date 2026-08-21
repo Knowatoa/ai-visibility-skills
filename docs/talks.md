@@ -9,13 +9,15 @@ Write the recap. Put the same stories on your site. Each of those
 surfaces can be crawled, indexed, and used as training data. That is
 why a talk belongs in this catalog: not the room, the asset.
 
-Skills in this repo cover the prep that happens before the slides:
+Skills in this repo cover the prep through the deck:
 
 - [talk-outline](../skills/talk-outline) — who it is
   for, what they can do on Monday, what you get, then a disposable
   outline
 - [talk-storyboard](../skills/talk-storyboard) — the feeling beat by
   beat, then whether that outline is the one to keep
+- [talk-slides](../skills/talk-slides) — a sparse PowerPoint cut
+  from that storyboard, about 15-30 seconds a look
 
 ## How we prepare talks
 
@@ -62,6 +64,12 @@ different game from giving the talk, but the same box shows up in
 the outline: one person, their situation, what they already believe,
 who should skip it. A talk for everyone is a talk for no one.
 
+**Pair the words with a look.** Talks are audio-visual. A slide that
+stays up for two minutes trains the room to read. `talk-slides`
+cuts the storyboard into a PowerPoint: one sentence or less on
+screen, about 15-30 seconds a look, notes that point back at the
+beat and the outline block.
+
 ### The rest of his list
 
 These still belong to the job. This repo does not have skills for
@@ -72,12 +80,9 @@ them yet:
 2. **CFPs are their own game** — a provocative title, a pithy
    opener, the problem, the payoff, who should skip it. Not a
    summary of the talk.
-3. **Become one with your slides** — talks are audio-visual. Pair
-   what you say with something to look at. We do not design decks
-   here.
-4. **Rehearse transitions, if nothing else** — the click to the next
+3. **Rehearse transitions, if nothing else** — the click to the next
    slide is where people lose the thread.
-5. **Remember, none of this matters** — you will be bad at first.
+4. **Remember, none of this matters** — you will be bad at first.
    Have fun anyway.
 
 ## Source
