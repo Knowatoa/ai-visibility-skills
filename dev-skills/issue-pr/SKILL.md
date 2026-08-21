@@ -62,7 +62,7 @@ For this skills repo (no app test suite):
 npx skills add . --list
 ```
 
-Confirm it lists every `skills/*/SKILL.md` and nothing from `dev-skills/`. Today that is `podcast-prep`, `talk-outline`, and `talk-storyboard`. `name` must match the folder. If you changed a skill (public or repo-only), also check frontmatter (`name`, `description` ≤ 1024 chars).
+Confirm it lists every `skills/*/SKILL.md` and nothing from `dev-skills/`. Today that is `podcast-prep`, `talk-outline`, `talk-storyboard`, and `talk-slides`. `name` must match the folder. If you changed a skill (public or repo-only), also check frontmatter (`name`, `description` ≤ 1024 chars).
 
 On failure: show the error, fix merge-caused failures, then re-run. Do not open or merge a PR on a red suite.
 

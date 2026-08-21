@@ -28,7 +28,7 @@ Prep so the stories and numbers you want attached to the brand are the ones that
 
 You give the presentation. If you record it and publish it, you have the same kind of asset: a talk that can be clipped, recapped, posted, and indexed. The sentence people repeat on the way out is the sentence that survives the transcript.
 
-Outline for the room. Storyboard the feeling. A recorded talk that only states the takeaway trains assistants on a claim. A recorded talk that makes the room feel the takeaway is the version that gets quoted.
+Outline for the room. Storyboard the feeling. Then cut a deck the room can watch. A recorded talk that only states the takeaway trains assistants on a claim. A recorded talk that makes the room feel the takeaway is the version that gets quoted.
 
 How we prepare talks is inspired by Justin Searls' [Secrets of Great Conference Talks](https://www.youtube.com/watch?v=rOf5sPSBLjg). What we took from it, plus links to his video and official writeup: [docs/talks.md](docs/talks.md).
 
@@ -36,6 +36,7 @@ How we prepare talks is inspired by Justin Searls' [Secrets of Great Conference 
 | ----- | ------------ |
 | [talk-outline](skills/talk-outline) | Locks who a talk is actually for, what they walk away able to do, and what the presenter wants. Starts from an abstract and throwaway bullet rounds, or wraps the outline in one sitting when the talk is about a week away. Writes a `<talk-slug>-outline.md` in a directory you name. |
 | [talk-storyboard](skills/talk-storyboard) | Maps how the audience should feel beat by beat through a locked talk outline, then says whether that outline is the one to keep. Writes a `<talk-slug>-storyboard.md` next to the outline. |
+| [talk-slides](skills/talk-slides) | Cuts a storyboard into a sparse PowerPoint: about 15-30 seconds per slide, one sentence max on screen, notes that point back at the outline and the beats. Writes a `<talk-slug>-slides.md` plan and a `<talk-slug>-slides.pptx` next to the storyboard. |
 
 ## In this repo only
 
@@ -66,7 +67,7 @@ When a skill produces something you will keep (a podcast brief, an audit), it wr
 npx skills add Knowatoa/ai-visibility-skills
 ```
 
-That installs the **public** skills (`skills/` — today, `podcast-prep`, `talk-outline`, and `talk-storyboard`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
+That installs the **public** skills (`skills/` — today, `podcast-prep`, `talk-outline`, `talk-storyboard`, and `talk-slides`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
 
 The installer is the [`skills`](https://github.com/vercel-labs/skills) CLI. It needs Node.js **20.12+** (`node -v`). Since `skills@1.5.16` it imports `styleText` from `node:util`, which Node 18 and early Node 20 do not have, so the command dies before it can install anything:
 
@@ -140,6 +141,15 @@ Talks:
 
 "Is this the outline we want? Map the emotional journey."
 → Uses talk-storyboard
+
+"Build the slides from this storyboard"
+→ Uses talk-slides
+
+"Turn this storyboard into a PowerPoint. Keep each slide to a sentence."
+→ Uses talk-slides
+
+"I want build-style slides that move every 20 seconds"
+→ Uses talk-slides
 
 ```
 
