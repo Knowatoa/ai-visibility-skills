@@ -1,13 +1,13 @@
 ---
 name: talk-slides
-description: "Builds a sparse PowerPoint deck from a talk storyboard: about 15-30 seconds per slide, one sentence max on screen, speaker notes that tie each slide back to the outline and the beats. Use when the user says build the slides, make the deck, turn this storyboard into PowerPoint, generate the pptx, I want build-style slides, keep each slide to a sentence, or 'visually engaging slides that move fast'. Do NOT load for writing the outline, mapping the emotional journey from scratch, a word-for-word speech, podcast guest prep, Keynote or Google Slides as the only output, or a fundraising pitch deck."
+description: "Builds a sparse PowerPoint deck from a talk storyboard: about 15-30 seconds per slide, a cue not the spoken line on screen, a visual note for a later pass, and speaker notes that tie each slide back to the outline and the beats. Use when the user says build the slides, make the deck, turn this storyboard into PowerPoint, generate the pptx, I want build-style slides, keep each slide to a sentence, these slides read like a script, or 'visually engaging slides that move fast'. Do NOT load for writing the outline, mapping the emotional journey from scratch, a word-for-word speech, illustrating the deck, podcast guest prep, Keynote or Google Slides as the only output, or a fundraising pitch deck."
 ---
 
 # Talk slides
 
-Cut the talk into a deck people can watch without reading a paragraph. The walk-away is a PowerPoint: one sentence or less on each slide, about 15 to 30 seconds a look, speaker notes that point at the storyboard beat and the outline block. Chat is a short status, not the deck.
+Cut the talk into a deck people can watch without reading a paragraph. The walk-away is a PowerPoint: a cue on each slide, about 15 to 30 seconds a look, a visual note for a later pass, speaker notes that point at the storyboard beat and the outline block. Chat is a short status, not the deck.
 
-The recording is the asset. A slide that stays up while you talk for two minutes trains the room to read instead of listen. Keep the click moving.
+The recording is the asset. A slide that stays up while you talk for two minutes trains the room to read instead of listen. Keep the click moving. A slide that is the sentence you are about to say trains you to read. You say the sentence. The slide does not. Someone who only has the deck should still follow the argument. That is the leave-behind. It is not a reason to paste the talk onto the slides.
 
 ## Do this job
 
@@ -19,20 +19,21 @@ The recording is the asset. A slide that stays up while you talk for two minutes
 6. If the storyboard header names an outline file, read that outline. Use it to make the notes' Outline line precise. If the outline is missing, use each beat's **Place** and **From the outline**. Do not fetch a new outline. Do not rewrite the outline or the storyboard.
 7. Resolve **Palette** before filling Slides. If the plan file, brand context, or their message already has background, text, and accent colors, copy them into the plan and keep going. If any of those three is missing, ask once in the same batch as other missing Inputs. Do not invent a brand palette. Hex values. A logo file they pointed at is optional and only goes on a title slide if they asked.
 8. Set `pace` from what they said. Default `20`. Allowed range is 15-30 unless they overrode it. Honor `length` from the storyboard or outline header. Target slide count is `length minutes * 60 / pace`, rounded to a whole number. A 20-minute talk at 20 seconds is about 60 slides. If length is unknown, do not invent a runtime. Cut from the beats at the default pace and note the missing length in Gaps.
-9. Fill **Slides** in the plan before you render the deck. One row per look. A beat is a run of slides, not one slide. Split when the next sentence, number, or turn would otherwise sit on screen too long. Two sentences is two slides. A bullet list is one slide per bullet, or better, one slide per idea and throw the list away. Title and close are short runs, not a paragraph bio. If length is known and the plan is under about 80% of the target count, you merged looks. Split again before you render. Do not ship a 12-slide deck for a 20-minute talk.
+9. Fill **Slides** in the plan before you render the deck. One row per look. A beat is a run of slides, not one slide. Split when the look changes: a new number, a turn, a new cue. Do not split just to park the next spoken sentence on its own slide. If reading the On screen column would give the talk, rewrite each line to the word, number, or fragment they need to see while you say the rest. A bullet list is one slide per idea, or throw the list away. Title and close are short runs, not a paragraph bio. If length is known and the plan is under about 80% of the target count, you merged looks. Split again into new cues, not into the next clause of the same sentence. Do not ship a 12-slide deck for a 20-minute talk. Do not change pace to "fix granularity" unless they named a new pace.
 10. For each slide use this shape in the plan:
 
-    - **On screen** — one sentence max. A fragment, a number, or a single word is better. No bullets. No clause pile.
+    - **On screen** — a cue. One sentence max, and only when that sentence is the claim the room should read. A fragment, a number, or a single word is better. No bullets. No clause pile. No story. No connective tissue.
+    - **Visual** — the look besides type. One of: empty, number, photo, diagram, quote. Then a few words for what it is (`empty`, `the 3%`, `screenshot of the 404 they already have`, `diagram of the crawl loop, later`). Do not generate the image. Do not pick a stock photo. If they did not give a file, the asset stays in Gaps.
     - **Seconds** — 15-30, or their override. Default 20.
     - **Beat** — the storyboard beat name
     - **Outline** — the outline block this sits on (heading or short paraphrase)
     - **Notes** — beat name, outline place, the beat's Hit, and one line for why this look exists. Not a speech. Not a paragraph you would read aloud.
 
     If you cannot point at a beat, the slide is invented: cut it or move it to Gaps.
-11. Write **Gaps**. What the storyboard or palette did not give you, and what you refused to invent.
+11. Write **Gaps**. What the storyboard or palette did not give you, visuals you named without an asset, and what you refused to invent.
 12. Render `<same-slug>-slides.pptx` from the plan. See **Build the pptx**. Do not add slides that are not in the plan. Do not call the plan the deck.
-13. Set `status: ready` and `resume: done` when the pptx exists, the slide count matches the plan, and a cold reader could click the deck with only the notes. Ready is about the deck, not about locking the outline.
-14. In chat: the plan path, the pptx path, slide count vs the target from length and pace, the palette in a few words, and the first and last on-screen lines. Do not paste the plan. Do not paste slide text. If they want a revision, change the plan, then rebuild the pptx. Three passes is the cap: your first deck, then at most two revisions. If they accept earlier, stop. After the third pass, lock the deck anyway and leave leftover mush in Gaps.
+13. Set `status: ready` and `resume: done` when the pptx exists, the slide count matches the plan, the On screen column is not the talk, and a cold reader could click the deck with only the notes. Ready is about the deck, not about locking the outline. Missing visuals do not block ready.
+14. In chat: the plan path, the pptx path, slide count vs the target from length and pace, the palette in a few words, the first and last on-screen lines, and how many Visual rows still need an asset. Do not paste the plan. Do not paste slide text. If they want a revision, change the plan, then rebuild the pptx. Three passes is the cap: your first deck, then at most two revisions. If they accept earlier, stop. After the third pass, lock the deck anyway and leave leftover mush in Gaps. Do not start illustrating.
 
 ## Working files
 
@@ -62,6 +63,7 @@ resume: "<exact next step a cold session should do>"
 ## Slides
 ### 1. <first words of on-screen text>
 - On screen:
+- Visual:
 - Seconds:
 - Beat:
 - Outline:
@@ -101,12 +103,12 @@ For every slide in the plan:
 
 1. Add a blank 16:9 slide (13.333 in by 7.5 in).
 2. Fill the background with the palette background.
-3. Put **On screen** in one text box, large type (about 40-60 pt), high contrast against the background. Lots of empty space. No bullets, no footer, no page numbers, no logo unless they gave one and asked for it on the title slide. Accent is for a single word or number, not a rainbow.
-4. Write **Notes** into the PowerPoint speaker notes, in this order: Beat, Outline, Hit, why this look exists.
+3. Put **On screen** in one text box, large type (about 40-60 pt), high contrast against the background. Lots of empty space. No bullets, no footer, no page numbers, no logo unless they gave one and asked for it on the title slide. Accent is for a single word or number, not a rainbow. Do not draw the Visual. If Visual is a photo and they pointed at a file for that slide, place that file. Otherwise the slide is type on the background.
+4. Write **Notes** into the PowerPoint speaker notes, in this order: Beat, Outline, Hit, why this look exists, Visual.
 
 Save when every plan row has a slide. Confirm the slide count matches the plan. If render fails, leave `status: in-progress` and set `resume` to the render step. Do not paste the deck into chat.
 
-Prefer a new slide over an on-click build. The point is a new look every 15-30 seconds, not a paragraph that reveals itself.
+Prefer a new slide over an on-click build. The point is a new look every 15-30 seconds, not a paragraph that reveals itself. Visual is the checklist for a later pass, not a reason to invent clipart.
 
 ## Inputs
 
@@ -124,10 +126,10 @@ From the user's message (ask only if missing and it would make the deck wrong), 
 3. Which storyboard, if more than one matches.
 4. Background, text, and accent hex colors, if those are not already in the plan, brand context, or this message.
 
-Do not ask for brand stories, a font, a logo, a target slide count, or a design tool. Do not fetch the topic on the web. Do not read other skills or the rest of the repo.
+Do not ask for brand stories, a font, a logo, a target slide count, a design tool, or images. Do not fetch the topic on the web. Do not read other skills or the rest of the repo.
 
 If they name a pace, use it. If they do not, use 20 seconds and do not ask.
 
 ## Refuse
 
-Stop in a few sentences if there is no storyboard and they will not provide one, if Beats is empty and they have not given a beat map, or if they want a different job: writing the outline from a blank page, storyboarding the feeling from scratch, a word-for-word speech, podcast guest prep, Keynote or Google Slides as the only file, or a fundraising pitch deck. Do not half-run those.
+Stop in a few sentences if there is no storyboard and they will not provide one, if Beats is empty and they have not given a beat map, or if they want a different job: writing the outline from a blank page, storyboarding the feeling from scratch, a word-for-word speech, illustrating the deck or generating images, podcast guest prep, Keynote or Google Slides as the only file, or a fundraising pitch deck. Do not half-run those.
