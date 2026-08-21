@@ -74,7 +74,7 @@ resume: "<exact next step a cold session should do>"
 
 `palette` in the header is `set` or `missing`. `status` is `in-progress` until the pptx exists and matches the plan; then `ready`. `resume` is the only progress pointer. Do not also keep a Status heading in the body.
 
-If the file already exists, read it, honor `resume`, and do not re-ask settled facts (talk name, storyboard path, outline path, length, pace, palette, file paths, slides already planned, deck path). If they come back with a changed storyboard, read both files and revise the plan, then rebuild the pptx. Do not restart from slide 1 unless the journey changed.
+If the file already exists, read it, honor `resume`, and do not re-ask settled facts (talk name, storyboard path, outline path, length, pace, palette, file paths, slides already planned, deck path). If they come back with a changed storyboard, read both files and revise the plan, then rebuild the pptx. If they say the deck reads like a script, or they want visual notes (not illustrations), rewrite On screen to cues and fill Visual. Do not restart from slide 1 unless the journey changed. Do not generate images.
 
 Palette, Pace, and the on-screen lines are skimmer zones. No storyboard recap, no "I considered…", no history of how you changed your mind. That belongs in Gaps or nowhere.
 
