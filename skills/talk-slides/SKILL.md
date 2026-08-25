@@ -124,9 +124,9 @@ If they name more than one edit in one turn, resolve every number against the cu
 
 Then:
 
-- **Merge A through B** — merge those rows into one look. Keep the cue that is the claim the room should read. Fold leftover Hits into Notes. Renumber. Stay on the sorter. Show it
-- **Move N between A and B / after K / before K** — take look N and place it after A and before B (or after / before K). Renumber. Stay on the sorter. Show it
-- **Drop N / drop A through B** — delete those rows. Renumber. Stay on the sorter. Show it
+- **Merge A through B** — merge those rows into one look. Keep the cue that is the claim the room should read. Fold leftover Hits into Notes. Renumber. Set `cursor` to `sorter` and `resume` to wait for the sorter of `<count>`. Show it
+- **Move N between A and B / after K / before K** — take look N and place it after A and before B (or after / before K). Renumber. Set `cursor` to `sorter` and `resume` to wait for the sorter of `<count>`. Show it
+- **Drop N / drop A through B** — delete those rows. Renumber. Set `cursor` to `sorter` and `resume` to wait for the sorter of `<count>`. Show it
 - **Rewrite N** — change On screen, Visual, or Notes as they said. Stay on the view they were in. Show it
 - **Walk N / go to N / this look** — show the walk frame for N
 - **Sorter / show the sorter / slide sorter** — set `cursor` to `sorter` and `resume` to wait for the sorter of `<count>`. Show it
@@ -135,7 +135,7 @@ Then:
 - **Rewrite** (walk, this look) — change On screen, Visual, or Notes as they said. Stay on N. Show the frame again
 - **Drop** (walk, this look) — delete this row, renumber, stay on this number (old next). Show the frame
 - **Go to K / back** (walk) — set `cursor` to that number. Show that frame
-- **Approve / looks good / approve the rest / skip the review / just generate** — set `plan: approved`, set `cursor: unset`, and render. A skip mid-approval only when they said it now
+- **Approve the rest / skip the review / just generate** — set `plan: approved`, set `cursor: unset`, and render. A skip mid-approval only when they said it now
 
 When they keep the last slide, or approve from either view, set `plan: approved`, set `cursor: unset`, and render.
 
