@@ -97,7 +97,7 @@ Chat only this:
 
 - `<count>` looks. Guide count if length is known, and that the guide is not a quota
 - Grouped by **Beat**, then by **Hit / why**. Consecutive looks that share a Beat stay under that Beat. Consecutive looks that share a Hit / why stay under that Hit / why. Do not invent a shared why to collapse them
-- Each look on one line: `N. <On screen> — <Visual> — <Seconds>s`
+- Stamps, four per row, in a fenced code block so the columns line up. Each stamp is two lines: `N <On screen>` and the Visual kind (`e` empty, `n` number, `p` photo, `d` diagram, `q` quote). Shorten On screen so the stamp fits; do not wrap a cue onto a second line. No Seconds
 - One ask: merge a run, move a look, rewrite a cue, drop a look, walk a look, or approve
 
 Wait. Do not render. Do not paste Outline, Notes, or Gaps. The sorter is the ask.
