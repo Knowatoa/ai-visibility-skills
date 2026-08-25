@@ -135,7 +135,7 @@ Then:
 - **Rewrite** (walk, this look) — change On screen, Visual, or Notes as they said. Stay on N. Show the frame again
 - **Drop** (walk, this look) — delete this row, renumber, stay on this number (old next). Show the frame
 - **Go to K / back** (walk) — set `cursor` to that number. Show that frame
-- **Approve the rest / skip the review / just generate** — set `plan: approved`, set `cursor: unset`, and render. A skip mid-approval only when they said it now
+- **Approve / looks good / Approve the rest / skip the review / just generate** — set `plan: approved`, set `cursor: unset`, and render. A skip mid-approval only when they said it now
 
 When they keep the last slide, or approve from either view, set `plan: approved`, set `cursor: unset`, and render.
 
