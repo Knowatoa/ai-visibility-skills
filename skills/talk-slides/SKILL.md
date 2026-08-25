@@ -1,11 +1,11 @@
 ---
 name: talk-slides
-description: "Builds a sparse PowerPoint deck from a talk storyboard: about 15-30 seconds per slide, a cue not the spoken line on screen, a visual note for a later pass, and speaker notes that tie each slide back to the outline and the beats. Walks the slides markdown one look at a time (previous, this, next) so the user can keep, combine, or rewrite before the pptx. Use when the user says build the slides, make the deck, turn this storyboard into PowerPoint, generate the pptx, walk through the slides, approve this slide, review the slides markdown, do not generate the pptx yet, I want build-style slides, keep each slide to a sentence, these slides read like a script, or 'visually engaging slides that move fast'. Do NOT load for writing the outline, mapping the emotional journey from scratch, a word-for-word speech, illustrating the deck, podcast guest prep, Keynote or Google Slides as the only output, or a fundraising pitch deck."
+description: "Builds a sparse PowerPoint deck from a talk storyboard: about 15-30 seconds per slide, a cue not the spoken line on screen, a visual note for a later pass, and speaker notes that tie each slide back to the outline and the beats. Approves the markdown before the pptx: a sorter grouped by beat and Hit/why for merge and move, plus one look at a time (previous, this, next). Use when the user says build the slides, make the deck, turn this storyboard into PowerPoint, generate the pptx, walk through the slides, show the slide sorter, merge these slides, move this slide, approve this slide, review the slides markdown, do not generate the pptx yet, I want build-style slides, keep each slide to a sentence, these slides read like a script, or 'visually engaging slides that move fast'. Do NOT load for writing the outline, mapping the emotional journey from scratch, a word-for-word speech, illustrating the deck, podcast guest prep, Keynote or Google Slides as the only output, or a fundraising pitch deck."
 ---
 
 # Talk slides
 
-Cut the talk into a deck people can watch without reading a paragraph. The walk-away is a PowerPoint, after they approve the slides markdown. The plan is the deck they can still move around. Each look is a cue, about 15 to 30 seconds, a visual note for a later pass, speaker notes that point at the storyboard beat and the outline block. Chat is a short status, not the deck.
+Cut the talk into a deck people can watch without reading a paragraph. The walk-away is a PowerPoint, after they approve the slides markdown. The plan is the deck they can still move around. Each look is a cue, about 15 to 30 seconds, a visual note for a later pass, speaker notes that point at the storyboard beat and the outline block. Chat is the sorter or one frame, not the plan and not the deck.
 
 The recording is the asset. A slide that stays up while you talk for two minutes trains the room to read instead of listen. Keep the click moving. A slide that is the sentence you are about to say trains you to read. You say the sentence. The slide does not. Someone who only has the deck should still follow the argument. That is the leave-behind. It is not a reason to paste the talk onto the slides.
 
@@ -75,9 +75,9 @@ resume: "<exact next step a cold session should do>"
 ## Gaps
 ```
 
-`palette` in the header is `set` or `missing`. `plan` is `draft` until the walkthrough finishes or they skip the rest; then `approved`. `cursor` is the slide number during the walkthrough, or `unset` before it starts and after the plan is approved. `status` is `in-progress` until the pptx exists and matches the approved plan; then `ready`. `resume` is the only progress pointer. Do not also keep a Status heading in the body.
+`palette` in the header is `set` or `missing`. `plan` is `draft` until they approve from the sorter or the walk, or they skip; then `approved`. `cursor` is `sorter` during the sorter, the slide number during the walk, or `unset` before approval starts and after the plan is approved. `status` is `in-progress` until the pptx exists and matches the approved plan; then `ready`. `resume` is the only progress pointer. Do not also keep a Status heading in the body.
 
-If the file already exists, read it, honor `resume`, and do not re-ask settled facts (talk name, storyboard path, outline path, length, pace, palette, file paths, slides already planned, walkthrough place, plan approval, deck path). If `resume` is wait for approval of slide N, show the previous / this / next frame for that slide and wait. Do not recut. Do not restart at slide 1. Do not dump the Slides list. Do not render. If `resume` is render from the approved plan, render. If they come back with a changed storyboard, read both files, revise the plan, set `plan: draft` and `cursor: unset`, and return to **Approve the plan**. If they say the deck reads like a script, or they want visual notes (not illustrations), rewrite On screen to cues and fill Visual. After a pptx already exists, rebuild. During the walkthrough, stay on `draft`. Do not generate images.
+If the file already exists, read it, honor `resume`, and do not re-ask settled facts (talk name, storyboard path, outline path, length, pace, palette, file paths, slides already planned, approval view, walkthrough place, plan approval, deck path). If `resume` is wait for the sorter, show the sorter and wait. If `resume` is wait for approval of slide N, show the previous / this / next frame for that slide and wait. Do not recut. Do not restart the approval. Do not paste the plan. Do not render. If `resume` is render from the approved plan, render. If they come back with a changed storyboard, read both files, revise the plan, set `plan: draft` and `cursor: unset`, and return to **Approve the plan**. If they say the deck reads like a script, or they want visual notes (not illustrations), rewrite On screen to cues and fill Visual. After a pptx already exists, rebuild. During approval, stay on `draft`. Do not generate images.
 
 Palette, Pace, and the on-screen lines are skimmer zones. No storyboard recap, no "I considered…", no history of how you changed your mind. That belongs in Gaps or nowhere.
 
@@ -85,35 +85,65 @@ Palette, Pace, and the on-screen lines are skimmer zones. No storyboard recap, n
 
 The plan is the deck they can still move around. The pptx is the hard work. Do not render until the plan is approved.
 
-After Slides and Gaps are filled, start a walkthrough at slide 1. Do not dump the Slides list. Set `cursor` to `1` and `resume` to wait for approval of slide 1.
+After Slides and Gaps are filled, show the **sorter**. Do not paste the plan. Set `cursor` to `sorter` and `resume` to wait for the sorter of `<count>`. If they already asked to walk one look, start that walk instead.
 
-Each turn, chat only this frame:
+Two views. One per turn. Do not show both.
+
+### Sorter
+
+The whole deck, so they can merge, move, and see the grouping. No Previous / Next.
+
+Chat only this:
+
+- `<count>` looks. Guide count if length is known, and that the guide is not a quota
+- Grouped by **Beat**, then by **Hit / why**. Consecutive looks that share a Beat stay under that Beat. Consecutive looks that share a Hit / why stay under that Hit / why. Do not invent a shared why to collapse them
+- Each look on one line: `N. <On screen> — <Visual> — <Seconds>s`
+- One ask: merge a run, move a look, rewrite a cue, drop a look, walk a look, or approve
+
+Wait. Do not render. Do not paste Outline, Notes, or Gaps. The sorter is the ask.
+
+They are deciding order and grouping: which looks are the same look, where a look belongs. If they start dictating the talk onto a slide, keep On screen as a cue and put the point in Notes. Do not write a speech.
+
+### Walk
+
+When they walk a look, set `cursor` to that number and `resume` to wait for approval of slide N of `<count>`. Chat only this frame:
 
 - `N of <count>`. Guide count if length is known, and that the guide is not a quota
 - **Previous** — On screen of N-1, or `none` on slide 1
 - **This** — On screen, Visual, Beat, Seconds, and the Notes Hit / why this look exists
 - **Next** — On screen of N+1, or `none` on the last slide
-- One ask: keep this look, combine it with next, rewrite the cue, or drop it
+- One ask: keep this look, combine it with next, rewrite the cue, drop it, or show the sorter
 
 Wait. Do not render. Do not paste the rest of the file. Do not ask a second question in the same turn (count, palette, the spoken paragraph). The frame is the ask.
 
 They are deciding what the room should see, and whether this look and the next one are the same look. If they start dictating the talk onto the slide, keep On screen as a cue and put the point in Notes. Do not write a speech.
 
-Apply the answer in the plan, then:
+### Apply
 
-- **Keep** — advance `cursor` to N+1 and show that frame in the same turn, unless that was the last slide
-- **Combine with next** — merge this row and the next into one look. Keep the cue that is the claim the room should read. Fold the leftover Hit into Notes. Renumber. Stay on this number (it is now the merged look) and show the new frame
-- **Rewrite** — change On screen, Visual, or Notes as they said. Stay on N. Show the frame again
-- **Drop** — delete this row, renumber, stay on this number (old next). Show the frame
-- **Go to K / back** — set `cursor` to that number. Show that frame
-- **Approve the rest / skip the review / just generate** — set `plan: approved`, set `cursor: unset`, and render. Mid-walk is a skip only when they said it now
+If they name more than one edit in one turn, resolve every number against the current numbering before any edit, then apply in the order they said, then renumber.
 
-When they keep the last slide, or skip the rest, set `plan: approved`, set `cursor: unset`, and render.
+Then:
 
-Skip the whole walkthrough only when they already said to skip the review, not to workshop the plan, or to generate without looking at the markdown, or `plan` is already `approved` on disk. Naming the job (build the slides, generate the pptx, make the deck) is not a skip. Do not skip because you think the count looks right.
+- **Merge A through B** — merge those rows into one look. Keep the cue that is the claim the room should read. Fold leftover Hits into Notes. Renumber. Stay on the sorter. Show it
+- **Move N between A and B / after K / before K** — take look N and place it after A and before B (or after / before K). Renumber. Stay on the sorter. Show it
+- **Drop N / drop A through B** — delete those rows. Renumber. Stay on the sorter. Show it
+- **Rewrite N** — change On screen, Visual, or Notes as they said. Stay on the view they were in. Show it
+- **Walk N / go to N / this look** — show the walk frame for N
+- **Sorter / show the sorter / slide sorter** — set `cursor` to `sorter` and `resume` to wait for the sorter of `<count>`. Show it
+- **Keep** (walk) — advance `cursor` to N+1 and show that frame, unless that was the last slide
+- **Combine with next** (walk) — merge this row and the next into one look. Keep the cue that is the claim the room should read. Fold the leftover Hit into Notes. Renumber. Stay on this number (it is now the merged look) and show the new frame
+- **Rewrite** (walk, this look) — change On screen, Visual, or Notes as they said. Stay on N. Show the frame again
+- **Drop** (walk, this look) — delete this row, renumber, stay on this number (old next). Show the frame
+- **Go to K / back** (walk) — set `cursor` to that number. Show that frame
+- **Approve / looks good / approve the rest / skip the review / just generate** — set `plan: approved`, set `cursor: unset`, and render. A skip mid-approval only when they said it now
 
-One walkthrough is the approval. Going back during it is fine. After the last slide, render. Do not ask "one more?" If they ask to walk the plan again before the pptx, do that once, then render anyway. Leftover mush goes in Gaps.
+When they keep the last slide, or approve from either view, set `plan: approved`, set `cursor: unset`, and render.
 
+Skip the whole approval only when they already said to skip the review, not to workshop the plan, or to generate without looking at the markdown, or `plan` is already `approved` on disk. Naming the job (build the slides, generate the pptx, make the deck) is not a skip. Showing the sorter is not a skip. Do not skip because you think the count looks right.
+
+One approval. They can bounce between the sorter and the walk. After they approve, render. Do not ask "one more?" If they ask to review again before the pptx, show the sorter once (or the walk if they asked for that), then render anyway. Leftover mush goes in Gaps.
+
+`resume` during the sorter: wait for the sorter of `<count>`.
 `resume` during the walk: wait for approval of slide N of `<count>`.
 
 ## Palette
