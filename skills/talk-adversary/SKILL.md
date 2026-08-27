@@ -15,7 +15,7 @@ Surface the talking points, the holes in them, what needs backup and what does n
 
 2. Ask where this talk's files should live before creating any, unless an input file already anchors the location. Default: the directory that holds the outline, storyboard, or slides. If location and input paths are both unknown, ask for them in the same batch. Do not ask where to write, wait, then ask for the transcript.
 
-3. The working file is the outline you will write back to. If `outline.md` or a `*-outline.md` already exists, that file is it: read it, honor `resume`, do not blank it. If they pointed at a differently named outline, edit that file. If there is no outline, write `outline.md` in the working directory as soon as the talk is identified, before the first finding. Sessions die. The outline is the memory.
+3. The working file is the outline you will write back to. If `outline.md` or a `*-outline.md` already exists, that file is it: read it, honor `adversary-resume`, do not blank it. If they pointed at a differently named outline, edit that file. If there is no outline, write `outline.md` in the working directory as soon as the talk is identified, before the first finding. Sessions die. The outline is the memory.
 
 4. Read the outline, then the storyboard, then the slides plan, then the transcript, in that order. Then, if it exists, `.agents/brand-context.md` (fallback `.claude/brand-context.md`). Brand context is only so you do not treat a take they already own as a hole. If it is missing, do not interview. The talk files are enough.
 
@@ -35,7 +35,7 @@ Surface the talking points, the holes in them, what needs backup and what does n
 
 The outline is the resume file, not a chat essay. Ask where this talk's files should live before creating any (default: the current directory). If they already pointed at a folder or an existing outline, use that directory. Do not ask this again in Inputs.
 
-`resume` is the only progress pointer. Do not also keep a Status heading in the body.
+`adversary-resume` is the only progress pointer for adversary work. Do not also keep a Status heading in the body. (The `resume` field belongs to `talk-outline` and should not be touched.)
 
 If the outline already has talk sections, keep them. Add only what is missing:
 
@@ -46,7 +46,7 @@ talk: "<title>"
 storyboard: "<path or unset>"
 slides: "<path or unset>"
 transcript: "<path or unset>"
-resume: "<exact next step a cold session should do>"
+adversary-resume: "<exact next step a cold session should do>"
 ---
 
 # Outline: <talk>
@@ -57,7 +57,7 @@ resume: "<exact next step a cold session should do>"
 ## Gaps
 ```
 
-`status` is `in-progress` until a cold reader could give the talk from the Outline and the write-backs are in the storyboard and slides you have. Then `ready`. If the file already exists, read it, honor `resume`, and do not re-ask settled facts (paths, talk title, which inputs were missing). Keep header fields the outline already has (`event`, `when`, `length`, `pace`). Do not touch Scratch rounds.
+`status` is `in-progress` until a cold reader could give the talk from the Outline and the write-backs are in the storyboard and slides you have. Then `ready`. If the file already exists, read it, honor `adversary-resume`, and do not re-ask settled facts (paths, talk title, which inputs were missing). Keep header fields the outline already has (`event`, `when`, `length`, `pace`, `resume`). Do not touch Scratch rounds.
 
 **Outline.** Skimmer zone. Timed or named blocks with the point, the proof, and any write-back written as a sentence they can say. No research diary, no "which cuts against," no history of how you changed your mind.
 
