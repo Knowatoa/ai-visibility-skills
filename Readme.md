@@ -1,31 +1,45 @@
 # AI Visibility Skills
 
-AI skills for getting your brand into AI answers.
+Skills for showing up in AI search.
 
 [![skills.sh](https://skills.sh/b/knowatoa/ai-visibility-skills)](https://skills.sh/knowatoa/ai-visibility-skills)
 
-Built by [Knowatoa](https://knowatoa.com?ref=github), the AI search visibility platform. We analyze how ChatGPT, Claude, Perplexity, Google AI Overviews, Google's AI Mode, Gemini, and Meta AI see and recommend brands. These skills are the manual versions of workflows we run every day.
+[Knowatoa](https://knowatoa.com?ref=github) tells you where you stand, what to write, and which channels to publish on. These skills are the publishing step: guest on a podcast, give the talk, leave with an asset you can clip, post, and keep distributing.
 
-## Why podcast prep is an AI visibility skill
+Models we check: ChatGPT, Claude, Perplexity, Google AI Overviews, Google's AI Mode, Gemini, and Meta AI.
 
-Podcast episodes get transcribed. Show notes get published. That content gets crawled and cited by AI assistants. When someone asks ChatGPT about your category, the stories you told on a podcast two years ago are part of what it draws on.
+## Jobs
 
-Guesting is earned media that compounds in AI answers. So prep matters: walking into an episode with the right stories and concrete numbers isn't just a better interview, it's better training data on your brand.
+Each public skill belongs to a job — the work you are actually doing. The skill is one step in that job.
 
-## Why a talk adversary is an AI visibility skill
+The reason any of these jobs belong in an AI visibility catalog is the same: you leave with an asset that will get published. That episode or talk can be broken into shorts, written up on your site, and shipped to every channel that will take it. Each of those surfaces can be crawled, indexed, and used as training data. The message you wanted said about the brand is now in more places assistants will read.
 
-Talks get recorded. Decks get posted. Transcripts get crawled. A skeptic's unanswered objection in that recording becomes part of how AI systems describe you. Addressing the real ones in the slides is how the published talk still makes your case.
+### Podcast appearances
 
-## Available skills
+You walk out of a recording with an episode. It gets transcribed. Show notes go up. Clips become shorts. The same stories can land as a post on your site. Guesting is earned media that compounds because that asset keeps getting repackaged.
 
-### AI visibility
+Prep so the stories and numbers you want attached to the brand are the ones that make it into the episode.
 
 | Skill | What it does |
 | ----- | ------------ |
 | [podcast-prep](skills/podcast-prep) | Researches a podcast before you guest on it: recent episode threads, show evolution, host profiles, and your stories mapped onto what the show cares about right now. Writes a `<show-slug>-prep.md` in a directory you name. |
-| [talk-adversary](skills/talk-adversary) | Red-teams a talk from the storyboard, a recent transcript, and any existing outline. Writes `outline.md` with the objections worth addressing folded into the talk. |
 
-### In this repo only
+### Talks
+
+You give the presentation. If you record it and publish it, you have the same kind of asset: a talk that can be clipped, recapped, posted, and indexed. The sentence people repeat on the way out is the sentence that survives the transcript.
+
+Outline for the room. Storyboard the feeling. Then cut a deck the room can watch. After a run-through, the spoken talk will often disagree with those files. That drift is the input for the next pass: holes, backup, criticisms, stuck questions, written back into the outline, storyboard, and slides. A recorded talk that only states the takeaway trains assistants on a claim. A recorded talk that makes the room feel the takeaway is the version that gets quoted.
+
+How we prepare talks is inspired by Justin Searls' [Secrets of Great Conference Talks](https://www.youtube.com/watch?v=rOf5sPSBLjg). What we took from it, plus links to his video and official writeup: [docs/talks.md](docs/talks.md).
+
+| Skill | What it does |
+| ----- | ------------ |
+| [talk-outline](skills/talk-outline) | Locks who a talk is actually for, what they walk away able to do, and what the presenter wants. Starts from an abstract and throwaway bullet rounds, or wraps the outline in one sitting when the talk is about a week away. Writes a `<talk-slug>-outline.md` in a directory you name. |
+| [talk-storyboard](skills/talk-storyboard) | Maps how the audience should feel beat by beat through a locked talk outline, then says whether that outline is the one to keep. Writes a `<talk-slug>-storyboard.md` next to the outline. |
+| [talk-slides](skills/talk-slides) | Cuts a storyboard into a sparse PowerPoint: about 15-30 seconds per slide, a cue not the spoken line on screen, a visual note for a later pass, notes that point back at the outline and the beats. Writes a `<talk-slug>-slides.md` plan, shows a stamp-grid sorter grouped by beat and Hit/why so they can merge, move, or walk one look (previous, this, next), then writes a `<talk-slug>-slides.pptx` next to the storyboard. |
+| [talk-adversary](skills/talk-adversary) | Reads a recent transcript against the outline, storyboard, and slides. The spoken talk is supposed to drift. Surfaces talking-point holes, backup, criticisms, and stuck questions, then writes the ones worth keeping back into those files. |
+
+## In this repo only
 
 These live in `dev-skills/` and load when you work in this clone. They are **not** installed by `npx skills add`.
 
@@ -44,9 +58,9 @@ These live in `dev-skills/` and load when you work in this clone. They are **not
 
 Skills are markdown files that give your AI of choice specialized workflows. Once installed, the AI recognizes when you're working on a matching task and follows the skill.
 
-Visibility skills may read a shared context file: `.agents/brand-context.md`. It holds your company, your story bank, and your positioning. Podcast prep creates that file if it is missing. Other visibility skills read it when it exists and do not start a brand interview. Repo-only skills do not use that file.
+Visibility skills read a shared context file first: `.agents/brand-context.md`. It holds your company, your story bank, and your positioning. The first visibility skill you run will interview you and create it. After that, those skills already know who you are. Repo-only skills do not use that file.
 
-When a skill produces something you will keep (a podcast brief, an outline, an audit), it writes a markdown file in a directory you name — default is the current directory — and resumes from that file if you come back later. Chat stays short. That file-as-memory behavior is also inspired by asb-skills; the files and the wording here are ours.
+When a skill produces something you will keep (a podcast brief, a talk file, an audit), it writes a markdown file in a directory you name — default is the current directory — and resumes from that file if you come back later. Chat stays short. That file-as-memory behavior is also inspired by asb-skills; the files and the wording here are ours.
 
 ## Installation
 
@@ -54,7 +68,25 @@ When a skill produces something you will keep (a podcast brief, an outline, an a
 npx skills add Knowatoa/ai-visibility-skills
 ```
 
-That installs the **public** skills (`skills/` — today, `podcast-prep` and `talk-adversary`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
+That installs the **public** skills (`skills/` — today, `podcast-prep`, `talk-outline`, `talk-storyboard`, `talk-slides`, and `talk-adversary`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
+
+The installer is the [`skills`](https://github.com/vercel-labs/skills) CLI. It needs Node.js **20.12+** (`node -v`). Since `skills@1.5.16` it imports `styleText` from `node:util`, which Node 18 and early Node 20 do not have, so the command dies before it can install anything:
+
+```
+SyntaxError: The requested module 'node:util' does not provide an export named 'styleText'
+```
+
+That is a CLI / Node mismatch, not a bug in these skills ([vercel-labs/skills#1672](https://github.com/vercel-labs/skills/issues/1672)). Upgrade Node where you run `npx`, pin the last CLI that still runs on older Node (`npx skills@1.5.15 add Knowatoa/ai-visibility-skills`), or skip npx and [copy the files](#manual-install).
+
+asdf (skip the plugin line if you already have it). This repo's `.tool-versions` pins the same [Node 24 LTS](https://nodejs.org):
+
+```
+asdf plugin add nodejs
+asdf install nodejs 24.19.0
+asdf set nodejs 24.19.0
+```
+
+Older asdf uses `asdf local` instead of `asdf set`. Then `node -v` should print `v24.19.0`. If it still says 18, `which node` and `asdf current` will show why.
 
 This is also how the skills show up on [skills.sh](https://skills.sh). There is no submit form. The directory indexes public GitHub repos from `npx skills add` telemetry, so the first install from a normal local shell is what creates [the listing](https://skills.sh/knowatoa/ai-visibility-skills). (Installs from CI often do not count.)
 
@@ -80,13 +112,62 @@ cp -r ai-visibility-skills/skills/* .agents/skills/
 ## Usage
  
 ```
+Podcast appearances:
+
 "I'm going on the Bootstrapped Founder podcast next week, help me prep"
 → Uses podcast-prep
 
 "What has Startups for the Rest of Us been talking about lately?"
 → Uses podcast-prep
 
-"Red-team this talk using outline.md, storyboard.md, and the latest transcript"
+Talks:
+
+"I have a 30-minute talk at SaaStr, help me outline it"
+→ Uses talk-outline
+
+"Who is this presentation actually for, and what should they take away?"
+→ Uses talk-outline
+
+"I have an abstract and some rough bullets for a talk in two months"
+→ Uses talk-outline
+
+"The talk is next week and I have not thought about it. Wrap up the outline."
+→ Uses talk-outline
+
+"Storyboard this talk from the outline"
+→ Uses talk-storyboard
+
+"How should the audience feel throughout this talk?"
+→ Uses talk-storyboard
+
+"Is this the outline we want? Map the emotional journey."
+→ Uses talk-storyboard
+
+"Build the slides from this storyboard"
+→ Uses talk-slides
+
+"Walk through each slide before you generate the PowerPoint"
+→ Uses talk-slides
+
+"Show the slide sorter. Slides 4 through 6 should be one slide."
+→ Uses talk-slides
+
+"Move slide 1 to between 9 and 10."
+→ Uses talk-slides
+
+"Turn this storyboard into a PowerPoint. Keep each slide to a sentence."
+→ Uses talk-slides
+
+"I want build-style slides that move every 20 seconds"
+→ Uses talk-slides
+
+"These slides read like a script. Cut the on-screen text back to cues."
+→ Uses talk-slides
+
+"The transcript doesn't match the outline. Find the holes."
+→ Uses talk-adversary
+
+"Red-team this talk using the outline, storyboard, slides, and the latest transcript"
 → Uses talk-adversary
 
 ```
@@ -104,9 +185,9 @@ In this repo only (not installed by `npx skills add`):
 → Uses audit-skill
 ```
  
-## Want to start replacing those lost organic traffic?
- 
-[Knowatoa](https://knowatoa.com?ref=github) tells you exactly what to write about and show you every place you should publish it, so you show up when buyers ask ChatGPT, Claude, and Perplexity about your category.
+## Knowatoa
+
+The topics and the channel list come from the [product](https://knowatoa.com?ref=github). These skills are the publishing step.
  
 ## Repo layout
 
@@ -119,6 +200,7 @@ skills/                 # public — what `npx skills add` installs
 dev-skills/             # this repo only
   <skill-name>/
     SKILL.md
+docs/                   # jobs and source notes — not installed
 ```
 
 Each `SKILL.md` starts with YAML frontmatter. `name` must be kebab-case and match the folder name. `description` should say what the skill does **and** when to trigger it (max 1024 characters).
@@ -134,7 +216,7 @@ Starter template: `npx skills init <skill-name>`, then move the folder under `sk
 
 ## Contributing
 
-Found a way to improve a skill? PRs and issues welcome. New **public** skills belong at `skills/<skill-name>/SKILL.md` with the frontmatter above. In this repo, `/create-skill` drafts that file; `/audit-skill` and `/exercise-skill` pressure-test it.
+Found a way to improve a skill? PRs and issues welcome. New **public** skills belong at `skills/<skill-name>/SKILL.md` with the frontmatter above, listed under the matching job in this README. In this repo, `/create-skill` drafts that file; `/audit-skill` and `/exercise-skill` pressure-test it.
  
 ## License
 

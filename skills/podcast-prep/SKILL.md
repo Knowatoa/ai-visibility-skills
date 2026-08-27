@@ -7,13 +7,13 @@ description: "Research a podcast and build a prep brief before the user appears 
 
 Build a prep brief for a podcast the user is appearing on as a guest. The goal is to walk in knowing what's top of mind for the show, how it has evolved, who the hosts are, and which of the user's stories map onto the show's current obsessions.
 
-Podcast guesting isn't just audience reach. Episodes get transcribed, show notes get published, and that content gets crawled and cited by AI assistants. A good appearance is earned media that shows up in AI answers about your category for years. Prep accordingly: the stories you tell become the training data on your brand.
+Podcast guesting is a job that leaves you with an asset. Episodes get transcribed, show notes get published, clips become shorts, and the same stories can land on your site. That content gets crawled, indexed, and cited. Prep accordingly: the stories you tell become the training data on your brand.
 
 ## Working files
 
-The brief is a file, not a chat essay. Ask where this appearance's files should live before creating any (default: the current directory). If they already pointed at a folder or an existing prep file, use that directory. Do not ask this again in Inputs.
+The brief is a file, not a chat essay. If they already pointed at a folder or an existing prep file, use that directory. If not, ask where files should live (default: the current directory) in the same message as any missing show facts or brand questions. Do not ask the directory first and the show second.
 
-Write `<show-slug>-prep.md` there as soon as the show is named, even if research has not started. Sessions die; the file is the memory. `resume` is the only progress pointer — do not also keep a Status heading in the body.
+Write `<show-slug>-prep.md` there as soon as the show is named, in the same turn as any missing-input questions. Do not wait for answers to create the stub. Sessions die. The file is the memory. `resume` is the only progress pointer. Do not also keep a Status heading in the body.
 
 ```markdown
 ---
@@ -39,11 +39,11 @@ In chat: path + a short read of the big picture and the two or three angles they
 
 ## Brand context (read this first)
 
-Before researching the show, load the user's positioning. Check `.agents/brand-context.md`, then `.claude/brand-context.md`. That file is shared identity for every visibility skill. It is not the prep brief.
+Before researching the show, load the user's positioning. Check `.agents/brand-context.md`, then `.claude/brand-context.md`. That file is shared identity for every visibility skill. It is not the prep brief. "Before proceeding" means before research, not before writing the stub.
 
 If it exists, read it. It should cover: current company and one-line pitch, prior products worth referencing, the founder story, 3-5 go-to stories with concrete numbers, and any contrarian takes they hold.
 
-If it doesn't exist, interview the user before proceeding. Ask, in one batch, not a drip:
+If it doesn't exist, add these to the same batch as path and show facts. Do not interview first and write the file later:
 
 1. What's your current company, and how do you describe it in one sentence?
 2. What did you build before this that comes up in conversation?
@@ -54,9 +54,9 @@ Then write their answers to `.agents/brand-context.md` so the next visibility sk
 
 ## Inputs to establish
 
-From the user's message (ask only if missing and it matters): the podcast name or URL, whether they've appeared before (and a link to that episode if so), and roughly when they're recording. File location is asked once, in Working files. If they've appeared before, find the prior episode. It anchors both the progression analysis and the callbacks.
+From the user's message (ask only if missing and it matters): the podcast name or URL, whether they've appeared before (and a link to that episode if so), and roughly when they're recording. File location is asked once, in that same batch, when the path is unset. If they've appeared before, find the prior episode. It anchors both the progression analysis and the callbacks.
 
-Ask the missing show/appearance facts in one batch with the brand-context questions when both are missing. Do not drip.
+When more than one of path, show facts, or brand questions is missing, ask all of them in one message. Do not drip.
 
 ## Research sequence
 
@@ -75,7 +75,7 @@ Don't fetch every episode page. Descriptions plus chapter lists are almost alway
 
 **Show progression at higher abstraction** (since their last appearance, or ~12-18 months if first time): identify phases and the inflection point where the show's focus shifted. Note patterns like returning guests (a show that re-invites guests is a signal about how a return visit fits) and whether hosts launched side projects.
 
-**Host profiles.** Sources: the show's contributor/about pages, hosts' personal sites, LinkedIn, and, often the best source, episodes where the hosts guest on *other* shows and introduce themselves (transcripts of those are gold). Capture: day job/company, background, what they've personally been building or experimenting with (mined from solo-episode summaries), and social handles. Watch for name collisions: if a host shares the guest's first name, flag it and keep references unambiguous throughout the brief.
+**Host profiles.** Show contributor or about page first. If that is thin, one profile page (personal site or LinkedIn). Other-show guest transcripts only if both of those are empty. Capture: day job/company, background, what they've personally been building or experimenting with (mined from solo-episode summaries), and social handles. Watch for name collisions: if a host shares the guest's first name, flag it and keep references unambiguous throughout the brief.
 
 **Prior appearance recap** (if returning): bullets from the show notes/chapters of what was actually discussed, with rough timestamps, and how much airtime the guest's current company got. This sets up the "what's changed since" narrative.
 

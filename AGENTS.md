@@ -20,8 +20,8 @@ Public visibility skills may read `.agents/brand-context.md`. Repo-only
 skills do not.
 
 Validate a change with `npx skills add . --list`. It must list every
-`skills/*/SKILL.md` and **nothing else**. Today that is `podcast-prep`
-and `talk-adversary`.
+`skills/*/SKILL.md` and **nothing else**. Today that is `podcast-prep`,
+`talk-outline`, `talk-storyboard`, `talk-slides`, and `talk-adversary`.
 Also check frontmatter (`name` matches the folder; `description` ≤ 1024
 chars) on any skill you touched, including repo-only ones.
 
@@ -64,3 +64,19 @@ are repo-only.
 Never work on `main`. Feature branch → PR. `/issue-pr` prepares the
 current branch; `/pr-review` walks open PRs. Neither squash-merges
 unless the user says to merge. Details: `dev-skills/cursor-guidance`.
+
+## Cursor Cloud specific instructions
+
+There is nothing to install and no test suite. This is a Markdown skills
+catalog; the only tooling is the `skills` CLI, fetched on demand by
+`npx`. The one check that matters is the catalog validation already
+described above (`npx skills add . --list` must list exactly the three
+public skills and nothing else).
+
+Node: the pod's default `node` is v22 (from `/exec-daemon`, which stays
+first on `PATH`). The `skills` CLI needs Node ≥20.12 for `styleText`, so
+v22 works and validation passes on it. `.tool-versions` pins Node
+24.19.0; it is installed via `nvm` but is not the default. For exact
+`.tool-versions` parity run `nvm use 24.19.0` in the shell first
+(`nvm use` does not override the `/exec-daemon` node on `PATH`, so invoke
+the nvm binary directly if you truly need v24).
