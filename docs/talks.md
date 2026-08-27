@@ -20,6 +20,10 @@ Skills in this repo cover the prep through the deck:
   from that storyboard: approve the markdown plan from a stamp-grid
   sorter grouped by beat and Hit/why, or walk one look at a time,
   then a cue each look, about 15-30 seconds
+- [talk-adversary](../skills/talk-adversary) — a recent transcript
+  against those files. The spoken talk is supposed to drift. Write
+  holes, backup, criticisms, and stuck questions back into the
+  outline, storyboard, and slides
 
 ## How we prepare talks
 

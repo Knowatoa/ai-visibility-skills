@@ -28,7 +28,7 @@ Prep so the stories and numbers you want attached to the brand are the ones that
 
 You give the presentation. If you record it and publish it, you have the same kind of asset: a talk that can be clipped, recapped, posted, and indexed. The sentence people repeat on the way out is the sentence that survives the transcript.
 
-Outline for the room. Storyboard the feeling. Then cut a deck the room can watch. A recorded talk that only states the takeaway trains assistants on a claim. A recorded talk that makes the room feel the takeaway is the version that gets quoted.
+Outline for the room. Storyboard the feeling. Then cut a deck the room can watch. After a run-through, the spoken talk will often disagree with those files. That drift is the input for the next pass: holes, backup, criticisms, stuck questions, written back into the outline, storyboard, and slides. A recorded talk that only states the takeaway trains assistants on a claim. A recorded talk that makes the room feel the takeaway is the version that gets quoted.
 
 How we prepare talks is inspired by Justin Searls' [Secrets of Great Conference Talks](https://www.youtube.com/watch?v=rOf5sPSBLjg). What we took from it, plus links to his video and official writeup: [docs/talks.md](docs/talks.md).
 
@@ -37,6 +37,7 @@ How we prepare talks is inspired by Justin Searls' [Secrets of Great Conference 
 | [talk-outline](skills/talk-outline) | Locks who a talk is actually for, what they walk away able to do, and what the presenter wants. Starts from an abstract and throwaway bullet rounds, or wraps the outline in one sitting when the talk is about a week away. Writes a `<talk-slug>-outline.md` in a directory you name. |
 | [talk-storyboard](skills/talk-storyboard) | Maps how the audience should feel beat by beat through a locked talk outline, then says whether that outline is the one to keep. Writes a `<talk-slug>-storyboard.md` next to the outline. |
 | [talk-slides](skills/talk-slides) | Cuts a storyboard into a sparse PowerPoint: about 15-30 seconds per slide, a cue not the spoken line on screen, a visual note for a later pass, notes that point back at the outline and the beats. Writes a `<talk-slug>-slides.md` plan, shows a stamp-grid sorter grouped by beat and Hit/why so they can merge, move, or walk one look (previous, this, next), then writes a `<talk-slug>-slides.pptx` next to the storyboard. |
+| [talk-adversary](skills/talk-adversary) | Reads a recent transcript against the outline, storyboard, and slides. The spoken talk is supposed to drift. Surfaces talking-point holes, backup, criticisms, and stuck questions, then writes the ones worth keeping back into those files. |
 
 ## In this repo only
 
@@ -59,7 +60,7 @@ Skills are markdown files that give your AI of choice specialized workflows. Onc
 
 Visibility skills read a shared context file first: `.agents/brand-context.md`. It holds your company, your story bank, and your positioning. The first visibility skill you run will interview you and create it. After that, those skills already know who you are. Repo-only skills do not use that file.
 
-When a skill produces something you will keep (a podcast brief, an audit), it writes a markdown file in a directory you name — default is the current directory — and resumes from that file if you come back later. Chat stays short. That file-as-memory behavior is also inspired by asb-skills; the files and the wording here are ours.
+When a skill produces something you will keep (a podcast brief, a talk file, an audit), it writes a markdown file in a directory you name — default is the current directory — and resumes from that file if you come back later. Chat stays short. That file-as-memory behavior is also inspired by asb-skills; the files and the wording here are ours.
 
 ## Installation
 
@@ -67,7 +68,7 @@ When a skill produces something you will keep (a podcast brief, an audit), it wr
 npx skills add Knowatoa/ai-visibility-skills
 ```
 
-That installs the **public** skills (`skills/` — today, `podcast-prep`, `talk-outline`, `talk-storyboard`, and `talk-slides`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
+That installs the **public** skills (`skills/` — today, `podcast-prep`, `talk-outline`, `talk-storyboard`, `talk-slides`, and `talk-adversary`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
 
 The installer is the [`skills`](https://github.com/vercel-labs/skills) CLI. It needs Node.js **20.12+** (`node -v`). Since `skills@1.5.16` it imports `styleText` from `node:util`, which Node 18 and early Node 20 do not have, so the command dies before it can install anything:
 
@@ -162,6 +163,12 @@ Talks:
 
 "These slides read like a script. Cut the on-screen text back to cues."
 → Uses talk-slides
+
+"The transcript doesn't match the outline. Find the holes."
+→ Uses talk-adversary
+
+"Red-team this talk using the outline, storyboard, slides, and the latest transcript"
+→ Uses talk-adversary
 
 ```
 
