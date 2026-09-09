@@ -40,7 +40,7 @@ resume: "<exact next step a cold session should do>"
 
 `status` is `in-progress` until Entities has one to five locked frames; then `ready`. `resume` is the only progress pointer. Do not also keep a Status heading in the body.
 
-If the file already exists, read it, honor `resume`, and do not re-ask settled facts (brand, buyer, file path, sources already captured, entities already locked, rejects already listed).
+If the file already exists, read it, honor `resume`, and do not re-ask settled facts (brand, buyer, file path, sources already captured, entities already locked, rejects already listed). The cite-for file wins over a missing brand-context file. Do not reopen the brand questionnaire mid-resume. Do not write `.agents/brand-context.md` on resume unless `resume` says to.
 
 Entities and Rejected are skimmer zones. No research diary. Source notes stay under Sources. Mush and missing access go in Gaps.
 
@@ -65,12 +65,7 @@ From the user's message (ask only if missing and it would make the entity list w
 
 File location is asked once, in the same batch, when the path is unset.
 
-If brand context is missing, add these to that same batch, then write `.agents/brand-context.md`:
-
-1. What's your current company, and how do you describe it in one sentence?
-2. What did you build before this that comes up in conversation?
-3. What are 2-3 stories you tell well, with real numbers attached?
-4. What's one opinion you hold that most people in your space disagree with?
+If brand context is missing and you do not yet have a company name or one-line pitch, add those two to the same batch. Write `.agents/brand-context.md` only from answers they give, never as an empty shell. Skip prior products, story numbers, and a dissenting opinion unless you still cannot name the buyer.
 
 Do not ask for competitor lists, keyword tools, or a target number of entities. Do not fetch extra market research.
 

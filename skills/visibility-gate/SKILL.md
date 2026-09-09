@@ -9,15 +9,15 @@ Before measuring what models say, check whether you can be retrieved at all. A m
 
 ## Do this job
 
-1. Load brand context. Check `.agents/brand-context.md`, then `.claude/brand-context.md`. If it exists, read it for the brand name only. If it is missing, do not interview.
+1. Load brand context. Check `.agents/brand-context.md`, then `.claude/brand-context.md`. If it exists, read it for the brand name only. If it is missing, do not interview for lore. Still ask the Inputs list in one batch.
 2. Find the entities. If they pointed at a `*-cite-for.md` or `cite-for.md`, read **Entities** from it. A stranger can write the same shape by hand: one to five specific frames, plus who types the query. If they named the entities in chat, use those. If more than one cite-for file matches, ask which one. If there are no entities and they will not name any, stop — see Refuse.
 3. If they already pointed at a cite-for file or folder, write the gate file next to it. If not, ask where files should live (default: the directory that holds the cite-for file, or the current directory) in the same message as any missing Inputs. Do not ask the directory first and the entities second.
 4. Write `<brand-slug>-gate.md` in the same turn as any missing-input questions. Name it from the cite-for file: `foo-cite-for.md` → `foo-gate.md`. If there is no cite-for file, slug the brand (`acme-gate.md`) or use `gate.md`. Do not wait for Webmaster access to create the stub.
 5. Fill **Prompts** with five to ten realistic buyer prompts, written from the entities and the buyer role. These are the prompts you will run this sitting, or the ones they already ran.
-6. Run those prompts now in a grounded / web-search chat, or use a run they already pointed at. Fill **Fan-out** with the three to six searches the tool actually showed for each prompt. If the tool does not show the searches, ask them to paste. Do not invent fan-out queries from the prompt text. The prompt is not the query.
-7. For each distinct fan-out query, search Google, Bing, and Brave and record the brand rank, or `not present`. Brave is required. If you cannot search an engine, ask for that engine's SERP paste in the same intake batch as other missing Inputs. Do not invent a rank. A missing engine goes in Gaps, not as a guessed position.
+6. Use a grounding run they already pointed at, or ask them to run the prompts in a grounded / web-search chat and paste the searches the tool listed. Fill **Fan-out** with those listed searches only. If the tool does not list rewrites, ask for a paste. Do not invent fan-out by searching the prompt yourself. The prompt is not the query.
+7. Once Fan-out has real queries, search Google, Bing, and Brave and record the brand rank, or `not present`. Brave is required. If you cannot search an engine, ask for that engine's SERP paste then — not in the first intake, before queries exist. Do not invent a rank. A missing engine goes in Gaps, not as a guessed position.
 8. Fill **Coverage** from Search Console and Bing Webmaster Tools if they provided it: indexed, excluded, duplicate, missing sitemap, wrong canonical. If they have no access, write that in Gaps and keep going. Do not invent coverage.
-9. Write **Verdict**. `pass` only when the brand appears on at least one fan-out query in at least one of the three indexes. `fail` when it ranks nowhere for the harvested queries across all engines you were able to search — if one or more engines sit in Gaps, note that in Verdict and do not claim a definitive fail. `blocked` when you have prompts but no real fan-out and no positions. Fail means a ranking problem. Do not start measuring, building, or placing.
+9. Write **Verdict**. `pass` only when the brand appears on at least one fan-out query in at least one of the three indexes. `fail` when every engine you actually searched shows the brand nowhere for the harvested queries. If an engine sits in Gaps, say so in Verdict and do not call it a definitive fail. `blocked` when you have prompts but no real fan-out, or real fan-out but no engine searched. Fail means a ranking problem. Do not start measuring, building, or placing.
 10. Set `status: ready` when Verdict is filled from real fan-out and positions, or when Verdict is `blocked` and Gaps say exactly what is missing. In chat: path + verdict + the queries you are on or missing from. Do not paste the file.
 
 ## Working files
@@ -57,8 +57,9 @@ From the user's message (ask only if missing and it would make the verdict wrong
 2. The entities, if they did not point at a cite-for file and did not name them.
 3. Where to write, if no cite-for file already anchors the directory (default: current directory).
 4. Fan-out searches the model actually ran, if they already have a grounding run.
-5. Google, Bing, or Brave SERP pastes for those queries, if you cannot search an engine yourself.
-6. Search Console or Bing Webmaster coverage, if they have it.
+5. Search Console or Bing Webmaster coverage, if they have it.
+
+Ask for Google, Bing, or Brave SERP pastes only after Fan-out has real queries, and only for engines you cannot search yourself.
 
 Do not ask for keyword tools, a full SEO audit, or daily share of voice. Do not crawl the rest of the repo. Do not fetch "whatever else seems useful."
 

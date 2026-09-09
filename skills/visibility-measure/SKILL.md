@@ -15,14 +15,14 @@ Everything here assumes the brand can be retrieved. If a gate file next to this 
 2. Find the entities. If they pointed at a `*-cite-for.md` or `cite-for.md`, read **Entities** and the buyer role. A stranger can write the same shape by hand. If they named the entities in chat, use those. If there are no entities and they will not name any, stop — see Refuse.
 3. If a `*-gate.md` or `gate.md` sits next to the cite-for file or the path they named, read **Verdict**. If it is `fail` and they have not asked to record a run anyway, stop. If it is `blocked` or missing, note that in Gaps and keep going. Only `fail` stops, unless they asked to record anyway.
 4. If they already pointed at a cite-for, gate, or folder, write the measure file next to it. If not, ask where files should live (default: that directory, or the current directory) in the same message as any missing Inputs.
-5. Write `<brand-slug>-measure.md` in the same turn as any missing-input questions. Name it from the cite-for file: `foo-cite-for.md` → `foo-measure.md`. If there is no cite-for file, slug the brand or use `measure.md`.
+5. Write `<brand-slug>-measure.md` in the same turn as any missing-input questions. Name it from the cite-for file: `foo-cite-for.md` → `foo-measure.md`. If there is no cite-for file, slug the brand or use `measure.md`. If turn 1 wrote `measure.md` and the brand arrives later, rename to `<brand-slug>-measure.md`. Do not open a second file.
 6. Write **Instrument A prompts**: one short prompt per entity, same wording every time, with web search on.
 
    > A <buyer> is looking for <entity>. Recommend some brands.
 
    Not "list ten." The bottom of a forced list is filler.
 7. If they have a run to record, fill **Instrument A log** and **Share of voice**. If they asked to measure and you can run the A prompt this sitting, run it once per entity and log it. Only stop and set `resume` to wait for a run when you cannot reach a model and they brought no answers. Do not invent presence, position, or shares. Leave Share of voice empty until a real run exists.
-8. If this sitting is a research pass, or they pasted realistic-prompt answers, fill **Instrument B**. Otherwise leave it and do not fake a domain list.
+8. Fill **Instrument B** only when this sitting is a research pass or they pasted personalized buyer prompts. A daily structured-prompt paste is an A row even if it includes citations. Otherwise leave B empty and do not fake a domain list.
 9. Fill **Supporting** only from numbers they gave or that you can read from a file they pointed at (Search Console branded queries, AI-referrer sessions, signup attribution, a poll). Skip GPTBot or server-log crawler counts. Those are not this job.
 10. Set `status: ready` when a cold reader can see the prompts and any real runs, and `resume` says the next sitting (next daily A, next weekly review, or next monthly B). In chat: path + share of voice if you have a real run + the domain head if B was run. Do not paste the file.
 
@@ -115,4 +115,4 @@ Do not ask for GPTBot logs, a keyword tool export, or a competitor teardown. Do 
 
 ## Refuse
 
-Stop in a few sentences if there are no entities and they will not name any, if a gate file in front of you says `fail` and they have not said to record a run anyway, or if they want a different job: checking the retrieval gate from scratch, writing pages or atoms, placing citations, monitoring GPTBot or server logs, or charting personalized prompts as if they were Instrument A. Do not mix A and B into one number. Do not invent a share of voice.
+Stop in a few sentences if there are no entities and they will not name any, if there is no buyer role and they will not name one (write no A prompts until the buyer is named), if a gate file in front of you says `fail` and they have not said to record a run anyway, or if they want a different job: checking the retrieval gate from scratch, writing pages or atoms, placing citations, monitoring GPTBot or server logs, or charting personalized prompts as if they were Instrument A. Do not mix A and B into one number. Do not invent a share of voice.

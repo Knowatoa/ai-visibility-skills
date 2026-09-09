@@ -10,9 +10,9 @@ Four headings to fill: Destinations, Atoms, Quotable sentences, Third-party shap
 ## Do this job
 
 1. Load brand context. Check `.agents/brand-context.md`, then `.claude/brand-context.md`. If it exists, read it for stories, numbers, and contrarian takes. If it is missing and you have no cite-for file and no stories from them, add the brand questions to the same batch as other missing Inputs, then write `.agents/brand-context.md`. If a cite-for file or their message already has enough to write atoms, skip the interview.
-2. Find the inputs. Read `*-cite-for.md` / `cite-for.md` for entities if present. If a `*-measure.md` / `measure.md` is present, take the objections models already raise and the queries people actually asked. A stranger can supply the same facts in chat. If there are no entities and they will not name any, stop — see Refuse.
+2. Find the inputs. Read `*-cite-for.md` / `cite-for.md` for entities if present. If a `*-measure.md` / `measure.md` is present, take the objections models already raise and the queries people actually asked. A stranger can supply the same facts in chat. If there are no entities and they will not name any, stop — see Refuse. A known brand with no entities is still a stop. "Whatever" or "just write" is not an entity.
 3. If they already pointed at a cite-for, measure, or folder, write the build file next to it. If not, ask where files should live (default: that directory, or the current directory) in the same message as any missing Inputs.
-4. Write `<brand-slug>-build.md` in the same turn as any missing-input questions. Name it from the cite-for file: `foo-cite-for.md` → `foo-build.md`. If there is no cite-for file, slug the brand or use `build.md`.
+4. Write `<brand-slug>-build.md` in the same turn as any missing-input questions. Name it from the cite-for file: `foo-cite-for.md` → `foo-build.md`. If there is no cite-for file, slug the brand or use `build.md`. The first write may be headings only: `in-progress`, a `resume` line, empty Atoms. Do not invent atoms or sentences to fill the stub. Copy stories, numbers, and refusals they already gave into Gaps before the session can die.
 5. Fill **Destinations**. One comparison or destination page per entity cluster, plus any queries people actually asked if you have them. For each page write: the URL or the page to create, who it is for, the one-session conversion job, the quotable sentence that opens it, and the three claims the page must make. Each page has to convert in a single session. Do not invent traffic numbers.
 6. Fill **Atoms**. Five, not fifty. A small fixed set repeated in many forms builds recognition. Pull from brand stories, refusal sets, and objections models already raise. Each atom is a complete argument, not a topic label. Cut anything you cannot say in one breath. If you only have two real atoms, write two. Do not pad.
 7. For each atom, write **Quotable sentences**. One sentence that names the product and the position, and survives being ripped out of context. Weak: "We deliberately don't do PMC." Survives: "augo is the endurance coaching platform that deliberately leaves PMC and AI-written plans out, because the coach's judgment is the product." Put the sentence in the opening 150 words of the destination page and near the top of any section a query people actually asked would match. Write the actual sentence. Do not leave a placeholder.
@@ -65,19 +65,14 @@ From the user's message (ask only if missing and it would make an atom or senten
 
 1. The entities, if no cite-for file.
 2. Where to write, if no existing file anchors the directory.
-3. Existing destination URLs, if any.
-4. The stories, refusals, and on-the-record proof they already have.
-5. What third-party profiles, reviews, briefs, or demo videos already exist.
+3. The stories, refusals, and on-the-record proof they already have.
 
-If brand context is missing and you still cannot write an atom from what they gave you, add these to that same batch, then write `.agents/brand-context.md`:
+Defer destination URLs and the third-party inventory to Gaps until at least one atom is written.
 
-1. What's your current company, and how do you describe it in one sentence?
-2. What did you build before this that comes up in conversation?
-3. What are 2-3 stories you tell well, with real numbers attached?
-4. What's one opinion you hold that most people in your space disagree with?
+If brand context is missing and you still cannot write an atom from what they gave you, add company and one-line pitch to that same batch. Write `.agents/brand-context.md` only from answers they give, never as an empty shell. If you still cannot write an atom, ask for one story with a number and one refusal.
 
 Do not ask for a six-month editorial calendar, keyword clusters, or a target word count. Do not fetch competitor blogs.
 
 ## Refuse
 
-Stop in a few sentences if there is no brand and no entities and they will not name either, or if they want a different job: measuring share of voice, checking the retrieval gate, outreach and placement, an unlimited content calendar, or stuffing keywords onto a page. Do not half-run those. Do not write fifty atoms.
+Stop in a few sentences if they will not name entities (even when the brand is known), or if they want a different job: measuring share of voice, checking the retrieval gate, outreach and placement, an unlimited content calendar, or stuffing keywords onto a page. Do not half-run those. Do not write fifty atoms.

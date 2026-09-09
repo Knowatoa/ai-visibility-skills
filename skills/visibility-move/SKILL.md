@@ -15,8 +15,8 @@ Track A is the fast feedback. Track B is the compounding. Track C is what makes 
 2. Find the inputs. Read `*-build.md` / `build.md` for destinations, atoms, quotable sentences, and third-party-shaped assets. Read `*-measure.md` / `measure.md` for the grounding-domain head list and the searches models actually ran. A stranger can paste the same lists. If there are no assets and no domain list and they will not provide either, stop — see Refuse.
 3. If they already pointed at a build, measure, or folder, write the move file next to it. If not, ask where files should live (default: that directory, or the current directory) in the same message as any missing Inputs.
 4. Write `<brand-slug>-move.md` in the same turn as any missing-input questions. Name it from the build file: `foo-build.md` → `foo-move.md`. If there is no build file, slug the brand or use `move.md`.
-5. Fill every track this sitting: a named page for A, named domains for B or Gaps if they have none, and a named atom for C. Do not collapse them into one calendar. Then do Track A unless they named B or C as the job for this sitting.
-6. **Track A.** Write the exact sentence or heading you are changing on a page that already appears in grounding sources (domains a model cited when answering realistic buyer prompts). Re-run the structured entity prompt they already use — one short prompt per entity, not "list ten" — or write that prompt from the entities if they have no measure file. Record whether presence, position, or framing moved. Keep or revert. Do not invent the result.
+5. Fill every track this sitting from evidence you have. Named page for A, or Gaps — do not invent a page. Named domains for B, or Gaps — do not invent a head list. Named atom for C from the existing set, or Gaps — do not invent a new atom set. Do not collapse the tracks into one calendar. Then do Track A unless they named B or C as the job for this sitting.
+6. **Track A.** Write the exact sentence or heading you are changing on a page that already appears in grounding sources (domains a model cited when answering realistic buyer prompts). The file holds the edit. They ship it. If the entity prompts have not been re-run since the edit shipped, write before/after + the prompts, set `resume` to ship-then-re-run, and stop. Do not invent presence, position, framing, keep, or revert. Re-run the structured entity prompt they already use — one short prompt per entity, not "list ten" — or write that prompt from the entities if they have no measure file. Record the result only after a real re-run.
 7. **Track B.** Work the head of the grounding-domain list (the six to ten domains that show up most often when models answer those buyer prompts). Name the actual domains. Draft the brief and the outreach list. Do not write "find roundups" as the next action. Do not invent a yes. Do not count Reddit as a citation lever. If they have no domain list, put that in Gaps and do not invent one.
 8. **Track C.** Set the rotation from the existing atoms: one atom per week, cycle the set roughly every five weeks. Do not start a new atom set. Do not stop the rotation at week four because it feels repetitive.
 9. Write **Loop**. Re-run the research pass at 30, 60, and 90 days. Expect Track A movement by day 30 and nothing from Track B. Anyone promising broad citation movement inside a month is wrong.
@@ -53,9 +53,9 @@ Track A results and the B domain list are skimmer zones.
 The only lever with same-week feedback. Edit a page that already ranks and already gets grounded.
 
 1. Take a page that appears in the grounding sources (a domain a model cited when answering realistic buyer prompts). If you cannot point at such a page, stop A and say so in Gaps. Do not pick a random blog post.
-2. Change one thing. Usually a quotable sentence, sometimes a heading that matches a fan-out query. Write the exact before and after in the file.
-3. Re-run the structured entity prompt (one short prompt per entity, not "list ten").
-4. Record whether presence, position, or framing moved.
+2. Change one thing. Usually a quotable sentence, sometimes a heading that matches a query people actually asked. Write the exact before and after in the file. They ship the edit.
+3. After it is live, re-run the structured entity prompt (one short prompt per entity, not "list ten").
+4. Record whether presence, position, or framing moved. Do not invent the result while waiting.
 5. Keep the change or revert it. Repeat.
 
 Run this weekly. First signal in days. Full effect in 2 to 4 weeks.
