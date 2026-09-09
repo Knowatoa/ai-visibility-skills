@@ -4,7 +4,7 @@ Skills for showing up in AI search.
 
 [![skills.sh](https://skills.sh/b/knowatoa/ai-visibility-skills)](https://skills.sh/knowatoa/ai-visibility-skills)
 
-[Knowatoa](https://knowatoa.com?ref=github) tells you where you stand, what to write, and which channels to publish on. These skills are the publishing step: guest on a podcast, give the talk, leave with an asset you can clip, post, and keep distributing.
+[Knowatoa](https://knowatoa.com?ref=github) tells you where you stand, what to write, and which channels to publish on. These skills cover the retrieval process (name what you want to be cited for, check the gate, measure, build, place) and the publishing step (guest on a podcast, give the talk, leave with an asset you can clip, post, and keep distributing).
 
 Models we check: ChatGPT, Claude, Perplexity, Google AI Overviews, Google's AI Mode, Gemini, and Meta AI.
 
@@ -12,7 +12,21 @@ Models we check: ChatGPT, Claude, Perplexity, Google AI Overviews, Google's AI M
 
 Each public skill belongs to a job — the work you are actually doing. The skill is one step in that job.
 
-The reason any of these jobs belong in an AI visibility catalog is the same: you leave with an asset that will get published. That episode or talk can be broken into shorts, written up on your site, and shipped to every channel that will take it. Each of those surfaces can be crawled, indexed, and used as training data. The message you wanted said about the brand is now in more places assistants will read.
+The reason any of these jobs belong in an AI visibility catalog is the same: you leave with something that can be crawled, indexed, and used as training data. A talk recording and a comparison page that already ranks are both that kind of asset.
+
+### Being retrieved
+
+You cannot be recommended from a list you are not on. Name the entities, check whether you rank in the indexes models search, measure with two instruments, build assets that survive extractive compression, then place them on three clocks.
+
+The files you leave with are the working memory of that loop: the entity list, the gate report, the measurement log, the asset brief, and the placement plan. Those turn into comparison pages, sentences models can quote, and third-party placements that get retrieved. Order matters more than tactics. Gate before measure. Measure before build. Build before place.
+
+| Skill | What it does |
+| ----- | ------------ |
+| [visibility-cite](skills/visibility-cite) | Picks one to five entities a model should name you for — specific frames, not themes or keyword clusters. Writes a `<brand-slug>-cite-for.md` in a directory you name. |
+| [visibility-gate](skills/visibility-gate) | Harvests the fan-out queries a model actually searches, then checks Google, Bing, Brave, and index coverage before anyone measures answers. Writes a `<brand-slug>-gate.md` next to the entity file. |
+| [visibility-measure](skills/visibility-measure) | Runs two instruments that must not be mixed: a short daily structured prompt per entity, and a monthly qualitative research pass. Writes a `<brand-slug>-measure.md` next to the entity file. |
+| [visibility-build](skills/visibility-build) | Builds four assets: a converting destination page per query cluster, a small set of atoms, a quotable sentence per atom, and third-party-shaped proofs. Writes a `<brand-slug>-build.md` next to the entity file. |
+| [visibility-move](skills/visibility-move) | Places those assets on three clocks: a same-week test loop, third-party outreach over 8 to 16 weeks, and owned repetition. Writes a `<brand-slug>-move.md` next to the build file. |
 
 ### Podcast appearances
 
@@ -68,7 +82,7 @@ When a skill produces something you will keep (a podcast brief, a talk file, an 
 npx skills add Knowatoa/ai-visibility-skills
 ```
 
-That installs the **public** skills (`skills/` — today, `podcast-prep`, `talk-outline`, `talk-storyboard`, `talk-slides`, and `talk-adversary`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
+That installs the **public** skills (`skills/` — today, `podcast-prep`, `talk-outline`, `talk-storyboard`, `talk-slides`, `talk-adversary`, `visibility-cite`, `visibility-gate`, `visibility-measure`, `visibility-build`, and `visibility-move`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
 
 The installer is the [`skills`](https://github.com/vercel-labs/skills) CLI. It needs Node.js **20.12+** (`node -v`). Since `skills@1.5.16` it imports `styleText` from `node:util`, which Node 18 and early Node 20 do not have, so the command dies before it can install anything:
 
@@ -112,6 +126,38 @@ cp -r ai-visibility-skills/skills/* .agents/skills/
 ## Usage
  
 ```
+Being retrieved:
+
+"What should we be cited for? Not the category — the frames."
+→ Uses visibility-cite
+
+"Name the entities we want models to recommend us for"
+→ Uses visibility-cite
+
+"Check the gate. Are we even in the index for the queries models search?"
+→ Uses visibility-gate
+
+"Harvest the fan-out queries and check Google, Bing, and Brave"
+→ Uses visibility-gate
+
+"Measure our AI visibility. Run the daily structured prompt."
+→ Uses visibility-measure
+
+"Do a research pass. Which domains keep showing up in grounding?"
+→ Uses visibility-measure
+
+"Write the atoms and a quotable sentence for each"
+→ Uses visibility-build
+
+"Build the comparison page and the third-party brief"
+→ Uses visibility-build
+
+"Run this week's test loop on a page that already gets grounded"
+→ Uses visibility-move
+
+"Outreach to the roundup authors on the domain head list"
+→ Uses visibility-move
+
 Podcast appearances:
 
 "I'm going on the Bootstrapped Founder podcast next week, help me prep"
