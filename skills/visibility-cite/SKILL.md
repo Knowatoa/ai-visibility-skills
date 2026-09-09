@@ -1,6 +1,6 @@
 ---
 name: visibility-cite
-description: "Picks one to five entities a model should name the brand for. Entities are specific frames, not themes or keyword clusters. Use when the user says what should we be cited for, name the entities we want models to recommend, pick our citation frames, what do we want to show up for in ChatGPT, or get the entities wrong and everything downstream optimizes toward a phrase nobody types. Do NOT load for measuring what models say, checking whether you rank or harvesting fan-out queries, writing comparison pages or atoms, SEO keyword clustering, or general brand positioning with no citation target."
+description: "Picks one to five entities a model should name the brand for. Entities are specific frames, not themes or keyword clusters. Use when the user says what should we be cited for, name the entities we want models to recommend, pick our citation frames, or what do we want to show up for in ChatGPT. Do NOT load for measuring what models say, checking whether you rank or harvesting fan-out queries, writing comparison pages or atoms, SEO keyword clustering, or general brand positioning with no citation target."
 ---
 
 # Visibility cite
@@ -13,7 +13,7 @@ Pick one to five entities you want a model to name you for. Not themes. Not keyw
 2. If they already pointed at a folder or an existing cite-for file, use that directory. If not, ask where files should live (default: the current directory) in the same message as any missing Inputs or brand questions. Do not ask the directory first and the brand second.
 3. Write `<brand-slug>-cite-for.md` as soon as the brand has a name, in the same turn as any missing-input questions. If the brand is unnamed, use `cite-for.md`. Do not wait for Search Console or call notes to create the stub. Sessions die. The file is the memory.
 4. Fill **Sources** before locking **Entities**. Work the three sources in this order. A later source does not override an earlier one when they disagree; the earlier source wins and the later phrase goes in Rejected or Gaps.
-5. Propose one to five entities. Each entity is a frame a person would type, not a market category. Reject "coaching software," "AI visibility," "the category we compete in." Accept "the alternative to TrainingPeaks for coaches who want the athlete relationship, not another dashboard" when that is the language buyers use. If you have more than five candidates, cut to the ones the sources actually support. Do not pad to five.
+5. Propose one to five entities. Each entity is a frame a person would type, not a market category. Reject "coaching software," "AI visibility," "the category we compete in." Accept "alternative to TrainingPeaks" or "coach-owned plans, not AI-written plans" when that is the language buyers use. Each locked entity must quote or paraphrase a line from Sources. If Customer language, Search Console, and titles/H1s are all Gaps, do not propose entities from the pitch. Leave Entities empty, keep `status: in-progress`, and put the ask in `resume`. If you have more than five candidates, cut to the ones the sources actually support. Do not pad to five.
 6. Write **Rejected** for every theme, cluster, or category you threw out, and why. If you cannot name a reject, you have not been strict enough.
 7. Set `status: ready` when a cold reader could write a retrieval prompt from the entity list without guessing the frame. In chat: path + the entities + one line on which source carried the most weight. Do not paste the file.
 
@@ -76,4 +76,4 @@ Do not ask for competitor lists, keyword tools, or a target number of entities. 
 
 ## Refuse
 
-Stop in a few sentences if there is no brand and they will not name one, or if they want a different job: measuring what models say, checking rank or harvesting fan-out queries, writing comparison pages or atoms, clustering keywords, or brand positioning with no citation target. Do not half-run those. Do not turn a category label into an entity to be helpful.
+Stop in a few sentences if there is no brand and they will not name one, if they will not give any buyer language, query list, or site titles/URL, or if they want a different job: measuring what models say, checking rank or harvesting fan-out queries, writing comparison pages or atoms, clustering keywords, or brand positioning with no citation target. Do not half-run those. Do not turn a category label into an entity to be helpful.

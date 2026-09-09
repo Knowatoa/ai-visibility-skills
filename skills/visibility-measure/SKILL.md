@@ -5,7 +5,7 @@ description: "Measures AI visibility with two instruments that must not be mixed
 
 # Visibility measure
 
-Two instruments, two jobs. Instrument A is the daily number. Instrument B is the research pass. Most processes use one for both and get a muddy number. The walk-away is a measurement file. Chat is the headline share of voice and the domain head, not the log.
+Two instruments, two jobs. Instrument A is the daily number. Instrument B is the research pass. Do not mix them into one number. Write the measurement file. Chat is the headline share of voice and the domain head, not the log.
 
 Everything here assumes the brand can be retrieved. If a gate file next to this one says `fail`, stop and say it is still a ranking problem.
 
@@ -13,15 +13,15 @@ Everything here assumes the brand can be retrieved. If a gate file next to this 
 
 1. Load brand context. Check `.agents/brand-context.md`, then `.claude/brand-context.md`. If it exists, read it for brand name and buyer role. If it is missing, do not interview.
 2. Find the entities. If they pointed at a `*-cite-for.md` or `cite-for.md`, read **Entities** and the buyer role. A stranger can write the same shape by hand. If they named the entities in chat, use those. If there are no entities and they will not name any, stop — see Refuse.
-3. If a `*-gate.md` or `gate.md` sits next to the cite-for file or the path they named, read **Verdict**. If it is `fail`, stop. If it is `blocked` or missing, note that in Gaps and keep going only when they still want a run recorded.
+3. If a `*-gate.md` or `gate.md` sits next to the cite-for file or the path they named, read **Verdict**. If it is `fail`, stop. If it is `blocked` or missing, note that in Gaps and keep going. Only `fail` stops.
 4. If they already pointed at a cite-for, gate, or folder, write the measure file next to it. If not, ask where files should live (default: that directory, or the current directory) in the same message as any missing Inputs.
 5. Write `<brand-slug>-measure.md` in the same turn as any missing-input questions. Name it from the cite-for file: `foo-cite-for.md` → `foo-measure.md`. If there is no cite-for file, slug the brand or use `measure.md`.
-6. Write **Instrument A prompts**: one short prompt per entity, same wording every time, grounding on.
+6. Write **Instrument A prompts**: one short prompt per entity, same wording every time, with web search on.
 
    > A <buyer> is looking for <entity>. Recommend some brands.
 
    Not "list ten." The bottom of a forced list is filler.
-7. If they have a run to record, fill **Instrument A log** and **Share of voice**. If they do not, write the prompts, set `resume` to wait for a run, and stop. Do not invent presence, position, or shares.
+7. If they have a run to record, fill **Instrument A log** and **Share of voice**. If they asked to measure and you can run the A prompt this sitting, run it once per entity and log it. Only stop and set `resume` to wait for a run when you cannot reach a model and they brought no answers. Do not invent presence, position, or shares. Leave Share of voice empty until a real run exists.
 8. If this sitting is a research pass, or they pasted realistic-prompt answers, fill **Instrument B**. Otherwise leave it and do not fake a domain list.
 9. Fill **Supporting** only from numbers they gave or that you can read from a file they pointed at (Search Console branded queries, AI-referrer sessions, signup attribution, a poll). Skip GPTBot or server-log crawler counts. Those are not this job.
 10. Set `status: ready` when a cold reader can see the prompts and any real runs, and `resume` says the next sitting (next daily A, next weekly review, or next monthly B). In chat: path + share of voice if you have a real run + the domain head if B was run. Do not paste the file.
@@ -52,7 +52,7 @@ resume: "<exact next step a cold session should do>"
 ## Gaps
 ```
 
-`status` is `in-progress` until the prompts are written and any run they brought is recorded; then `ready`. Ready does not mean the research pass is done. `resume` is the only progress pointer. Do not also keep a Status heading in the body.
+`status` is `in-progress` until the prompts are written and any run they brought is recorded; then `ready`. Ready does not mean the research pass is done. Ready with no A run is fine only when `resume` says to wait for a run. `resume` is the only progress pointer. Do not also keep a Status heading in the body.
 
 If the file already exists, read it, honor `resume`, and do not re-ask settled facts. Append new A runs. Do not restart the log.
 
@@ -60,9 +60,9 @@ Share of voice, Cited domains, and Objections are skimmer zones. No methodology 
 
 ## Instrument A
 
-Daily. Reviewed weekly. One prompt per entity. Deliberately plain. Grounding on. Same wording every time.
+Daily. Reviewed weekly. One prompt per entity. Deliberately plain. Same wording every time. Keep it short.
 
-Per run, record four things. Do not invent any of them.
+Log each run as one row: date, model, entity, presence (yes/no), ordinal (`3 of 8` or `absent`), citation share, mention share. Do not invent any of them.
 
 | Metric | Question it answers |
 | --- | --- |
@@ -71,13 +71,11 @@ Per run, record four things. Do not invent any of them.
 | Citation share | Of all sources cited, what share are ours |
 | Mention share | Of all brands named, what share is us |
 
-Blend citation share and mention share into one headline **share of voice**. That is the number you report. The other three live underneath it.
-
-You are measuring the index bias that every personalized answer starts from, not what any one user sees. Variance comes from long, underspecified prompts. Keep these short.
+**Share of voice** is the mean of citation share and mention share for that run. Treat a missing share as 0. That is the headline number. The other three live underneath it. Do not write a share of voice until the row exists.
 
 ## Instrument B
 
-Once per cycle, not on a chart. Monthly. Fifteen to thirty prompts written the way the buyer would type them, personal details included. Problem frame, trigger frame, and the entity frames from the cite-for file.
+Once per cycle, not on a chart. Monthly. Fifteen to thirty prompts written the way the buyer would type them, personal details included. Write them from the buyer role plus the entity list already in this file. Mix three shapes: a problem they are in ("my athletes ignore the plan"), a trigger that started the search ("we just got acquired"), and the entity frames themselves.
 
 Harvest:
 
