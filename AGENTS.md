@@ -21,7 +21,9 @@ skills do not.
 
 Validate a change with `npx skills add . --list`. It must list every
 `skills/*/SKILL.md` and **nothing else**. Today that is `podcast-prep`,
-`talk-outline`, `talk-storyboard`, `talk-slides`, and `talk-adversary`.
+`talk-outline`, `talk-storyboard`, `talk-slides`, `talk-adversary`,
+`visibility-cite`, `visibility-gate`, `visibility-measure`,
+`visibility-build`, and `visibility-move`.
 Also check frontmatter (`name` matches the folder; `description` ≤ 1024
 chars) on any skill you touched, including repo-only ones.
 
@@ -70,8 +72,8 @@ unless the user says to merge. Details: `dev-skills/cursor-guidance`.
 There is nothing to install and no test suite. This is a Markdown skills
 catalog; the only tooling is the `skills` CLI, fetched on demand by
 `npx`. The one check that matters is the catalog validation already
-described above (`npx skills add . --list` must list exactly the three
-public skills and nothing else).
+described above (`npx skills add . --list` must list every public
+skill and nothing else).
 
 Node: the pod's default `node` is v22 (from `/exec-daemon`, which stays
 first on `PATH`). The `skills` CLI needs Node ≥20.12 for `styleText`, so
