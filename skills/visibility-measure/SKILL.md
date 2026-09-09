@@ -7,13 +7,13 @@ description: "Measures AI visibility with two instruments that must not be mixed
 
 Two instruments, two jobs. Instrument A is the daily number. Instrument B is the research pass. Do not mix them into one number. Write the measurement file. Chat is the headline share of voice and the domain head, not the log.
 
-Everything here assumes the brand can be retrieved. If a gate file next to this one says `fail`, stop and say it is still a ranking problem.
+Everything here assumes the brand can be retrieved. If a gate file next to this one says `fail` and they have not asked to record a run anyway, stop and say it is still a ranking problem.
 
 ## Do this job
 
 1. Load brand context. Check `.agents/brand-context.md`, then `.claude/brand-context.md`. If it exists, read it for brand name and buyer role. If it is missing, do not interview.
 2. Find the entities. If they pointed at a `*-cite-for.md` or `cite-for.md`, read **Entities** and the buyer role. A stranger can write the same shape by hand. If they named the entities in chat, use those. If there are no entities and they will not name any, stop — see Refuse.
-3. If a `*-gate.md` or `gate.md` sits next to the cite-for file or the path they named, read **Verdict**. If it is `fail`, stop. If it is `blocked` or missing, note that in Gaps and keep going. Only `fail` stops.
+3. If a `*-gate.md` or `gate.md` sits next to the cite-for file or the path they named, read **Verdict**. If it is `fail` and they have not asked to record a run anyway, stop. If it is `blocked` or missing, note that in Gaps and keep going. Only `fail` stops, unless they asked to record anyway.
 4. If they already pointed at a cite-for, gate, or folder, write the measure file next to it. If not, ask where files should live (default: that directory, or the current directory) in the same message as any missing Inputs.
 5. Write `<brand-slug>-measure.md` in the same turn as any missing-input questions. Name it from the cite-for file: `foo-cite-for.md` → `foo-measure.md`. If there is no cite-for file, slug the brand or use `measure.md`.
 6. Write **Instrument A prompts**: one short prompt per entity, same wording every time, with web search on.
@@ -81,7 +81,7 @@ Harvest:
 
 - **Every cited domain.** Rank by frequency. Expect twenty to forty, with a head of six to ten that appear in most answers. That head list is the input for placement work.
 - **The objections the model raises.** When it reaches for a competitor, note what triggered it. That is a positioning gap.
-- **The fan-out queries.** Copy them into the gate file if one exists, or into Fan-out here.
+- **The fan-out queries.** Record them in this file's Instrument B Fan-out section. Do not copy them into the gate file — gate uses a different prompt set and copying would invalidate its Positions and Verdict.
 
 A personalized prompt is more revealing than a clean one. It is not something you chart. Do not average B into the daily share of voice.
 

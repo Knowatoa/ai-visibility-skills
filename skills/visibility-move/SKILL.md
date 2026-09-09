@@ -20,7 +20,7 @@ Track A is the fast feedback. Track B is the compounding. Track C is what makes 
 7. **Track B.** Work the head of the grounding-domain list (the six to ten domains that show up most often when models answer those buyer prompts). Name the actual domains. Draft the brief and the outreach list. Do not write "find roundups" as the next action. Do not invent a yes. Do not count Reddit as a citation lever. If they have no domain list, put that in Gaps and do not invent one.
 8. **Track C.** Set the rotation from the existing atoms: one atom per week, cycle the set roughly every five weeks. Do not start a new atom set. Do not stop the rotation at week four because it feels repetitive.
 9. Write **Loop**. Re-run the research pass at 30, 60, and 90 days. Expect Track A movement by day 30 and nothing from Track B. Anyone promising broad citation movement inside a month is wrong.
-10. Set `status: ready` when a cold reader could take the next action on each track you have evidence for. Missing domains stay in Gaps; do not invent a B list to mark ready. In chat: path + this week's A change + how many B outreaches are queued + which atom is on C. Do not paste the file.
+10. Set `status: ready` when a cold reader could take the next action on each track you have evidence for. Missing atoms stay in Gaps; do not invent a C atom to mark ready. Missing domains stay in Gaps; do not invent a B list to mark ready. In chat: path + this week's A change + how many B outreaches are queued + which atom is on C. Do not paste the file.
 
 ## Working files
 
@@ -42,7 +42,7 @@ resume: "<exact next step a cold session should do>"
 ## Gaps
 ```
 
-`status` is `in-progress` until A has a named page (or Gaps), B has named domains or a named hole, and C has a named atom; then `ready`. `resume` is the only progress pointer. Do not also keep a Status heading in the body.
+`status` is `in-progress` until A has a named page (or Gaps), B has named domains or a named hole, and C has a named atom or Gaps; then `ready`. `resume` is the only progress pointer. Do not also keep a Status heading in the body.
 
 If the file already exists, read it, honor `resume`, and do not re-ask settled facts. Append A tests. Do not restart.
 
