@@ -39,6 +39,14 @@ How we prepare talks is inspired by Justin Searls' [Secrets of Great Conference 
 | [talk-slides](skills/talk-slides) | Cuts a storyboard into a sparse PowerPoint: about 15-30 seconds per slide, a cue not the spoken line on screen, a visual note for a later pass, notes that point back at the outline and the beats. Writes a `<talk-slug>-slides.md` plan, shows a stamp-grid sorter grouped by beat and Hit/why so they can merge, move, or walk one look (previous, this, next), then writes a `<talk-slug>-slides.pptx` next to the storyboard. |
 | [talk-adversary](skills/talk-adversary) | Reads a recent transcript against the outline, storyboard, and slides. The spoken talk is supposed to drift. Surfaces talking-point holes, backup, criticisms, and stuck questions, then writes the ones worth keeping back into those files. |
 
+### Channel tracking
+
+Talks and podcasts only compound if you can see what they bring in. Describe real buyers and where each one is today. Get back the journey map and the stages your CRM should track.
+
+| Skill | What it does |
+| ----- | ------------ |
+| [channel-funnel-map](skills/channel-funnel-map) | Turns real buyer stories (met at a conference then came back organically, a cold call that went quiet) into a map of the buyer's journey: channels, paths, crossovers between paths, and the signal behind each step. Recommends the CRM stages and contact fields to track and places each buyer in one. Writes a `<business-slug>-channel-map.md` with a copy-ready CRM setup request. |
+
 ## In this repo only
 
 These live in `dev-skills/` and load when you work in this clone. They are **not** installed by `npx skills add`.
@@ -68,7 +76,7 @@ When a skill produces something you will keep (a podcast brief, a talk file, an 
 npx skills add Knowatoa/ai-visibility-skills
 ```
 
-That installs the **public** skills (`skills/` — today, `podcast-prep`, `talk-outline`, `talk-storyboard`, `talk-slides`, and `talk-adversary`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
+That installs the **public** skills (`skills/` — today, `podcast-prep`, `talk-outline`, `talk-storyboard`, `talk-slides`, `talk-adversary`, and `channel-funnel-map`) into the agents you have locally: Claude Code, Cursor, Codex, Windsurf, and [70+ others](https://github.com/vercel-labs/skills#supported-agents). Preview what it will install with `npx skills add Knowatoa/ai-visibility-skills --list`. Repo-only skills in `dev-skills/` are not in that list.
 
 The installer is the [`skills`](https://github.com/vercel-labs/skills) CLI. It needs Node.js **20.12+** (`node -v`). Since `skills@1.5.16` it imports `styleText` from `node:util`, which Node 18 and early Node 20 do not have, so the command dies before it can install anything:
 
@@ -169,6 +177,17 @@ Talks:
 
 "Red-team this talk using the outline, storyboard, slides, and the latest transcript"
 → Uses talk-adversary
+
+Channel tracking:
+
+"Map how leads get from first touch to a purchase"
+→ Uses channel-funnel-map
+
+"What stages should my CRM have?"
+→ Uses channel-funnel-map
+
+"Here are four of our buyers and where each one is. What should we track?"
+→ Uses channel-funnel-map
 
 ```
 
