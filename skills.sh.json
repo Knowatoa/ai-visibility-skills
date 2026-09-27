@@ -5,12 +5,26 @@
     {
       "title": "Podcast appearances",
       "description": "Prep a guest appearance so the episode that gets published, clipped, and indexed says the things you want attached to the brand.",
-      "skills": ["podcast-prep"]
+      "skills": [
+        "podcast-prep"
+      ]
     },
     {
       "title": "Talks",
       "description": "Prepare a talk so the recording, deck, and recap posts that follow can be chopped up and distributed.",
-      "skills": ["talk-outline", "talk-storyboard", "talk-slides", "talk-adversary"]
+      "skills": [
+        "talk-outline",
+        "talk-storyboard",
+        "talk-slides",
+        "talk-adversary"
+      ]
+    },
+    {
+      "title": "Channel tracking",
+      "description": "Map how customers arrive and what each path takes to a purchase, so every channel, including the talks and podcasts above, can be tracked and compared.",
+      "skills": [
+        "channel-funnel-map"
+      ]
     }
   ]
 }
