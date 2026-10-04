@@ -25,6 +25,30 @@ Skills in this repo cover the prep through the deck:
   holes, backup, criticisms, and stuck questions back into the
   outline, storyboard, and slides
 
+## What a rehearsal taught us
+
+We ran one talk ("ARE We F*cked?") through all four skills, then
+compared the files with the rehearsal transcript. About half the
+planned structure didn't survive the stage, and the talk was better
+for it. Four lessons are now built into the skills:
+
+- **Find the speaker's word, keep three moves.** Eight named patterns
+  collapsed into one noun ("jobs") and three moves on stage.
+  `talk-outline` now asks for the organizing word and caps the spine.
+- **Lived proof survives.** A secondhand story from X was dropped.
+  Stories from that week took its place. Proof is now tagged `lived`
+  or `secondhand`.
+- **Pay off locally.** Fears planned to be answered 20 minutes later
+  were answered on the spot. Beats that depend on held-back payoffs
+  or callbacks are now marked `fragile` in the storyboard.
+- **The spoken talk wins.** `talk-adversary` now rewrites the outline
+  to what was said instead of adding notes next to the plan, and ends
+  with lessons for the next outline.
+
+The point is less time arguing over files in chat. Write a light
+outline, rehearse it, and let the transcript do the next revision.
+Each skill's `examples/` folder shows the real before and after.
+
 ## How we prepare talks
 
 A lot of that method is inspired by Justin Searls. Watch

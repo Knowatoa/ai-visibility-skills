@@ -1,25 +1,27 @@
 ---
 name: talk-outline
-description: "Builds a talk outline that names the real audience, what they walk away able to do, and what the presenter is trying to get. Starts from an abstract and throwaway bullet rounds, or wraps the outline in one sitting when the talk is about a week away. Use when the user asks to outline a talk, keynote, webinar, meetup, or conference session, or says 'help me structure this presentation', 'I have some rough bullets', 'here's my abstract', 'the talk is next week', 'wrap up this outline', 'who is this talk for', or 'what should they take away'. Do NOT load for slide design, writing a full speech, podcast guest prep, picking which event to speak at, or a fundraising pitch deck."
+description: "Builds a talk outline that names the real audience, what they walk away able to do, and what the presenter is trying to get, hung on a spine of at most three moves the speaker can say without slides. Starts from an abstract, throwaway bullet rounds, or a rough spoken ramble, or wraps the outline in one sitting when the talk is about a week away. Use when the user asks to outline a talk, keynote, webinar, meetup, or conference session, or says 'help me structure this presentation', 'I have some rough bullets', 'here's my abstract', 'here's me talking it through', 'the talk is next week', 'wrap up this outline', 'who is this talk for', or 'what should they take away'. Do NOT load for slide design, writing a full speech, podcast guest prep, picking which event to speak at, a fundraising pitch deck, or reworking an outline against a rehearsal transcript."
 ---
 
 # Talk outline
 
-Lock who the talk is actually for, what that person walks away able to do, and what you want from giving it. The happy path is weeks of throwing lists away. If they have not sat down yet and the talk is about a week out, stay in the sitting: at most three back-and-forths, then stop. If they already know what they want to talk about, one pass. The deliverable is a file, not a chat essay.
+Lock who the talk is for, what that person walks away able to do, and what you want from giving it. Then hang the talk on a spine the speaker can carry without notes. The deliverable is a file, not a chat essay.
+
+The outline is a starting point, not a contract. The spoken talk will drift from it on the first rehearsal, and that is healthy. Write an outline that is cheap to drift from: few named parts, lived stories, short blocks. Do not spend the sitting perfecting structure that a run-through will rewrite.
 
 Giving the talk is the job. If you record it and publish it, you leave with an asset that can be clipped, recapped, posted, and indexed. Outline for the room first. Write the one sentence that should survive a transcript if the talk might be public.
 
 ## Do this job
 
 1. Load brand context. Check `.agents/brand-context.md`, then `.claude/brand-context.md`. If it exists, read it.
-2. If they already pointed at a folder or an existing outline, use that directory. If not, ask where files should live (default: the current directory) in the same message as any missing Inputs or brand questions. Do not ask the directory first and the talk second.
-3. Write `<talk-slug>-outline.md` in that directory as soon as the talk has a name or topic, in the same turn as any missing-input questions. Do not wait for answers to create the stub. Sessions die. The file is the memory.
-4. Fill **Who this is for**, **What the audience gets**, and **What I get** before **Outline**. Scratch can start while a box is still mush. If a box is mush, ask. Do not invent an audience or a presenter win.
-5. Put their abstract in **Abstract**. Put their existing bullets in **Scratch** as Round 1.
-6. Set `pace`. Default `scratch`. Use `wrap-up` when `when` is about a week or less, or they asked to wrap, lock, or finish now, or they said they already know the talk. If they switch later, change `pace` and keep going. Do not ask which pace.
-7. If `scratch`: write one ~10-bullet dump this sitting if they had no bullets, from the abstract, the boxes you can fill, and brand stories. Do not copy that list into Outline. Stop unless they ask for another dump now. Set `resume` to the next sitting: ask what stuck, write a new ~10 that does not repeat discarded rounds. The forgetting is the filter.
-8. If `wrap-up`: follow **Wrap-up**. Do not send them away to forget a list.
-9. Set `status: ready` when a cold reader could give the talk from the file. In chat while scratching: path + the three boxes + which round is in the file. Tell them the list is disposable and to come back when they have forgotten it. Do not paste the bullets. During wrap-up and once Outline is locked: path + the three boxes + section titles only. Do not paste the file. When ready, stop. Do not start slides, a speech, or another skill.
+2. If they already pointed at a folder or an existing outline, use that directory. If not, ask where files should live (default: the current directory) in the same message as any missing Inputs.
+3. Write `<talk-slug>-outline.md` as soon as the talk has a name or topic, in the same turn as any missing-input questions. Sessions die. The file is the memory.
+4. Fill **Who this is for**, **What the audience gets**, and **What I get**. If a box is mush, ask. Do not invent an audience or a presenter win.
+5. Put their abstract in **Abstract**. Put their bullets or ramble in **Scratch** as Round 1.
+6. Set `pace`. Default `scratch`. Use `wrap-up` when `when` is about a week or less, they asked to finish now, or they already know the talk. Do not ask which pace.
+7. Find the **Spine** (see below) before writing blocks.
+8. Run **Scratch** or **Wrap-up**.
+9. Set `status: ready` when a cold reader could give the talk from the file. In chat: path, the three boxes, the spine, section titles. Do not paste the file. When ready, stop. Do not start slides, a speech, or another skill.
 
 ## Working files
 
@@ -40,6 +42,7 @@ resume: "<exact next step a cold session should do>"
 ## Who this is for
 ## What the audience gets
 ## What I get
+## Spine
 ## Scratch
 ### Round 1, <date>
 ### What survived
@@ -48,23 +51,29 @@ resume: "<exact next step a cold session should do>"
 ## Gaps
 ```
 
-`pace` is `scratch` or `wrap-up`. `status` is `in-progress` until the three boxes and Outline are filled; then `ready`. In scratch, Outline must come from **What survived**. A first dump is not enough. In wrap-up, Outline is filled when they accept a pass or you lock on pass 3. `resume` is the only progress pointer. Do not also keep a Status heading in the body.
+`status` is `in-progress` until the boxes, Spine, and Outline are filled; then `ready`. `resume` is the only progress pointer.
 
-If the file already exists, read it, honor `resume`, and do not re-ask settled facts (talk name, event, when, length, pace, file path, the three boxes, abstract, scratch rounds already on disk, brand stories already captured). If an older file has no Abstract, Scratch, or `pace`, add them and keep going. Do not restart.
+If the file already exists, read it, honor `resume`, and do not re-ask settled facts. If an older file lacks a section, add it and keep going. Do not restart.
 
-Who this is for, What the audience gets, and What I get are skimmer zones. No research diary, no "I considered…", no history of how you changed your mind. Scratch holds the thrown-away rounds. Everything else like that belongs in Gaps or nowhere.
+Who this is for, What the audience gets, What I get, and Spine are skimmer zones. No research diary, no "I considered…". That belongs in Gaps or nowhere.
 
 ## The three boxes
 
-Do not start Outline until each box is a testable sentence. Reject the mush versions. Scratch does not need the boxes to be done. Wrap-up does. If wrap-up boxes are mush, ask, then write pass 1. Do not invent them.
+Each box is a testable sentence. Reject the mush versions.
 
-**Who this is for.** One person, not a room. Role + situation they are in + what they already believe + who should skip this talk. Reject "developers", "everyone at the conference", and the event's advertised track. The event page tells you who bought a ticket. You are writing for the person whose problem the talk solves. If those are different people, say so.
+**Who this is for.** One person in **the next room the speaker will stand in**. Role + situation + what they already believe + who should skip this talk. Reject "developers" and the event's advertised track. If a later room is the real target, note it in Gaps and outline for that room in its own file later. Do not interleave variants for two rooms in one outline; speakers talk to the faces in front of them.
 
-**What the audience gets.** What they can do or decide after, on a specific next day. Reject "understand X", "learn about Y", "be inspired." If you cannot name the Monday action, you do not have a takeaway yet.
+**What the audience gets.** One to three lines the speaker would put on a "what you'll take away" slide, in the speaker's own words. Each names something they can do or decide on a specific next day. Reject "understand X", "learn about Y", "be inspired." Read the lines aloud as the speaker. If they would not say it that way, rewrite it until they would.
 
-**What I get.** A result you can check in 30 days: a meeting booked, a hire conversation started, a phrase people repeat, a recap post that exists. Reject "thought leadership", "exposure", "share my knowledge." Pick one primary win. A list of hopes is not a win.
+**What I get.** One result checkable in 30 days: a meeting booked, a phrase repeated, a recap post that exists. Reject "thought leadership" and "exposure." One primary win.
 
-If the talk may be recorded or posted, fill **Quotable line** with the one sentence that should survive a transcript. Do not invent a slogan when they have not given you the claim. Leave it empty and note it in Gaps.
+If the talk may be recorded, fill **Quotable line** with the one sentence that should survive a transcript. Do not invent a slogan when they have not given you the claim; leave it empty and note it in Gaps.
+
+## Spine
+
+Before blocks, find the speaker's organizing word: the noun they keep reaching for when they explain the topic (jobs, habits, mistakes, rooms). Ask once: "When you explain this to a friend, what word do you keep coming back to?" If they gave you a ramble, take the most repeated noun from it.
+
+Then write the spine: **that word plus at most three moves**, each a short verb phrase. Example: *jobs — own the most important one; hand AI everything else; let AI work off the clock.* The core of the talk hangs on these moves. A taxonomy of four pairs or eight named patterns is too many to carry on stage; it will collapse into three moves in the first rehearsal anyway. Extra ideas become examples under a move or go to Scratch.
 
 ## Inputs
 
@@ -72,11 +81,11 @@ From the user's message (ask only if missing and it matters), in one batch:
 
 1. What's the talk called, or what is it about?
 2. Where is it, when is it, and how long do you have?
-3. Who do you think is in the room?
+3. Who is in the next room you'll give it to?
 4. What do you want out of giving this, in a form you could check in 30 days?
-5. Paste any abstract or CFP blurb, and any rough bullets you already have, including lists you already threw away.
+5. Any abstract, rough bullets, or a transcript of you talking it through (a phone voice memo is fine).
 
-File location is asked once, in the same batch as these questions when the path is unset. If they already have an abstract, bullets, slides, a messy draft, or speaker notes, read those instead of guessing. Do not go fetch extra context.
+A spoken ramble is the fastest source. If they have none and the talk is soon, offer once: "Talk it through for five minutes into your phone and paste the transcript. I'll outline from that." Do not insist.
 
 If brand context is missing, add these to that same batch, then write `.agents/brand-context.md`:
 
@@ -85,52 +94,50 @@ If brand context is missing, add these to that same batch, then write `.agents/b
 3. What are 2-3 stories you tell well, with real numbers attached?
 4. What's one opinion you hold that most people in your space disagree with?
 
-Event research is optional and short. Only if they named an event and you need the advertised audience to contrast with the real target: open the event or session page, note who it claims the talk is for, then stop. Do not crawl the speaker list, prior years, or "whatever else seems useful."
+Do not research the event, the speaker list, or the topic.
 
 ## Scratch
 
-Default pace. About ten short bullets per sitting. Not slide titles, not a speech, not timed sections.
+Default pace. About ten short bullets per sitting. Not slide titles, not a speech.
 
-Paste their abstract into **Abstract**. Do not rewrite it into a better CFP. If they have no abstract, leave the section empty and note it in Gaps. Do not invent one.
+Their bullets or ramble are Round 1. If they have none and at least one box is a testable sentence, write ~10 candidate points from the abstract, the boxes, and brand stories. If every box is mush, ask the boxes instead.
 
-Their bullets, if any, are Round 1. Label whose they are. They are still disposable unless they say these are the ones that stuck.
+After you write a round, stop. `resume` says the next sitting asks what is still in their head, then either writes a new ~10 that does not repeat discarded bullets or locks. The forgetting is the filter.
 
-If they have no bullets and at least one box is a testable sentence, write ~10 candidate points from the abstract, that box, and brand stories. If they have no bullets and every box is mush, do not invent a dump. Ask the boxes.
-
-After you write a round, leave it. Do not promote it. Do not generate Round 2 in the same sitting unless they ask. `resume` must say the next sitting asks what is still in their head, then writes a new ~10 that does not repeat discarded bullets.
-
-On return, read Scratch first. Ask what stuck. That is the only question if the rest is settled. Put keepers under **What survived**. Then another dump, or Outline if they are ready to lock. If they say the talk is now a week out or they want it wrapped, switch `pace` to `wrap-up` and follow **Wrap-up**.
-
-Two or more rounds on disk and they have not named keepers: ask once what is still in their head. Do not drip "another round?" after every list.
+On return, ask what stuck. Put keepers under **What survived**. If they are ready, write Spine and Outline from What survived. Two rounds is usually enough; if they have two rounds and no keepers, ask once what is still in their head, then lock from that.
 
 ## Wrap-up
 
-Same sitting. Use this when they have not lived with the talk yet and need the outline now.
+Same sitting. Write Spine and Outline as one pass from their keepers, ramble, abstract, boxes, and brand stories. Chat the spine and block titles. Take one round of reaction, revise once, then lock. Leftover mush goes in Gaps.
 
-If they already know the talk (they named the points, brought keepers, or said this is what they want), write Outline from that in one pass. Do not workshop it.
+If the reaction is "this doesn't feel right" without specifics, do not trade more passes in chat. Ask them to talk the talk for five minutes and paste the transcript, and outline from that. Arguing over an outline in chat is slower than one rough run-through.
 
-Otherwise write Outline now as pass 1, from the abstract, the boxes, their bullets, and brand stories. Chat the section titles. Wait for what is wrong or missing. Revise. Three passes is the cap: your first outline, then at most two revisions. If they accept earlier, lock. After the third pass, lock anyway. Leftover mush goes in Gaps. Do not ask "one more?"
-
-Their bullets in wrap-up go under **What survived** unless they reject them. `resume` during wrap-up: which pass you are on, wait for their reaction, lock on accept or pass 3.
-
-When `status` is `ready`, stop. The file is the handoff. Do not start the next job.
+When `status` is `ready`, stop. The first rehearsal transcript is the next revision, not another chat pass.
 
 ## Outline
 
-Write timed blocks that fit `length`. A 20-minute talk is not a 45-minute talk with the same sections spoken faster. If length is still unknown, write untimed blocks and note it in Gaps. Do not invent a runtime.
+Timed blocks that fit `length`. Plan for about **85% of the slot**; first-hand stories run long, and the core block grows most. Name the Q&A buffer. If length is unknown, write untimed blocks and note it in Gaps.
 
-In scratch, source blocks from **What survived**, not from the latest dump. If they asked to lock a scratch file and What survived is empty, have them mark keepers first. Do not promote a list they walked away from.
+Always include:
 
-In wrap-up, source blocks from their keepers or from the live Outline they are reacting to. Pass 1 may write Outline without a forgotten scratch round. That is the point of wrap-up.
+- **Open** (about a minute): who it's for, the takeaway lines, the shape of the talk. Speakers reach for an agenda slide anyway; plan it.
+- **Core**: one block per spine move.
+- **Close**: restate the takeaway lines, the presenter ask, and answer the title. A talk titled as a question ends by answering it.
 
-For each block: the point, the proof (a story or number from brand context or from what they already gave you), and which box it serves. Opening names the audience's situation. Close restates the audience takeaway and the presenter ask.
+Each block, about 80 words or less:
 
-State each block's point and proof flatly. Delivery and staging notes — what the room feels, when to pause — belong to the storyboard, not the outline.
+- **Point** — one sentence.
+- **Proof** — a story or number. Tag it `lived` (the speaker did it or saw it) or `secondhand` (a tweet, a video, an article). Lived proof survives the stage; secondhand proof gets dropped or garbled. Use secondhand only when it is sourced and the point needs it, and put the source in Gaps. Leave room in the core for "this week's story": the speaker will bring a fresher one than you can.
+- **Serves** — which box.
 
-Do not write slide titles as decoration. Do not write a full speech. Do not add a demo, origin story, or company overview unless it serves a box.
+Resolve tension locally. If a block raises a fear, question, or setup, pay it off in the same block or the next one. Allow at most one long-range callback, and the title is the natural one. Plans that spread payoffs across the whole talk do not survive delivery.
 
-Map brand-context stories onto the audience's existing belief. The proof should change that belief or make the Monday action obvious. If a story does not do that, leave it out.
+State points and proof flatly. What the room feels belongs to the storyboard. Do not write slide titles, a speech, or a company overview unless it serves a box. Map brand stories onto the audience's existing belief; if a story does not move that belief or make the Monday action obvious, leave it out.
+
+## Examples
+
+`examples/` in this skill's folder, if present, shows a real outline next to what was actually said on stage. Read it only if you are unsure what a spine, a lived proof, or a local payoff looks like. Everything you need to run the job is above.
 
 ## Refuse
 
-Stop in a few sentences if there is no talk topic and they will not name one, or if they want a different job: slide design or visual layout, a word-for-word speech or speaker-notes manuscript, podcast guest prep, which events to pitch, or a fundraising pitch deck. Do not half-run those.
+Stop in a few sentences if there is no talk topic and they will not name one, or if they want a different job: slide design, a word-for-word speech, podcast guest prep, which events to pitch, a fundraising pitch deck, or reworking the outline against a rehearsal transcript (that is a pressure-test against the spoken talk, not an outline from scratch). Do not half-run those.

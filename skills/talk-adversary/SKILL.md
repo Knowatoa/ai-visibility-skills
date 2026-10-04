@@ -1,43 +1,44 @@
 ---
 name: talk-adversary
-description: "Pressure-tests a talk against a recent transcript that will often disagree with the outline, storyboard, and slides. Surfaces talking points, holes that need backup, criticisms, and questions the room gets stuck on, then writes the ones worth keeping back into those files. Use when the user has a transcript plus outline.md, storyboard.md, or slides, says the spoken talk drifted from the deck, or asks to find holes, backup, pushback, or stuck questions before they present again. Also trigger for 'red-team this talk', 'what would a skeptic say', or 'address pushback in the deck.' Do NOT load for writing a talk from scratch with no source to attack, cleaning a transcript as the deliverable, podcast guest prep, illustrating slides, or a brand roast with no presentation attached."
+description: "Pressure-tests a talk against a recent rehearsal or live transcript that will often disagree with the outline, storyboard, and slides. Maps the drift, rewrites the outline to the talk that was actually spoken, then surfaces up to five holes, criticisms, and stuck questions and writes them back into the outline, storyboard, and slides plan. Ends with what to do differently when outlining the next talk. Use when the user has a transcript plus an outline, storyboard, or slides, says the spoken talk drifted from the deck, or asks to find holes, backup, pushback, or stuck questions before they present again. Also trigger for 'red-team this talk', 'what would a skeptic say', 'update the outline from my rehearsal', or 'address pushback in the deck.' Do NOT load for writing a talk from scratch with no source to attack, cleaning a transcript as the deliverable, podcast guest prep, illustrating slides, or a brand roast with no presentation attached."
 ---
 
 # Talk adversary
 
-Read the outline, storyboard, slides, and a recent transcript. The transcript will often be a different talk than the files. That is expected. After the deck exists, the spoken version moves. Do not treat that drift as a defect and do not "fix" the transcript to match the plan.
+Read the outline, storyboard, slides plan, and a recent transcript. The transcript will often be a different talk than the files. That is expected and usually good: the spoken version is what the speaker can actually carry.
 
-Surface the talking points, the holes in them, what needs backup and what does not, criticisms of the talk or the transcript, and questions people get stuck on. Write the ones worth keeping back into the outline, the storyboard, and the slides. Chat stays short.
+**The spoken talk wins by default.** Rewrite the files to match it, then attack it. Restore a planned element only when the plan's version is clearly stronger, and say why in one line. Do not drag the talk back toward the plan for its own sake.
+
+Chat stays short. The files are the work.
 
 ## Do this job
 
-1. Find the inputs. If the user pointed at a folder, look there for `outline.md` or `*-outline.md`, `storyboard.md` / `storyboar.md` / `*-storyboard.md`, `slides.md` / `*-slides.md` / `*.pptx`, and a transcript (`.md`, `.txt`, `.vtt`, `.srt`). Use any paths they gave. Content pasted in chat counts. If more than one file matches a role, ask which one. If a file is missing, ask once, in one batch, for the paths. If they say they do not have it, proceed with what exists and record the hole in Gaps. Do not invent a talk. Do not search the web for the topic, competitors, or "what critics say." The files you were given are the corpus.
+1. **Find the inputs.** Look where the user pointed for `*-outline.md` / `outline.md`, `*-storyboard.md`, `*-slides.md` / `slides.md`, and a transcript (`.md`, `.txt`, `.vtt`, `.srt`). Pasted content counts. If more than one file matches a role, or a role is missing, ask once in one batch. If they have no file for a role, go on without it and note it in Gaps. If no input anchors a directory, ask where files live in that same batch (default: current directory). Do not search the web.
 
-2. Ask where this talk's files should live before creating any, unless an input file already anchors the location. Default: the directory that holds the outline, storyboard, or slides. If location and input paths are both unknown, ask for them in the same batch. Do not ask where to write, wait, then ask for the transcript.
+2. **Read** the outline, then the storyboard, then the slides plan, then the transcript. Then `.agents/brand-context.md` (fallback `.claude/brand-context.md`) if it exists, only so you do not flag a take they already own. If the outline already has `adversary-resume`, honor it and do not re-ask settled facts.
 
-3. The working file is the outline you will write back to. If `outline.md` or a `*-outline.md` already exists, that file is it: read it, honor `adversary-resume`, do not blank it. If they pointed at a differently named outline, edit that file. If there is no outline, write `outline.md` in the working directory as soon as the talk is identified, before the first finding. Sessions die. The outline is the memory.
+3. **Map the drift.** Write `## Drift` in the outline first: one row per planned block and per new spoken section, in spoken order.
 
-4. Read the outline, then the storyboard, then the slides plan, then the transcript, in that order. Then, if it exists, `.agents/brand-context.md` (fallback `.claude/brand-context.md`). Brand context is only so you do not treat a take they already own as a hole. If it is missing, do not interview. The talk files are enough.
+   | Planned block (min) | Spoken (timestamp, ~min) | Verdict |
+   |---|---|---|
 
-5. Extract talking points from every source you have. Tag each one planned or spoken. Include the named audience, takeaway, or presenter win when the outline has those boxes. A point that exists in the transcript and not in the files is a candidate to write back, not a problem. A point that exists in the files and vanished from the transcript is a hole or a drop, not a crime. Do not summarize the transcript.
+   Verdict is one of `kept`, `moved`, `replaced`, `new`, `dropped`, with a few words on what changed. Use transcript timestamps when they exist. Note total planned vs. spoken time. This table is the most useful thing in the pass; write it before any finding.
 
-6. For each talking point, decide: hole, needs backup, already backed, criticism, or stuck question. A hole is a load-bearing claim with no story, number, or slide cue. "Already backed" means the files or the transcript already carry the proof; leave it alone. A criticism is what a smart person in the room would actually say. A stuck question is the thing they turn over instead of hearing the next beat.
+4. **Rewrite the Outline to the spoken talk.** Rebuild `## Outline` blocks in spoken order with spoken timings: point and proof, written as sentences the speaker can say, using the speaker's own strongest lines from the transcript. If the speaker used a different organizing idea than the outline (for example a new noun or three moves in place of a list of patterns), the spoken one becomes the **Spine**. Move planned material that was not spoken to `## Cut (planned, not spoken)`, one line each, so nothing is lost. Do not append "run-through notes" next to the old blocks; one outline, one talk. Keep the header fields and the three boxes. Update **What the audience gets** only if the spoken takeaway clearly changed, using the speaker's words.
 
-7. Keep a finding only when you can point at a talking point or a transcript moment. It must use nouns from the files (a named claim, slide, story, or number). If you could paste it onto a different talk and it would still read true, drop it. Do not invent the missing number, customer, or competitor. If a claim needs a fact you do not have, put it in Gaps.
+5. **Find up to five write-backs.** For each spoken talking point, decide: hole (a load-bearing claim with no story, number, or cue), needs backup, already backed, criticism (what a smart person in the room would say), or stuck question (what they turn over instead of hearing the next beat). Keep a finding only if it uses nouns from this talk and points at a transcript moment. If it would read true on any other talk, drop it. Rank by whether someone in the room would actually push back, and whether leaving it unsaid weakens the recording. Cap at five. Do not turn the talk into a FAQ.
 
-8. Cap write-backs at five. Rank by whether a smart person in the room would actually get stuck or push back, and whether leaving it unsaid makes the recording weaker. That is "within reason." Do not turn the talk into a FAQ. Fold each write-back into the matching outline block as a normal beat (point and proof), not as Attack/Patch commentary. Then patch the matching storyboard beat and slides row. Preserve headings already in those files. Create **Holes**, **Leave it**, and **Gaps** at the end of the outline if they are missing. Real findings that would derail, are already owned, or cannot be handled in this talk go in Leave it. Do not pad Leave it with hypotheticals.
+6. **Apply them.** Fold each write-back into its outline block as a normal sentence (point and proof), not as Attack/Patch commentary. Label each in **Holes** as `adopt-spoken` (sharpens something the speaker said) or `restore-plan` (brings back a planned element, with the one-line reason). Then patch the matching storyboard beat and slides row (see Write back). Findings that would derail, are already owned, or cannot be handled in this talk go in **Leave it**, one line each.
 
-9. Apply the write-backs. Do not wait to be asked, and do not stop at the outline. See **Write back**. After the files are `ready`, stop. Do not start a new outline, a new storyboard, or a full slide rebuild beyond the rows you patched.
+7. **Write `## Next time`**: two to five lines on what the planning files got wrong that the spoken talk fixed, phrased as advice for outlining and storyboarding the next talk. Example: "Proof from a tweet was dropped on stage; this week's lived stories replaced it. Next outline: lived proof only." Only lessons the drift map shows. No generic speaking tips.
 
-10. In chat: the paths plus the talking points you wrote back and the holes you left. Do not paste the files.
+8. Set `status: ready` and `adversary-resume: done` once the outline, storyboard, and slides plan you have are patched. In chat: the paths, the drift in three or four lines, the write-backs, and the Next time lines. Do not paste the files. Stop. Do not start a new storyboard or a full slide rebuild.
 
 ## Working files
 
-The outline is the resume file, not a chat essay. Ask where this talk's files should live before creating any (default: the current directory). If they already pointed at a folder or an existing outline, use that directory. Do not ask this again in Inputs.
+The outline is the resume file. If none exists, write `outline.md` as soon as the talk is identified, before the first finding. Sessions die.
 
-`adversary-resume` is the only progress pointer for adversary work. Do not also keep a Status heading in the body. (The `resume` field belongs to `talk-outline` and should not be touched.)
-
-If the outline already has talk sections, keep them. Add only what is missing:
+`adversary-resume` is the only progress pointer for this skill. Do not touch `resume`; it belongs to whatever wrote the outline. Keep header fields the outline already has. Do not touch Scratch rounds.
 
 ```markdown
 ---
@@ -51,47 +52,36 @@ adversary-resume: "<exact next step a cold session should do>"
 
 # Outline: <talk>
 
+## Spine
 ## Outline
+## Drift
 ## Holes
 ## Leave it
+## Cut (planned, not spoken)
+## Next time
 ## Gaps
 ```
 
-`status` is `in-progress` until a cold reader could give the talk from the Outline and the write-backs are in the storyboard and slides you have. Then `ready`. If the file already exists, read it, honor `adversary-resume`, and do not re-ask settled facts (paths, talk title, which inputs were missing). Keep header fields the outline already has (`event`, `when`, `length`, `pace`, `resume`). Do not touch Scratch rounds.
+**Outline** and **Spine** are skimmer zones: what the speaker says, in order. No research diary, no history of changes. The history lives in Drift and Cut.
 
-**Outline.** Skimmer zone. Timed or named blocks with the point, the proof, and any write-back written as a sentence they can say. No research diary, no "which cuts against," no history of how you changed your mind.
+**Holes.** Talking point, what is missing, criticism or stuck question, `adopt-spoken` or `restore-plan`, and where you wrote it back (outline block, storyboard beat, slide N).
 
-**Holes.** Talking point, what is missing, backup needed or not, criticism or stuck question, and where you wrote it back (outline block, storyboard beat, slide N) or why you did not.
-
-**Leave it.** One line, then why it stays out (derail, already owned, already backed, not this talk).
-
-**Gaps.** Missing input, truncated transcript, claim with no evidence, number you refused to invent, pptx left stale.
+**Gaps.** Missing input, truncated transcript, a claim with no source, a number you refused to invent, a stale pptx.
 
 ## Write back
 
-Do the outline first, then the storyboard, then the slides. Same five findings. Do not invent a second list.
+Outline first, then storyboard, then slides. Same findings, no second list.
 
-**Storyboard** (`storyboard.md`, `storyboar.md`, or `*-storyboard.md`). Usual beat shape: Place, Energy, Feel, Hit, From the outline. If the headings differ, use the closest equivalents. Update Hit and From the outline on the beat whose Place matches the outline block. Add a beat only when a stuck question needs a feeling the journey does not have. Do not theatricalize. Do not rewrite The journey unless the Monday takeaway changed. If there is no storyboard, put that in Gaps and keep going.
+**Storyboard.** Usual beat shape: Place, Energy, Feel, Hit, Stands alone. Repoint each beat's Place at the rewritten outline block. If a planned beat's block was dropped, delete the beat and list it under the storyboard's Gaps; if a new spoken section carries a feeling no beat has, add one short beat. Update Hit where a write-back changes what the beat must land. Do not rewrite The journey unless the takeaway changed. Do not theatricalize. If there is no storyboard, note it in Gaps.
 
-**Slides** (`slides.md` or `*-slides.md`). Usual row shape: On screen, Visual, Seconds, Beat, Outline, Notes. On screen stays a cue: a word, a number, or one claim. Do not put the spoken line on the slide. Put the backup or the answer to the stuck question in Notes. Add a look only when the room needs to see something that was a hole. Do not add a slide per criticism. If there is no slides plan, put that in Gaps.
+**Slides plan.** Usual row shape: On screen, Visual, Seconds, Beat, Outline, Notes. On screen stays a cue: a word, a number, or one claim. Put backup and stuck-question answers in Notes. Add a look only when the room needs to see something that was a hole (a source line under a number, a screenshot the speaker referenced). If the speaker presented looks the plan does not have, add rows for them. If there is no slides plan, note it in Gaps.
 
-If a `.pptx` sits next to the plan, rebuild it from the updated plan after the markdown is ready. Use python-pptx. 16:9, on-screen cue large, notes in speaker notes. Do not generate images. If render fails or the package is missing, leave the markdown ready and put the pptx in Gaps.
+Do not rebuild a `.pptx`. If one sits next to the plan, note in Gaps that it is stale and needs a regeneration from the updated plan.
 
-## Inputs
+## Examples
 
-Need a transcript and some version of the planned talk (outline, storyboard, or slides). File location is asked once, in Working files / step 2.
-
-Ask only if missing and it matters, in one batch:
-
-1. Path or paste for the existing outline, if they have one.
-2. Path or paste for the storyboard.
-3. Path or paste for the slides plan or deck.
-4. Path or paste for the recent transcript.
-
-If you also do not know where to write, include that here. Do not drip.
-
-Do not ask for audience size, slide tool, brand story, or a target number of findings.
+`examples/` in this skill's folder, if present, shows a real drift map, a rewritten block, a Cut entry, and Next time lines from one talk. Read it only if you are unsure of the shape.
 
 ## Refuse
 
-Stop in a few sentences if there is no talk content and they will not provide any, or if they want a different job: writing the talk from scratch with nothing to pressure-test, cleaning or publishing a transcript as the deliverable, visual slide design or illustration with no argument to attack, podcast guest prep for a show they are appearing on, or a brand roast with no presentation attached. Do not attack the speaker as a person. Do not half-run those.
+Stop in a few sentences if there is no talk content and they will not provide any, or if they want a different job: writing the talk from scratch with nothing to pressure-test, cleaning or publishing a transcript as the deliverable, visual slide design or illustration, podcast guest prep, or a brand roast with no presentation attached. Do not attack the speaker as a person. Do not half-run those.
