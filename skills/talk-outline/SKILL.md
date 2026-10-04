@@ -19,7 +19,7 @@ Giving the talk is the job. If you record it and publish it, you leave with an a
 4. Fill **Who this is for**, **What the audience gets**, and **What I get**. If a box is mush, ask. Do not invent an audience or a presenter win.
 5. Put their abstract in **Abstract**. Put their bullets or ramble in **Scratch** as Round 1.
 6. Set `pace`. Default `scratch`. Use `wrap-up` when `when` is about a week or less, they asked to finish now, or they already know the talk. Do not ask which pace.
-7. Find the **Outline** (see below) before writing blocks.
+7. Find the **Spine** (see below) before writing blocks.
 8. Run **Scratch** or **Wrap-up**.
 9. Set `status: ready` when a cold reader could give the talk from the file. In chat: path, the three boxes, the spine, section titles. Do not paste the file. When ready, stop. Do not start slides, a speech, or another skill.
 
@@ -108,7 +108,7 @@ On return, ask what stuck. Put keepers under **What survived**. If they are read
 
 ## Wrap-up
 
-Same sitting. Write Spine and Outline as one pass from their keepers, ramble, abstract, boxes, and brand stories. Chat the spine and block titles. Take one round of reaction, revise once, then lock. Leftover mush goes in Gaps.
+Same sitting. Write Spine and Outline as one pass from their keepers, Scratch, ramble, abstract, boxes, and brand stories. Chat the spine and block titles. Take one round of reaction, revise once, then lock. Leftover mush goes in Gaps.
 
 If the reaction is "this doesn't feel right" without specifics, do not trade more passes in chat. Ask them to talk the talk for five minutes and paste the transcript, and outline from that. Arguing over an outline in chat is slower than one rough run-through.
 
