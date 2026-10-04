@@ -1,11 +1,11 @@
 ---
 name: talk-outline
-description: "Builds a talk outline that names the real audience, what they walk away able to do, and what the presenter is trying to get, hung on a spine of at most three moves the speaker can say without slides. Starts from an abstract, throwaway bullet rounds, or a rough spoken ramble, or wraps the outline in one sitting when the talk is about a week away. Use when the user asks to outline a talk, keynote, webinar, meetup, or conference session, or says 'help me structure this presentation', 'I have some rough bullets', 'here's my abstract', 'here's me talking it through', 'the talk is next week', 'wrap up this outline', 'who is this talk for', or 'what should they take away'. Do NOT load for slide design, writing a full speech, podcast guest prep, picking which event to speak at, a fundraising pitch deck, or reworking an outline against a rehearsal transcript."
+description: "Builds a talk outline that names the real audience, what they walk away able to do, and what the presenter is trying to get, based on a outline (also referred to as spine,of at most three points the speaker can say without slides. Starts from an abstract, throwaway bullet rounds, or a rough spoken ramble, or wraps the outline in one sitting when the talk is about a week away. Use when the user asks to outline a talk, keynote, webinar, meetup, or conference session, or says 'help me structure this presentation', 'I have some rough bullets', 'here's my abstract', 'here's me talking it through', 'the talk is next week', 'wrap up this outline', 'who is this talk for', or 'what should they take away'. Do NOT load for slide design, writing a full speech, podcast guest prep, picking which event to speak at, a fundraising pitch deck, or reworking an outline against a rehearsal transcript."
 ---
 
 # Talk outline
 
-Lock who the talk is for, what that person walks away able to do, and what you want from giving it. Then hang the talk on a spine the speaker can carry without notes. The deliverable is a file, not a chat essay.
+Lock who the talk is for, what that person walks away able to do, and what you want from giving it. Then hang the talk on a outline the speaker can carry without notes. The deliverable is a file, not a chat essay.
 
 The outline is a starting point, not a contract. The spoken talk will drift from it on the first rehearsal, and that is healthy. Write an outline that is cheap to drift from: few named parts, lived stories, short blocks. Do not spend the sitting perfecting structure that a run-through will rewrite.
 
@@ -19,7 +19,7 @@ Giving the talk is the job. If you record it and publish it, you leave with an a
 4. Fill **Who this is for**, **What the audience gets**, and **What I get**. If a box is mush, ask. Do not invent an audience or a presenter win.
 5. Put their abstract in **Abstract**. Put their bullets or ramble in **Scratch** as Round 1.
 6. Set `pace`. Default `scratch`. Use `wrap-up` when `when` is about a week or less, they asked to finish now, or they already know the talk. Do not ask which pace.
-7. Find the **Spine** (see below) before writing blocks.
+7. Find the **Outline** (see below) before writing blocks.
 8. Run **Scratch** or **Wrap-up**.
 9. Set `status: ready` when a cold reader could give the talk from the file. In chat: path, the three boxes, the spine, section titles. Do not paste the file. When ready, stop. Do not start slides, a speech, or another skill.
 
