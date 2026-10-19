@@ -1,6 +1,6 @@
 ---
 name: talk-outline
-description: "Builds a talk outline that names the real audience, what they walk away able to do, and what the presenter is trying to get, based on a outline (also referred to as spine,of at most three points the speaker can say without slides. Starts from an abstract, throwaway bullet rounds, or a rough spoken ramble, or wraps the outline in one sitting when the talk is about a week away. Use when the user asks to outline a talk, keynote, webinar, meetup, or conference session, or says 'help me structure this presentation', 'I have some rough bullets', 'here's my abstract', 'here's me talking it through', 'the talk is next week', 'wrap up this outline', 'who is this talk for', or 'what should they take away'. Do NOT load for slide design, writing a full speech, podcast guest prep, picking which event to speak at, a fundraising pitch deck, or reworking an outline against a rehearsal transcript."
+description: "Builds a talk outline that names the real audience, what they walk away able to do, and what the presenter is trying to get, then hangs it on a spine of at most three points the speaker can say without slides, and offers a one-page cues card to rehearse from before any slides exist. Starts from an abstract, throwaway bullet rounds, or a rough spoken ramble, or wraps the outline in one sitting when the talk is about a week away. Use when the user asks to outline a talk, keynote, webinar, meetup, or conference session, or says 'help me structure this presentation', 'I have some rough bullets', 'here's my abstract', 'here's me talking it through', 'the talk is next week', 'wrap up this outline', 'who is this talk for', 'what should they take away', or 'make me cue cards to practice from'. Do NOT load for slide design, writing a full speech, podcast guest prep, picking which event to speak at, a fundraising pitch deck, or reworking an outline against a rehearsal transcript."
 ---
 
 # Talk outline
@@ -21,7 +21,8 @@ Giving the talk is the job. If you record it and publish it, you leave with an a
 6. Set `pace`. Default `scratch`. Use `wrap-up` when `when` is about a week or less, they asked to finish now, or they already know the talk. Do not ask which pace.
 7. Find the **Spine** (see below) before writing blocks.
 8. Run **Scratch** or **Wrap-up**.
-9. Set `status: ready` when a cold reader could give the talk from the file. In chat: path, the three boxes, the spine, section titles. Do not paste the file. When ready, stop. Do not start slides, a speech, or another skill.
+9. Set `status: ready` when a cold reader could give the talk from the file. In chat: path, the three boxes, the spine, section titles. Do not paste the file.
+10. Offer the **Cues** card once, in that same message: "Want a one-page cues card to rehearse from before slides?" Set `resume` to "cues offered; write the card if they say yes." If yes, write it and set `resume: done`. Then stop. Do not start slides, a speech, or another skill.
 
 ## Working files
 
@@ -33,6 +34,7 @@ event: "<event or unknown>"
 when: "<date or unknown>"
 length: "<minutes or unknown>"
 pace: scratch
+cues: "<path or unset>"
 resume: "<exact next step a cold session should do>"
 ---
 
@@ -53,7 +55,7 @@ resume: "<exact next step a cold session should do>"
 
 `status` is `in-progress` until the boxes, Spine, and Outline are filled; then `ready`. `resume` is the only progress pointer.
 
-If the file already exists, read it, honor `resume`, and do not re-ask settled facts. If an older file lacks a section, add it and keep going. Do not restart.
+If the file already exists, read it, honor `resume`, and do not re-ask settled facts. If the outline is `ready` and they ask for cues, write the cues card. If an older file lacks a section, add it and keep going. Do not restart.
 
 Who this is for, What the audience gets, What I get, and Spine are skimmer zones. No research diary, no "I considered…". That belongs in Gaps or nowhere.
 
@@ -134,9 +136,24 @@ Resolve tension locally. If a block raises a fear, question, or setup, pay it of
 
 State points and proof flatly. What the room feels belongs to the storyboard. Do not write slide titles, a speech, or a company overview unless it serves a box. Map brand stories onto the audience's existing belief; if a story does not move that belief or make the Monday action obvious, leave it out.
 
+## Cues
+
+A cues card is the cheapest rehearsal tool: one page the speaker holds while they talk it through, before anyone builds slides. Rehearsing from cards instead of slides lets the talk change shape out loud. The transcript from that run (or the marked-up card, if there is no recording) is the next revision of the outline.
+
+If they ask for cues and there is no outline, run this job first; the card comes after Spine and Outline exist. Never write cues from a topic alone.
+
+Write `<talk-slug>-cues.md` next to the outline and set `cues` in the outline header. Build it from Spine and Outline only:
+
+- Top line: title, length, and the quotable line or key quote if there is one.
+- One heading per Outline block, in order: `## <block> · <minutes> min`.
+- Under each, two to six cues: a story's name ("ladder in the rain"), a number, the spine move it lands on, a quote or verse to read word for word. A cue is a few words to glance at, not a sentence to recite.
+- The close restates the spine moves and the ask.
+
+It must fit on the page they hold. If it does not, cut cues, not sections. Tell them to copy pen edits into the `.md` the same day, so the next run starts from what was said; reworking the outline from those edits is not this job. If they ask to print it, a plain one-page HTML or PDF made from the `.md` is fine; the `.md` stays the source.
+
 ## Examples
 
-`examples/` in this skill's folder, if present, shows a real outline next to what was actually said on stage. Read it only if you are unsure what a spine, a lived proof, or a local payoff looks like. Everything you need to run the job is above.
+`examples/` in this skill's folder, if present, shows a real outline next to what was actually said on stage, and a cues card the speaker rehearsed and spoke from. Read it only if you are unsure what a spine, a lived proof, a local payoff, or a cue looks like. Everything you need to run the job is above.
 
 ## Refuse
 
