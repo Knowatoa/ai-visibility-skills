@@ -13,7 +13,7 @@ Skills in this repo cover the prep through the deck:
 
 - [talk-outline](../skills/talk-outline) — who it is
   for, what they can do on Monday, what you get, then a disposable
-  outline
+  outline, and a one-page cues card to rehearse from
 - [talk-storyboard](../skills/talk-storyboard) — the feeling beat by
   beat, then whether that outline is the one to keep
 - [talk-slides](../skills/talk-slides) — a sparse PowerPoint cut
@@ -21,9 +21,10 @@ Skills in this repo cover the prep through the deck:
   sorter grouped by beat and Hit/why, or walk one look at a time,
   then a cue each look, about 15-30 seconds
 - [talk-adversary](../skills/talk-adversary) — a recent transcript
-  against those files. The spoken talk is supposed to drift. Write
-  holes, backup, criticisms, and stuck questions back into the
-  outline, storyboard, and slides
+  (or a marked-up cues card, if nobody recorded it) against those
+  files. The spoken talk is supposed to drift. Write holes, backup,
+  criticisms, and stuck questions back into the outline, storyboard,
+  and slides or cues
 
 ## What a rehearsal taught us
 
@@ -48,6 +49,43 @@ for it. Four lessons are now built into the skills:
 The point is less time arguing over files in chat. Write a light
 outline, rehearse it, and let the transcript do the next revision.
 Each skill's `examples/` folder shows the real before and after.
+
+## Cues before slides
+
+The second talk we ran through these skills was a 30–40 minute
+sermon. It took a shorter path:
+
+1. `talk-outline`, then part of a storyboard.
+2. A one-page cues card from the outline instead of slides.
+3. A practice run from the card, transcribed.
+4. `talk-adversary` against that transcript. The frame changed: the
+   speaker kept reaching for a different passage than the one the
+   outline was built on.
+5. Delivered from the printed card, edited in pen while speaking.
+   No recording.
+6. `talk-adversary` again, with the marked-up card as the spoken
+   version. Three people came up afterward; two used the new verbs.
+7. Slides for the next delivery, built from the rewritten outline.
+
+Rehearsing from cards changed the frame, the three moves, and a
+supporting quote. None of it cost a slide rebuild. A deck built
+before step 4 would have been thrown away.
+
+What that changed in the skills:
+
+- `talk-outline` offers the cues card when the outline is ready: one
+  heading per block with minutes, a few cues under each, quotes to
+  read word for word. No sentences to recite.
+- `talk-adversary` treats a cues card like a slides plan: it reads
+  it, rewrites it to the spoken order, and adds each fix as one cue.
+  With no recording, the marked-up card counts as what was said.
+
+The order that worked: outline → cues → rehearse → adversary →
+storyboard and slides. The storyboard still earns its place before
+the deck; it just doesn't have to come before the first run-through.
+The real files, trimmed: the cues card in
+[talk-outline/examples](../skills/talk-outline/examples) and the
+drift map in [talk-adversary/examples](../skills/talk-adversary/examples).
 
 ## How we prepare talks
 
