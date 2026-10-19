@@ -5,7 +5,7 @@ description: "Pressure-tests a talk against a recent rehearsal or live transcrip
 
 # Talk adversary
 
-Read the outline, storyboard, slides plan or cues card, and a recent transcript. The transcript will often be a different talk than the files. That is expected and usually good: the spoken version is what the speaker can actually carry.
+Read the outline, storyboard, slides plan or cues card, and a recent transcript (or the marked-up cues card after an unrecorded talk). The transcript will often be a different talk than the files. That is expected and usually good: the spoken version is what the speaker can actually carry.
 
 **The spoken talk wins by default.** Rewrite the files to match it, then attack it. Restore a planned element only when the plan's version is clearly stronger, and say why in one line. Do not drag the talk back toward the plan for its own sake.
 
@@ -15,7 +15,7 @@ Chat stays short. The files are the work.
 
 1. **Find the inputs.** Look where the user pointed for `*-outline.md` / `outline.md`, `*-storyboard.md`, `*-slides.md` / `slides.md`, `*-cues.md` / `cues.md`, and a transcript (`.md`, `.txt`, `.vtt`, `.srt`). Pasted content counts. A cues card is the one page the speaker rehearsed or spoke from; before slides exist, it plays the slides plan's role; do not ask for a slides plan when a cues card exists. If there is no recording, the cues card with the changes the speaker made while speaking (pen edits, crossed-out lines, what they said instead) is the spoken version; say so in Gaps. If more than one file matches a role, or a role is missing, ask once in one batch. If they have no file for a role, go on without it and note it in Gaps. If no input anchors a directory, ask where files live in that same batch (default: current directory). Do not search the web.
 
-2. **Read** the outline, then the storyboard, then the slides plan and cues card, then the transcript. Then `.agents/brand-context.md` (fallback `.claude/brand-context.md`) if it exists, only so you do not flag a take they already own. If the outline already has `adversary-resume`, honor it and do not re-ask settled facts.
+2. **Read** the outline, then the storyboard, then the slides plan and cues card, then the transcript (or the marked-up cues card if there is no recording). Then `.agents/brand-context.md` (fallback `.claude/brand-context.md`) if it exists, only so you do not flag a take they already own. If the outline already has `adversary-resume`, honor it and do not re-ask settled facts.
 
 3. **Map the drift.** Write `## Drift` in the outline first: one row per planned block and per new spoken section, in spoken order.
 
@@ -24,7 +24,7 @@ Chat stays short. The files are the work.
 
    Verdict is one of `kept`, `moved`, `replaced`, `new`, `dropped`, with a few words on what changed. Use transcript timestamps when they exist. Note total planned vs. spoken time. This table is the most useful thing in the pass; write it before any finding.
 
-4. **Rewrite the Outline to the spoken talk.** Rebuild `## Outline` blocks in spoken order with spoken timings: point and proof, written as sentences the speaker can say, using the speaker's own strongest lines from the transcript. If the speaker used a different organizing idea than the outline (for example a new noun or three moves in place of a list of patterns), the spoken one becomes the **Spine**. Move planned material that was not spoken to `## Cut (planned, not spoken)`, one line each, so nothing is lost. Do not append "run-through notes" next to the old blocks; one outline, one talk. Keep the header fields and the three boxes. Update **What the audience gets** only if the spoken takeaway clearly changed, using the speaker's words.
+4. **Rewrite the Outline to the spoken talk.** Rebuild `## Outline` blocks in spoken order with spoken timings: point and proof, written as sentences the speaker can say, using the speaker's own strongest lines from the transcript (or from the marked-up card if there is no recording). If the speaker used a different organizing idea than the outline (for example a new noun or three moves in place of a list of patterns), the spoken one becomes the **Spine**. Move planned material that was not spoken to `## Cut (planned, not spoken)`, one line each, so nothing is lost. Do not append "run-through notes" next to the old blocks; one outline, one talk. Keep the header fields and the three boxes. Update **What the audience gets** only if the spoken takeaway clearly changed, using the speaker's words.
 
 5. **Find up to five write-backs.** For each spoken talking point, decide: hole (a load-bearing claim with no story, number, or cue), needs backup, already backed, criticism (what a smart person in the room would say), or stuck question (what they turn over instead of hearing the next beat). Keep a finding only if it uses nouns from this talk and points at a transcript moment (or a line on the marked-up card, if there is no recording). If it would read true on any other talk, drop it. Rank by whether someone in the room would actually push back, and whether leaving it unsaid weakens the recording. Cap at five. Do not turn the talk into a FAQ.
 
